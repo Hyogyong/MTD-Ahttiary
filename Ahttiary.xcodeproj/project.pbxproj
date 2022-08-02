@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1709342898D309001E98D5 /* DateViewModel.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
 		7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB0288F933000E92B73 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A1709342898D309001E98D5 /* DateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* Ahttiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahttiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
 		7AD34AAE288F932E00E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		7AD34ABE288F945000E92B73 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7A1709342898D309001E98D5 /* DateViewModel.swift */,
 				7AD34AC3288F94CF00E92B73 /* ViewModel.swift */,
 			);
 			path = ViewModels;
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */,
 				7AD34AC4288F94CF00E92B73 /* ViewModel.swift in Sources */,
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				7AD34ABC288F943600E92B73 /* Secret.swift in Sources */,
