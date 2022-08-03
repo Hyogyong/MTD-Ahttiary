@@ -10,6 +10,8 @@ import SwiftUI
 struct WriteNoteView: View {
     @ObservedObject var noteManager: NoteManager = NoteManager()
     
+    @FocusState var isTextFieldsFocused: Bool
+    
     var body: some View {
         VStack {
             // 아띠와 말풍선
@@ -31,7 +33,9 @@ struct WriteNoteView: View {
             
             HStack {
                 Text(DateFormatter.getKoreanDateInString())
+                
                 Spacer()
+                
                 Text("맑음")
             }
             .padding(.horizontal)
@@ -47,6 +51,7 @@ struct WriteNoteView: View {
                     .background(Color.Custom.ahttyWhite)
                     .cornerRadius(15)
                     .padding()
+                    .focused($isTextFieldsFocused)
             }
             
             HStack {
@@ -63,6 +68,17 @@ struct WriteNoteView: View {
             Spacer()
         }
         .background(Color.Custom.backgroundColor.ignoresSafeArea())
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button {
+                    isTextFieldsFocused = false
+                } label: {
+                    Image(systemName: "keyboard.chevron.compact.down")
+                }
+                
+            }
+        }
     }
 }
 
