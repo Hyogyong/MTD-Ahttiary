@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WriteNoteView: View {
-    @ObservedObject var noteManager = NoteManager()
+    @ObservedObject var noteManager: NoteManager = NoteManager()
     
     var body: some View {
         ZStack {
