@@ -9,7 +9,7 @@ import Foundation
 
 extension DateFormatter {
     static func getKoreanDateInString() -> String {
-        let dateFormatter = DateFormatter()
+        let dateFormatter: DateFormatter = DateFormatter()
         
         dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.timeZone = TimeZone(abbreviation: "KST")
