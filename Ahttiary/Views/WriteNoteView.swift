@@ -23,7 +23,7 @@ struct WriteNoteView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
+                    .background(Color.Custom.ahttyWhite)
                     .cornerRadius(15)
                     .padding()
             }
@@ -44,6 +44,7 @@ struct WriteNoteView: View {
                         .frame(
                             height: ScreenSize.answerMessageBoxHeight
                         )
+                        .background(Color.Custom.ahttyWhite)
                         .cornerRadius(15)
                         .padding()
                 }
