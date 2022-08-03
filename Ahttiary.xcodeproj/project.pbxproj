@@ -14,9 +14,7 @@
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
 		7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB0288F933000E92B73 /* Assets.xcassets */; };
 		7AD34AB4288F933000E92B73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */; };
-		7AD34ABC288F943600E92B73 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34ABB288F943600E92B73 /* Secret.swift */; };
 		7AD34AC2288F947700E92B73 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AC1288F947700E92B73 /* Model.swift */; };
-		7AD34AC4288F94CF00E92B73 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AC3288F94CF00E92B73 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +26,7 @@
 		7AD34AAE288F932E00E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7AD34AB0288F933000E92B73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7AD34ABB288F943600E92B73 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		7AD34AC1288F947700E92B73 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		7AD34AC3288F94CF00E92B73 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +59,6 @@
 		7AD34AAB288F932E00E92B73 /* Ahttiary */ = {
 			isa = PBXGroup;
 			children = (
-				7AD34ABA288F942300E92B73 /* Secrets */,
 				7AD34ABF288F945200E92B73 /* Models */,
 				7AD34ABE288F945000E92B73 /* ViewModels */,
 				7AD34AC0288F945D00E92B73 /* Views */,
@@ -82,19 +77,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7AD34ABA288F942300E92B73 /* Secrets */ = {
-			isa = PBXGroup;
-			children = (
-				7AD34ABB288F943600E92B73 /* Secret.swift */,
-			);
-			path = Secrets;
-			sourceTree = "<group>";
-		};
 		7AD34ABE288F945000E92B73 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				7A1709342898D309001E98D5 /* DateViewModel.swift */,
-				7AD34AC3288F94CF00E92B73 /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,9 +176,7 @@
 				7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */,
 				7A17093C2898D4AF001E98D5 /* MainView.swift in Sources */,
 				7A17093A2898D466001E98D5 /* CalendarView.swift in Sources */,
-				7AD34AC4288F94CF00E92B73 /* ViewModel.swift in Sources */,
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
-				7AD34ABC288F943600E92B73 /* Secret.swift in Sources */,
 				7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */,
 				7AD34AC2288F947700E92B73 /* Model.swift in Sources */,
 			);
