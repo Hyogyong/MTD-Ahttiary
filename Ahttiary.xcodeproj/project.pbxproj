@@ -13,7 +13,6 @@
 		7AD34AB4288F933000E92B73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */; };
 		7AD34AC2288F947700E92B73 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AC1288F947700E92B73 /* Model.swift */; };
 		7AD34AC4288F94CF00E92B73 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AC3288F94CF00E92B73 /* ViewModel.swift */; };
-		F8C8A07F2898E1A50087C00D /* WritingNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A07E2898E1A50087C00D /* WritingNoteView.swift */; };
 		F8C8A08128998F4F0087C00D /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A08028998F4F0087C00D /* ScreenSize.swift */; };
 		F8C8A083289A26E40087C00D /* WriteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A082289A26E40087C00D /* WriteNoteView.swift */; };
 		F8C8A085289A2AE20087C00D /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C8A084289A2AE20087C00D /* NoteManager.swift */; };
@@ -29,7 +28,6 @@
 		7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AD34AC1288F947700E92B73 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7AD34AC3288F94CF00E92B73 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		F8C8A07E2898E1A50087C00D /* WritingNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingNoteView.swift; sourceTree = "<group>"; };
 		F8C8A08028998F4F0087C00D /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		F8C8A082289A26E40087C00D /* WriteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNoteView.swift; sourceTree = "<group>"; };
 		F8C8A084289A2AE20087C00D /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				7AD34AAE288F932E00E92B73 /* ContentView.swift */,
-				F8C8A07E2898E1A50087C00D /* WritingNoteView.swift */,
 				F8C8A08028998F4F0087C00D /* ScreenSize.swift */,
 				F8C8A082289A26E40087C00D /* WriteNoteView.swift */,
 				F8C8A084289A2AE20087C00D /* NoteManager.swift */,
@@ -188,7 +185,6 @@
 				F8C8A08128998F4F0087C00D /* ScreenSize.swift in Sources */,
 				7AD34AC4288F94CF00E92B73 /* ViewModel.swift in Sources */,
 				F8C8A087289A2FB90087C00D /* Color+Extensions.swift in Sources */,
-				F8C8A07F2898E1A50087C00D /* WritingNoteView.swift in Sources */,
 				F8C8A089289A326D0087C00D /* DateFormatter+Extensions.swift in Sources */,
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				F8C8A083289A26E40087C00D /* WriteNoteView.swift in Sources */,
