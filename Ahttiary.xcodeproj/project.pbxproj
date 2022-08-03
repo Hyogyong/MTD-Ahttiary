@@ -10,6 +10,7 @@
 		7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1709342898D309001E98D5 /* DateViewModel.swift */; };
 		7A17093A2898D466001E98D5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1709392898D466001E98D5 /* CalendarView.swift */; };
 		7A17093C2898D4AF001E98D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17093B2898D4AF001E98D5 /* MainView.swift */; };
+		7A3BA2FB289ABB9A002ABB95 /* CurrentMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA2FA289ABB9A002ABB95 /* CurrentMonthView.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
 		7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB0288F933000E92B73 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		7A1709342898D309001E98D5 /* DateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		7A1709392898D466001E98D5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		7A17093B2898D4AF001E98D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7A3BA2FA289ABB9A002ABB95 /* CurrentMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMonthView.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* Ahttiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahttiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
 		7AD34AAE288F932E00E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				7A1709392898D466001E98D5 /* CalendarView.swift */,
+				7A3BA2FA289ABB9A002ABB95 /* CurrentMonthView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */,
 				7AD34AC2288F947700E92B73 /* Model.swift in Sources */,
+				7A3BA2FB289ABB9A002ABB95 /* CurrentMonthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
