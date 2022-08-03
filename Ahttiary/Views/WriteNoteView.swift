@@ -18,6 +18,7 @@ struct WriteNoteView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
+                
                 Text(NoteManager.questions[noteManager.pageNumber])
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
@@ -39,15 +40,13 @@ struct WriteNoteView: View {
             
             // 노트 작성란
             HStack {
-                ZStack {
-                    TextEditor(text: $noteManager.answers[noteManager.pageNumber])
-                        .frame(
-                            height: ScreenSize.answerMessageBoxHeight
-                        )
-                        .background(Color.Custom.ahttyWhite)
-                        .cornerRadius(15)
-                        .padding()
-                }
+                TextEditor(text: $noteManager.answers[noteManager.pageNumber])
+                    .frame(
+                        height: ScreenSize.answerMessageBoxHeight
+                    )
+                    .background(Color.Custom.ahttyWhite)
+                    .cornerRadius(15)
+                    .padding()
             }
             
             HStack {
