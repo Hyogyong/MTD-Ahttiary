@@ -10,18 +10,23 @@ import SwiftUI
 struct DateGridView: View {
     var body: some View {
         VStack {
-            HStack {
-                Text("M")
-                Text("T")
-                Text("W")
-                Text("T")
-                Text("F")
-                Text("S")
-                Text("S")
-            }
+            dayOfWeek
         }
-        
+                
     }// body
+    
+    private var dayOfWeek: some View {
+        HStack (spacing: 1) {
+            Text("M").dayOfWeek()
+            Text("T").dayOfWeek()
+            Text("W").dayOfWeek()
+            Text("T").dayOfWeek()
+            Text("F").dayOfWeek()
+            Text("S").dayOfWeek()
+            Text("S").dayOfWeek()
+        }
+    }// dayOfWeek
+        
 }// DateGridView
 
 struct DateGridView_Previews: PreviewProvider {
