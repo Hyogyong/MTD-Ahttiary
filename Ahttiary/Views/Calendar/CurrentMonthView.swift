@@ -20,7 +20,7 @@ struct CurrentMonthView: View {
     var body: some View {
         HStack {
             Button {
-                dateManager.minusMonth()
+                fetchPreviousMonth()
             } label: {
                 Image(systemName: "chevron.left")
             }
@@ -28,13 +28,23 @@ struct CurrentMonthView: View {
             Text(currentYearAndMonth)
             
             Button {
-                dateManager.addMonth()
+                fetchNextMonth()
             } label: {
                 Image(systemName: "chevron.right")
             }
         }
-
     }// body
+    
+    private func fetchPreviousMonth() {
+        guard let previousMonth = CalendarViewModel().minusMonth(dateManager.date) else { return }
+        dateManager.date = previousMonth
+    }
+    
+    private func fetchNextMonth() {
+        guard let nextMonth = CalendarViewModel().addMonth(dateManager.date) else { return }
+        dateManager.date = nextMonth
+    }
+
 }// CurrentMonthView
 
 struct CurrentMonthView_Previews: PreviewProvider {
