@@ -16,9 +16,34 @@ struct CalendarCell: View {
     let totalDaysInPreviousMonth: Int
     
     var body: some View {
-        Text("1")
+        Text(monthStruct().day())
+            .foregroundColor(textColor(type: monthStruct().monthType))
+    }// body
+    
+    private func monthStruct() -> MonthStruct {
+        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
+        
+        if (count <= start) {
+            let day = totalDaysInPreviousMonth + count - start
+            
+            return MonthStruct(monthType: .previous, dayInt: day)
+        } else if (count - start > totalDaysInMonth) {
+            let day = count - start - totalDaysInMonth
+            
+            return MonthStruct(monthType: .next, dayInt: day)
+        }
+        
+        let day = count - start
+        
+        return MonthStruct(monthType: .current, dayInt: day)
     }
-}
+    
+    private func textColor(type: MonthType) -> Color {
+        if type == .current { return .black }
+        return .gray
+    }
+    
+}// CalendarCell
 
 struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
