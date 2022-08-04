@@ -14,6 +14,7 @@
 		7A3BA305289C037A002ABB95 /* DateGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA304289C037A002ABB95 /* DateGridView.swift */; };
 		7A3BA308289C0938002ABB95 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA307289C0938002ABB95 /* Text.swift */; };
 		7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */; };
+		7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
 		7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB0288F933000E92B73 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		7A3BA304289C037A002ABB95 /* DateGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGridView.swift; sourceTree = "<group>"; };
 		7A3BA307289C0938002ABB95 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* Ahttiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahttiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
 		7AD34AAE288F932E00E92B73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				7A1709392898D466001E98D5 /* CalendarView.swift */,
 				7A3BA2FA289ABB9A002ABB95 /* CurrentMonthView.swift */,
 				7A3BA304289C037A002ABB95 /* DateGridView.swift */,
+				7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
 				7A3BA308289C0938002ABB95 /* Text.swift in Sources */,
+				7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */,
 				7A3BA305289C037A002ABB95 /* DateGridView.swift in Sources */,
 				7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */,
 				7AD34AC2288F947700E92B73 /* Model.swift in Sources */,
