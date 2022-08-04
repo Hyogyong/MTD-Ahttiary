@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DateGridView: View {
+    @EnvironmentObject var dateManager: DateViewModel
+    
     var body: some View {
         VStack {
             dayOfWeek
+            calendarGrid
         }
-                
     }// body
     
     private var dayOfWeek: some View {
@@ -26,6 +28,12 @@ struct DateGridView: View {
             Text("S").dayOfWeek()
         }
     }// dayOfWeek
+    
+    private var calendarGrid: some View {
+        VStack (spacing: 1) {
+            Text("Hello")
+        }
+    }// calendarGrid
         
 }// DateGridView
 
