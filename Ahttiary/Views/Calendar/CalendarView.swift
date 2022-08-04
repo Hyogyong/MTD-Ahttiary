@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     var body: some View {
         CurrentMonthView()
+        DateGridView()
 
     }// body
 }// CalendarView
