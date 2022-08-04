@@ -9,12 +9,29 @@ import SwiftUI
 
 struct CurrentMonthView: View {
     @EnvironmentObject var dateManager: DateViewModel
+    var currentYearAndMonth: String {
+        let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
+        let year = components.year
+        let month = components.month
+        
+        return "\(year!)년 \(month!)월"
+    }
     
     var body: some View {
-        VStack {
-            Text("\(dateManager.date)")
-            Text("Hello")
-            Text("Hello")
+        HStack {
+            Button {
+                dateManager.minusMonth()
+            } label: {
+                Image(systemName: "chevron.left")
+            }
+
+            Text(currentYearAndMonth)
+            
+            Button {
+                dateManager.addMonth()
+            } label: {
+                Image(systemName: "chevron.right")
+            }
         }
 
     }// body
