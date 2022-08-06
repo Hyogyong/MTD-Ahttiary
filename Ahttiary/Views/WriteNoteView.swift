@@ -10,79 +10,37 @@ import SwiftUI
 struct WriteNoteView: View {
     @ObservedObject var noteManager: NoteManager = NoteManager()
     
-    @FocusState var isTextFieldsFocused: Bool
-    
     var body: some View {
-        VStack {
-            // 아띠와 말풍선
-            HStack(alignment: .center) {
-                Image("AhttyWriter")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: ScreenSize.ahttyWriterWidth)
-                
-                Text(NoteManager.questions[noteManager.pageNumber])
-                    .frame(
-                        height: ScreenSize.questionMessageBoxHeight,
-                        alignment: .center
-                    )
-                    .background(Color.Custom.ahttyWhite)
-                    .cornerRadius(15)
-                    .padding()
-            }
+        switch noteManager.pageNumber {
             
-            HStack {
-                Text(DateFormatter.getKoreanDateInString())
-                
-                Spacer()
-                
-                Text("맑음")
-            }
-            .padding(.horizontal)
-            .font(.callout)
-            .foregroundColor(.gray)
+        case 0...1:
+            // 상황, 정서
+            WritePageView(noteManager: noteManager)
             
-            // 노트 작성란
-            HStack {
-                TextEditor(text: $noteManager.answers[noteManager.pageNumber])
-                    .frame(
-                        height: ScreenSize.answerMessageBoxHeight
-                    )
-                    .background(Color.Custom.ahttyWhite)
-                    .cornerRadius(15)
-                    .padding()
-                    .focused($isTextFieldsFocused)
-            }
+        case 2:
+            // 감정 체크 및 다이어리 추가 작성 여부 선택
+            CheckPageView(noteManager: noteManager, isWritingFinished: false)
             
-            HStack {
-                Button("이전") {
-                    noteManager.goToPreviousPage()
-                }
-                .buttonStyle(.bordered)
-                Button("다음") {
-                    noteManager.goToNextPage()
-                }
-                .buttonStyle(.bordered)
-            }
+        case 3...5:
+            // 다이어리 추가 작성 (자동적 사고 기술, 인지 왜곡 파악, 합리적 반응 도출)
+            WritePageView(noteManager: noteManager)
             
-            Spacer()
-        }
-        .background(Color.Custom.backgroundColor.ignoresSafeArea())
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button {
-                    isTextFieldsFocused = false
-                } label: {
-                    Image(systemName: "keyboard.chevron.compact.down")
-                }
-                
-            }
+        case 6:
+            // 감정 체크 및 페이지 넘어가기
+            CheckPageView(noteManager: noteManager, isWritingFinished: true)
+            
+        case 7:
+            // 마지막 페이지(내일도 즐거운 하루 보내자!)
+            EndPageView(noteManager: noteManager)
+            
+        default:
+            // ErrorPageView()
+            EmptyView()
         }
     }
 }
 
-struct WriteNoteView_Previews: PreviewProvider {
+struct WritingView_Previews: PreviewProvider {
     static var previews: some View {
         WriteNoteView()
     }
