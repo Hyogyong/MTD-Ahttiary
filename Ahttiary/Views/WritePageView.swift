@@ -58,12 +58,12 @@ struct WritePageView: View {
                 Button("이전") {
                     noteManager.goToPreviousPage()
                 }
-                .buttonStyle(.bordered)
+                
                 Button("다음") {
                     noteManager.goToNextPage()
                 }
-                .buttonStyle(.bordered)
             }
+            .buttonStyle(.bordered)
             
             Spacer()
         }
@@ -71,6 +71,7 @@ struct WritePageView: View {
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
+                
                 Button {
                     isTextFieldsFocused = false
                 } label: {

@@ -40,18 +40,17 @@ struct CheckPageView: View {
                     Button("계속 쓸래") {
                         noteManager.goToNextPage()
                     }
-                    .buttonStyle(.bordered)
+                    
                     Button("오늘은 여기까지만") {
                         noteManager.goToLastPage()
                     }
-                    .buttonStyle(.bordered)
                 } else {
                     Button("다 썼다~") {
                         noteManager.goToLastPage()
                     }
-                    .buttonStyle(.bordered)
                 }
             }
+            .buttonStyle(.bordered)
             
             Spacer()
         }
@@ -59,6 +58,7 @@ struct CheckPageView: View {
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
+                
                 Button {
                     isTextFieldsFocused = false
                 } label: {
