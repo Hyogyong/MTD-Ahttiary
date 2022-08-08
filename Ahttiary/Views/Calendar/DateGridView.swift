@@ -19,20 +19,44 @@ struct DateGridView: View {
     
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
+            Text("S").dayOfWeek()
             Text("M").dayOfWeek()
             Text("T").dayOfWeek()
             Text("W").dayOfWeek()
             Text("T").dayOfWeek()
             Text("F").dayOfWeek()
             Text("S").dayOfWeek()
-            Text("S").dayOfWeek()
         }
     }// dayOfWeek
     
     private var calendarGrid: some View {
         VStack (spacing: 1) {
-            Text("Hello")
+            let totalDaysInMonth = CalendarViewModel().totalDaysInMonth(dateManager.date)
+            let theFirstDayOfMonth = CalendarViewModel().theFirstDayOfMonth(dateManager.date)
+            let startingSpaces = CalendarViewModel().weekDay(theFirstDayOfMonth!)
+            let previousMonth = CalendarViewModel().minusMonth(dateManager.date)
+            let totalDaysInPreviousMonth = CalendarViewModel().totalDaysInMonth(previousMonth!)
+
+            ForEach(0..<6) { row in
+                HStack (spacing: 1) {
+                    ForEach(1..<8) { column in
+                        let count = column + (row * 7)
+                        if let totalDaysInMonth = totalDaysInMonth,
+                           let startingSpaces = startingSpaces,
+                           let totalDaysInPreviousMonth = totalDaysInPreviousMonth {
+                            CalendarCell(
+                                count: count,
+                                startingSpaces: startingSpaces,
+                                totalDaysInMonth: totalDaysInMonth,
+                                totalDaysInPreviousMonth: totalDaysInPreviousMonth
+                            )
+                            .environmentObject(dateManager)
+                        }
+                    }
+                }
+            }
         }
+        .frame(maxHeight: .infinity)
     }// calendarGrid
         
 }// DateGridView
