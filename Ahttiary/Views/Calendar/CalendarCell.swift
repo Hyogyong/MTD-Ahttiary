@@ -11,7 +11,7 @@ import SwiftUI
 struct CalendarCell: View {
     @EnvironmentObject var dateManager: DateViewModel
     let count: Int
-    let startingSpaces: Int
+    let startingPosition: Int
     let totalDaysInMonth: Int
     let totalDaysInPreviousMonth: Int
     
@@ -22,17 +22,17 @@ struct CalendarCell: View {
     }// body
     
     private func fetchMonthStruct() -> MonthStruct {
-        if (count <= startingSpaces) {
-            let day = totalDaysInPreviousMonth + count - startingSpaces
+        if (count <= startingPosition) {
+            let day = totalDaysInPreviousMonth + count - startingPosition
             
             return MonthStruct(monthType: .previous, dayInt: day)
-        } else if (count - startingSpaces > totalDaysInMonth) {
-            let day = count - startingSpaces - totalDaysInMonth
+        } else if (count - startingPosition > totalDaysInMonth) {
+            let day = count - startingPosition - totalDaysInMonth
             
             return MonthStruct(monthType: .next, dayInt: day)
         }
         
-        let day = count - startingSpaces
+        let day = count - startingPosition
         
         return MonthStruct(monthType: .current, dayInt: day)
     }
@@ -49,7 +49,7 @@ struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
         CalendarCell(
             count: 1,
-            startingSpaces: 1,
+            startingPosition: 1,
             totalDaysInMonth: 1,
             totalDaysInPreviousMonth: 1
         )

@@ -33,7 +33,7 @@ struct DateGridView: View {
         VStack (spacing: 1) {
             let totalDaysInMonth = CalendarViewModel().totalDaysInMonth(dateManager.date)
             let theFirstDayOfMonth = CalendarViewModel().theFirstDayOfMonth(dateManager.date)
-            let startingSpaces = CalendarViewModel().weekDay(theFirstDayOfMonth!)
+            let startingPosition = CalendarViewModel().weekDay(theFirstDayOfMonth!)
             let previousMonth = CalendarViewModel().getPreviousMonth(dateManager.date)
             let totalDaysInPreviousMonth = CalendarViewModel().totalDaysInMonth(previousMonth!)
 
@@ -42,11 +42,11 @@ struct DateGridView: View {
                     ForEach(1..<8) { column in
                         let count = column + (row * 7)
                         if let totalDaysInMonth = totalDaysInMonth,
-                           let startingSpaces = startingSpaces,
+                           let startingPosition = startingPosition,
                            let totalDaysInPreviousMonth = totalDaysInPreviousMonth {
                             CalendarCell(
                                 count: count,
-                                startingSpaces: startingSpaces,
+                                startingPosition: startingPosition,
                                 totalDaysInMonth: totalDaysInMonth,
                                 totalDaysInPreviousMonth: totalDaysInPreviousMonth
                             )
