@@ -36,12 +36,12 @@ struct CurrentMonthView: View {
     }// body
     
     private func fetchPreviousMonth() {
-        guard let previousMonth = CalendarViewModel().minusMonth(dateManager.date) else { return }
+        guard let previousMonth = CalendarViewModel().getPreviousMonth(dateManager.date) else { return }
         dateManager.date = previousMonth
     }
     
     private func fetchNextMonth() {
-        guard let nextMonth = CalendarViewModel().addMonth(dateManager.date) else { return }
+        guard let nextMonth = CalendarViewModel().getNextMonth(dateManager.date) else { return }
         dateManager.date = nextMonth
     }
 

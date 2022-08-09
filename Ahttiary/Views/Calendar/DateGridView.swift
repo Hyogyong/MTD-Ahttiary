@@ -34,7 +34,7 @@ struct DateGridView: View {
             let totalDaysInMonth = CalendarViewModel().totalDaysInMonth(dateManager.date)
             let theFirstDayOfMonth = CalendarViewModel().theFirstDayOfMonth(dateManager.date)
             let startingSpaces = CalendarViewModel().weekDay(theFirstDayOfMonth!)
-            let previousMonth = CalendarViewModel().minusMonth(dateManager.date)
+            let previousMonth = CalendarViewModel().getPreviousMonth(dateManager.date)
             let totalDaysInPreviousMonth = CalendarViewModel().totalDaysInMonth(previousMonth!)
 
             ForEach(0..<6) { row in

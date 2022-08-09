@@ -11,7 +11,7 @@ final class CalendarViewModel {
     let calendar = Calendar.current
     
     // 1개월을 증가시킵니다.
-    func addMonth(_ date: Date) -> Date? {
+    func getNextMonth(_ date: Date) -> Date? {
         guard let changedMonth = Calendar.current.date(byAdding: .month, value: 1, to: date)
         else { return nil }
 
@@ -19,7 +19,7 @@ final class CalendarViewModel {
     }
 
     // 1개월을 차감합니다.
-    func minusMonth(_ date: Date) -> Date? {
+    func getPreviousMonth(_ date: Date) -> Date? {
         guard let changedMonth = Calendar.current.date(byAdding: .month, value: -1, to: date)
         else { return nil }
         
