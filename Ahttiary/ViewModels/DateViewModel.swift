@@ -7,6 +7,6 @@
 
 import Foundation
 
-class DateViewModel: ObservableObject {
+final class DateViewModel: ObservableObject {
     @Published var date: Date = Date()
-}
+}// DateViewModel
