@@ -15,6 +15,10 @@ struct DateGridView: View {
             dayOfWeek
             calendarGrid
         }
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
+            if value.translation.width < 0 { dateManager.fetchNextMonth() }
+            if value.translation.width > 0 { dateManager.fetchPreviousMonth() }
+        }))
     }// body
     
     private var dayOfWeek: some View {
@@ -36,7 +40,7 @@ struct DateGridView: View {
             let startingPosition = CalendarViewModel().weekDay(theFirstDayOfMonth!)
             let previousMonth = CalendarViewModel().getPreviousMonth(dateManager.date)
             let totalDaysInPreviousMonth = CalendarViewModel().totalDaysInMonth(previousMonth!)
-
+            
             ForEach(0..<6) { row in
                 HStack (spacing: 1) {
                     ForEach(1..<8) { column in
@@ -58,7 +62,7 @@ struct DateGridView: View {
         }
         .frame(maxHeight: .infinity)
     }// calendarGrid
-        
+    
 }// DateGridView
 
 struct DateGridView_Previews: PreviewProvider {
