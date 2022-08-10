@@ -12,7 +12,8 @@ extension Text {
     func expandHorizontally() -> some View {
         self.frame(maxWidth: .infinity)
             .padding(.top, 1)
-            .lineLimit(1)
+            .font(.system(size: 16, weight: .semibold))
+            .foregroundColor(Color.Custom.carrotGreen)
     }
     
 }// Text
