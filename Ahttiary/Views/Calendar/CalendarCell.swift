@@ -16,9 +16,14 @@ struct CalendarCell: View {
     let totalDaysInPreviousMonth: Int
     
     var body: some View {
-        Text(fetchMonthStruct().day())
-            .foregroundColor(textColor(type: fetchMonthStruct().monthType))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        if fetchMonthStruct().monthType == .current {
+            Text(fetchMonthStruct().day())
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
+            Text("")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }// body
     
     private func fetchMonthStruct() -> MonthStruct {
@@ -36,13 +41,7 @@ struct CalendarCell: View {
         
         return MonthStruct(monthType: .current, dayInt: day)
     }
-    
-    // 현재 월에 속한 날짜가 아니라면 회색 처리
-    private func textColor(type: MonthType) -> Color {
-        if type == .current { return .black }
-        return .gray
-    }
-    
+        
 }// CalendarCell
 
 struct CalendarCell_Previews: PreviewProvider {
