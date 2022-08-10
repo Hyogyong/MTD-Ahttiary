@@ -19,13 +19,13 @@ struct DateGridView: View {
     
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
-            Text("S").expandHorizontally()
-            Text("M").expandHorizontally()
-            Text("T").expandHorizontally()
-            Text("W").expandHorizontally()
-            Text("T").expandHorizontally()
-            Text("F").expandHorizontally()
-            Text("S").expandHorizontally()
+            Text("일").expandHorizontally()
+            Text("월").expandHorizontally()
+            Text("화").expandHorizontally()
+            Text("수").expandHorizontally()
+            Text("목").expandHorizontally()
+            Text("금").expandHorizontally()
+            Text("토").expandHorizontally()
         }
     }// dayOfWeek
     
