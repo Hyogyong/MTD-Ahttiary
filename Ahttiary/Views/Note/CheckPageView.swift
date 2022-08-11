@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CheckPageView: View {
-    @ObservedObject var noteManager: NoteManager
     
+    @ObservedObject var noteManager: NoteManager
     @FocusState var isTextFieldsFocused: Bool
     
     var isWritingFinished: Bool
