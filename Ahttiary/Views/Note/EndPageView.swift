@@ -26,7 +26,7 @@ struct EndPageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.Custom.ahttyWhite)
+                    .background(Color.white)
                     .cornerRadius(15)
                     .padding()
             }
@@ -38,6 +38,6 @@ struct EndPageView: View {
             
             Spacer()
         }
-        .background(Color.Custom.backgroundColor.ignoresSafeArea())
+        .background(Color.Custom.background.ignoresSafeArea())
     }
 }

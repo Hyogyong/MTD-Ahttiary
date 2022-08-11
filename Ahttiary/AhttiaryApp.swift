@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct AhttiaryApp: App {
+    
+    @StateObject var dateViewModel: DateViewModel = DateViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(dateViewModel)
         }
     }
 }
