@@ -50,6 +50,10 @@ struct WriteNoteView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .ignoresSafeArea()
         .navigationBarTitleDisplayMode(.inline)
+        .onDisappear {
+            PersistentStore.shared.saveContext()
+            noteManager.goToFirstPage()
+        }
         
     } // End of body
 }

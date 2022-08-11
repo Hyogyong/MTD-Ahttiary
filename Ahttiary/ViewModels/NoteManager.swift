@@ -68,6 +68,10 @@ final class NoteManager: ObservableObject {
         }
     }
     
+    func goToFirstPage() {
+        pageNumber = 0
+    }
+    
     func goToLastPage() {
         let lastPageNumber = NoteManager.questions.count - 1
         
