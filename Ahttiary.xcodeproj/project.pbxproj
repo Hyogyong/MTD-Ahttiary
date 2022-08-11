@@ -27,6 +27,7 @@
 		F814F73128A4D3B4007E08F0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73028A4D3B4007E08F0 /* Note.swift */; };
 		F814F73328A4D65A007E08F0 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73228A4D65A007E08F0 /* NSManagedObject.swift */; };
 		F814F73528A4E7A2007E08F0 /* TemporaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73428A4E7A2007E08F0 /* TemporaryListView.swift */; };
+		F89302E628A5258B006067E2 /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89302E528A5258B006067E2 /* DraftNote.swift */; };
 		F8C7A185289EAFCF0000697B /* WriteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A184289EAFCF0000697B /* WriteNoteView.swift */; };
 		F8C7A187289EAFE60000697B /* CheckPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A186289EAFE60000697B /* CheckPageView.swift */; };
 		F8C7A189289EB0C70000697B /* EndPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A188289EB0C70000697B /* EndPageView.swift */; };
@@ -58,6 +59,7 @@
 		F814F73028A4D3B4007E08F0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		F814F73228A4D65A007E08F0 /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		F814F73428A4E7A2007E08F0 /* TemporaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryListView.swift; sourceTree = "<group>"; };
+		F89302E528A5258B006067E2 /* DraftNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
 		F8C7A184289EAFCF0000697B /* WriteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNoteView.swift; sourceTree = "<group>"; };
 		F8C7A186289EAFE60000697B /* CheckPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPageView.swift; sourceTree = "<group>"; };
 		F8C7A188289EB0C70000697B /* EndPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				F814F72E28A4D320007E08F0 /* PersistentStore.swift */,
 				F814F73228A4D65A007E08F0 /* NSManagedObject.swift */,
 				F814F73028A4D3B4007E08F0 /* Note.swift */,
+				F89302E528A5258B006067E2 /* DraftNote.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				F814F72C28A4D197007E08F0 /* Ahttiary.xcdatamodeld in Sources */,
 				7A3BA2FB289ABB9A002ABB95 /* CurrentMonthView.swift in Sources */,
 				7A3BA30E289C0FD0002ABB95 /* MonthStruct.swift in Sources */,
+				F89302E628A5258B006067E2 /* DraftNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

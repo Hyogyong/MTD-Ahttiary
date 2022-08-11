@@ -10,17 +10,21 @@ import SwiftUI
 struct WriteNoteView: View {
     
     @ObservedObject var noteManager: NoteManager = NoteManager()
-    @ObservedObject var note: Note
+    @StateObject private var draftNote: DraftNote
+    
+    init(note: Note) {
+        _draftNote = StateObject(wrappedValue: DraftNote(note: note))
+    }
     
     var body: some View {
         
         TabView(selection: $noteManager.pageNumber) {
             // 상황
-            WritePageView(noteManager: noteManager, answer: $note.firstAnswer)
+            WritePageView(noteManager: noteManager, answer: $draftNote.firstAnswer)
                 .tag(0)
             
             // 정서
-            WritePageView(noteManager: noteManager, answer: $note.secondAnswer)
+            WritePageView(noteManager: noteManager, answer: $draftNote.secondAnswer)
                 .tag(1)
             
             // 감정 체크 및 다이어리 추가 작성 여부 선택
@@ -28,15 +32,15 @@ struct WriteNoteView: View {
                 .tag(2)
             
             // 자동적 사고 기술
-            WritePageView(noteManager: noteManager, answer: $note.thirdAnswer)
+            WritePageView(noteManager: noteManager, answer: $draftNote.thirdAnswer)
                 .tag(3)
             
             // 인지 왜곡 파악
-            WritePageView(noteManager: noteManager, answer: $note.fourthAnswer)
+            WritePageView(noteManager: noteManager, answer: $draftNote.fourthAnswer)
                 .tag(4)
             
             // 합리적 반응 도출
-            WritePageView(noteManager: noteManager, answer: $note.fifthAnswer)
+            WritePageView(noteManager: noteManager, answer: $draftNote.fifthAnswer)
                 .tag(5)
             
             // 감정 체크 및 페이지 넘어가기
@@ -51,7 +55,7 @@ struct WriteNoteView: View {
         .ignoresSafeArea()
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
-            PersistentStore.shared.saveContext()
+            Note.updateNote(using: draftNote)
             noteManager.goToFirstPage()
         }
         

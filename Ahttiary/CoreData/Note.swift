@@ -92,4 +92,25 @@ extension Note {
         
         PersistentStore.shared.saveContext()
     }
+    
+    class func updateNote(using draftNote: DraftNote) {
+        if let id = draftNote.id,
+           let note = Note.object(id: id, context: PersistentStore.shared.context) {
+            note.updateValues(from: draftNote)
+        } else {
+            let newNote = Note.getNewNote()
+            newNote.updateValues(from: draftNote)
+        }
+        
+        PersistentStore.shared.saveContext()
+    }
+    
+    private func updateValues(from draftNote: DraftNote) {
+        dateCreated_ = draftNote.dateCreated
+        firstAnswer_ = draftNote.firstAnswer
+        secondAnswer_ = draftNote.secondAnswer
+        thirdAnswer_ = draftNote.thirdAnswer
+        fourthAnswer_ = draftNote.fourthAnswer
+        fifthAnswer_ = draftNote.fifthAnswer
+    }
 }
