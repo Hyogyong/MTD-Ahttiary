@@ -8,22 +8,36 @@
 import SwiftUI
 
 struct WriteNoteView: View {
+    
     @ObservedObject var noteManager: NoteManager = NoteManager()
+    @ObservedObject var note: Note
     
     var body: some View {
         switch noteManager.pageNumber {
             
-        case 0...1:
-            // 상황, 정서
-            WritePageView(noteManager: noteManager)
+        case 0:
+            // 상황
+            WritePageView(noteManager: noteManager, answer: $note.firstAnswer)
+            
+        case 1:
+            // 정서
+            WritePageView(noteManager: noteManager, answer: $note.secondAnswer)
             
         case 2:
             // 감정 체크 및 다이어리 추가 작성 여부 선택
             CheckPageView(noteManager: noteManager, isWritingFinished: false)
             
-        case 3...5:
-            // 다이어리 추가 작성 (자동적 사고 기술, 인지 왜곡 파악, 합리적 반응 도출)
-            WritePageView(noteManager: noteManager)
+        case 3:
+            // 자동적 사고 기술
+            WritePageView(noteManager: noteManager, answer: $note.thirdAnswer)
+            
+        case 4:
+            // 인지 왜곡 파악
+            WritePageView(noteManager: noteManager, answer: $note.fourthAnswer)
+            
+        case 5:
+            // 합리적 반응 도출
+            WritePageView(noteManager: noteManager, answer: $note.fifthAnswer)
             
         case 6:
             // 감정 체크 및 페이지 넘어가기
@@ -37,11 +51,5 @@ struct WriteNoteView: View {
             // ErrorPageView()
             EmptyView()
         }
-    }
-}
-
-struct WritingView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteNoteView()
-    }
+    } // End of body
 }
