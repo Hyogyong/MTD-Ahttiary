@@ -12,8 +12,6 @@ struct CheckPageView: View {
     @ObservedObject var noteManager: NoteManager
     @FocusState var isTextFieldsFocused: Bool
     
-    var isWritingFinished: Bool
-    
     var body: some View {
         VStack {
             Spacer()
@@ -36,18 +34,8 @@ struct CheckPageView: View {
             }
             
             VStack {
-                if !isWritingFinished {
-                    Button("계속 쓸래") {
-                        noteManager.goToNextPage()
-                    }
-                    
-                    Button("오늘은 여기까지만") {
-                        noteManager.goToLastPage()
-                    }
-                } else {
-                    Button("다 썼다~") {
-                        noteManager.goToLastPage()
-                    }
+                Button("GBZG~") {
+                    noteManager.goToNextPage()
                 }
             }
             .buttonStyle(.bordered)

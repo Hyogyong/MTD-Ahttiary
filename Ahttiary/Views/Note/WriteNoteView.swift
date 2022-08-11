@@ -27,8 +27,8 @@ struct WriteNoteView: View {
             WritePageView(noteManager: noteManager, answer: $draftNote.secondAnswer)
                 .tag(1)
             
-            // 감정 체크 및 다이어리 추가 작성 여부 선택
-            CheckPageView(noteManager: noteManager, isWritingFinished: false)
+            // 첫 번째 감정 체크
+            CheckPageView(noteManager: noteManager)
                 .tag(2)
             
             // 자동적 사고 기술
@@ -43,8 +43,8 @@ struct WriteNoteView: View {
             WritePageView(noteManager: noteManager, answer: $draftNote.fifthAnswer)
                 .tag(5)
             
-            // 감정 체크 및 페이지 넘어가기
-            CheckPageView(noteManager: noteManager, isWritingFinished: true)
+            // 두 번째 감정 체크
+            CheckPageView(noteManager: noteManager)
                 .tag(6)
             
             // 마지막 페이지(내일도 즐거운 하루 보내자!)
