@@ -18,7 +18,10 @@ struct TemporaryListView: View {
                 Section("총 \(notes.count)개") {
                     ForEach(notes) { note in
                         NavigationLink {
-                            WriteNoteView()
+                            WriteNoteView(note: note)
+                                .onDisappear {
+                                    PersistentStore.shared.saveContext()
+                                }
                         } label: {
                             Text("\(DateFormatter.convertToKoreanDate(date: note.dateCreated))")
                         }
