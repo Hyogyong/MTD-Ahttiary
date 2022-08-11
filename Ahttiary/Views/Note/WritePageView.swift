@@ -80,6 +80,9 @@ struct WritePageView: View {
                 
             }
         }
+        .onAppear {
+            UITextView.appearance().backgroundColor = .clear
+        }
     }
 }
 
