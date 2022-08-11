@@ -64,6 +64,8 @@ extension Note {
         newNote.firstAnswer = ""
         newNote.secondAnswer = ""
         newNote.thirdAnswer = ""
+        newNote.fourthAnswer = ""
+        newNote.fifthAnswer = ""
         
         PersistentStore.shared.saveContext()
     }
