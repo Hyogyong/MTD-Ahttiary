@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct EndPageView: View {
+    
     @ObservedObject var noteManager: NoteManager
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -31,10 +34,10 @@ struct EndPageView: View {
                     .padding()
             }
             
-                Button("종료하기") {
-                    noteManager.goToLastPage()
-                }
-                .buttonStyle(.bordered)
+            Button("종료하기") {
+                dismiss()
+            }
+            .buttonStyle(.bordered)
             
             Spacer()
         }
