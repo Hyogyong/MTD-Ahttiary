@@ -26,7 +26,7 @@ struct WritePageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.Custom.ahttyWhite)
+                    .background(Color.white)
                     .cornerRadius(15)
                     .padding()
             }
@@ -48,7 +48,7 @@ struct WritePageView: View {
                     .frame(
                         height: ScreenSize.answerMessageBoxHeight
                     )
-                    .background(Color.Custom.ahttyWhite)
+                    .background(Color.white)
                     .cornerRadius(15)
                     .padding()
                     .focused($isTextFieldsFocused)
@@ -67,7 +67,7 @@ struct WritePageView: View {
             
             Spacer()
         }
-        .background(Color.Custom.backgroundColor.ignoresSafeArea())
+        .background(Color.Custom.background.ignoresSafeArea())
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
