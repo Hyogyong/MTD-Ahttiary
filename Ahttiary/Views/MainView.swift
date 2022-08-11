@@ -26,7 +26,7 @@ struct MainView: View {
             Spacer()
         }
         // General View Setting
-        .padding(.horizontal)
+        .padding(.horizontal, 20)
 
     }// body
 }// MainView

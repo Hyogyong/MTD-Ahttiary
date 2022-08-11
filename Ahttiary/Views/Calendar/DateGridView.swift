@@ -15,17 +15,21 @@ struct DateGridView: View {
             dayOfWeek
             calendarGrid
         }
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
+            if value.translation.width < 0 { dateManager.fetchNextMonth() }
+            if value.translation.width > 0 { dateManager.fetchPreviousMonth() }
+        }))
     }// body
     
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
-            Text("S").expandHorizontally()
-            Text("M").expandHorizontally()
-            Text("T").expandHorizontally()
-            Text("W").expandHorizontally()
-            Text("T").expandHorizontally()
-            Text("F").expandHorizontally()
-            Text("S").expandHorizontally()
+            Text("일").expandHorizontally()
+            Text("월").expandHorizontally()
+            Text("화").expandHorizontally()
+            Text("수").expandHorizontally()
+            Text("목").expandHorizontally()
+            Text("금").expandHorizontally()
+            Text("토").expandHorizontally()
         }
     }// dayOfWeek
     
@@ -36,7 +40,7 @@ struct DateGridView: View {
             let startingPosition = CalendarViewModel().weekDay(theFirstDayOfMonth!)
             let previousMonth = CalendarViewModel().getPreviousMonth(dateManager.date)
             let totalDaysInPreviousMonth = CalendarViewModel().totalDaysInMonth(previousMonth!)
-
+            
             ForEach(0..<6) { row in
                 HStack (spacing: 1) {
                     ForEach(1..<8) { column in
@@ -58,7 +62,7 @@ struct DateGridView: View {
         }
         .frame(maxHeight: .infinity)
     }// calendarGrid
-        
+    
 }// DateGridView
 
 struct DateGridView_Previews: PreviewProvider {
