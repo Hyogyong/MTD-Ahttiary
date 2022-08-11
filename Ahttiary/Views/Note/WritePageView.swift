@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct WritePageView: View {
-    @ObservedObject var noteManager: NoteManager = NoteManager()
+    
+    @ObservedObject var noteManager: NoteManager
+    @Binding var answer: String
     
     @FocusState var isTextFieldsFocused: Bool
     
@@ -44,7 +46,7 @@ struct WritePageView: View {
             
             // 노트 작성란
             HStack {
-                TextEditor(text: $noteManager.answers[noteManager.pageNumber])
+                TextEditor(text: $answer)
                     .frame(
                         height: ScreenSize.answerMessageBoxHeight
                     )
@@ -83,11 +85,5 @@ struct WritePageView: View {
         .onAppear {
             UITextView.appearance().backgroundColor = .clear
         }
-    }
-}
-
-struct WriteNoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        WritePageView()
     }
 }
