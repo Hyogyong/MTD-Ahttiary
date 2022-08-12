@@ -8,40 +8,56 @@
 import SwiftUI
 
 struct WriteNoteView: View {
+    
     @ObservedObject var noteManager: NoteManager = NoteManager()
+    @StateObject private var draftNote: DraftNote
+    
+    init(note: Note) {
+        _draftNote = StateObject(wrappedValue: DraftNote(note: note))
+    }
     
     var body: some View {
-        switch noteManager.pageNumber {
+        
+        TabView(selection: $noteManager.pageNumber) {
+            // 상황
+            WritePageView(noteManager: noteManager, answer: $draftNote.firstAnswer)
+                .tag(0)
             
-        case 0...1:
-            // 상황, 정서
-            WritePageView(noteManager: noteManager)
+            // 정서
+            WritePageView(noteManager: noteManager, answer: $draftNote.secondAnswer)
+                .tag(1)
             
-        case 2:
-            // 감정 체크 및 다이어리 추가 작성 여부 선택
-            CheckPageView(noteManager: noteManager, isWritingFinished: false)
+            // 첫 번째 감정 체크
+            CheckPageView(noteManager: noteManager)
+                .tag(2)
             
-        case 3...5:
-            // 다이어리 추가 작성 (자동적 사고 기술, 인지 왜곡 파악, 합리적 반응 도출)
-            WritePageView(noteManager: noteManager)
+            // 자동적 사고 기술
+            WritePageView(noteManager: noteManager, answer: $draftNote.thirdAnswer)
+                .tag(3)
             
-        case 6:
-            // 감정 체크 및 페이지 넘어가기
-            CheckPageView(noteManager: noteManager, isWritingFinished: true)
+            // 인지 왜곡 파악
+            WritePageView(noteManager: noteManager, answer: $draftNote.fourthAnswer)
+                .tag(4)
             
-        case 7:
+            // 합리적 반응 도출
+            WritePageView(noteManager: noteManager, answer: $draftNote.fifthAnswer)
+                .tag(5)
+            
+            // 두 번째 감정 체크
+            CheckPageView(noteManager: noteManager)
+                .tag(6)
+            
             // 마지막 페이지(내일도 즐거운 하루 보내자!)
             EndPageView(noteManager: noteManager)
-            
-        default:
-            // ErrorPageView()
-            EmptyView()
+                .tag(7)
         }
-    }
-}
-
-struct WritingView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteNoteView()
-    }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .ignoresSafeArea()
+        .navigationBarTitleDisplayMode(.inline)
+        .onDisappear {
+            Note.updateNote(using: draftNote)
+            noteManager.goToFirstPage()
+        }
+        
+    } // End of body
 }

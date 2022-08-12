@@ -22,6 +22,12 @@
 		7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB0288F933000E92B73 /* Assets.xcassets */; };
 		7AD34AB4288F933000E92B73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */; };
 		7AD34AC2288F947700E92B73 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AC1288F947700E92B73 /* Model.swift */; };
+		F814F72C28A4D197007E08F0 /* Ahttiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F814F72A28A4D197007E08F0 /* Ahttiary.xcdatamodeld */; };
+		F814F72F28A4D320007E08F0 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F72E28A4D320007E08F0 /* PersistentStore.swift */; };
+		F814F73128A4D3B4007E08F0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73028A4D3B4007E08F0 /* Note.swift */; };
+		F814F73328A4D65A007E08F0 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73228A4D65A007E08F0 /* NSManagedObject.swift */; };
+		F814F73528A4E7A2007E08F0 /* TemporaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814F73428A4E7A2007E08F0 /* TemporaryListView.swift */; };
+		F89302E628A5258B006067E2 /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89302E528A5258B006067E2 /* DraftNote.swift */; };
 		F8C7A185289EAFCF0000697B /* WriteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A184289EAFCF0000697B /* WriteNoteView.swift */; };
 		F8C7A187289EAFE60000697B /* CheckPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A186289EAFE60000697B /* CheckPageView.swift */; };
 		F8C7A189289EB0C70000697B /* EndPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C7A188289EB0C70000697B /* EndPageView.swift */; };
@@ -48,6 +54,12 @@
 		7AD34AB0288F933000E92B73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD34AB3288F933000E92B73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AD34AC1288F947700E92B73 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F814F72B28A4D197007E08F0 /* Ahttiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ahttiary.xcdatamodel; sourceTree = "<group>"; };
+		F814F72E28A4D320007E08F0 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
+		F814F73028A4D3B4007E08F0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		F814F73228A4D65A007E08F0 /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
+		F814F73428A4E7A2007E08F0 /* TemporaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryListView.swift; sourceTree = "<group>"; };
+		F89302E528A5258B006067E2 /* DraftNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
 		F8C7A184289EAFCF0000697B /* WriteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNoteView.swift; sourceTree = "<group>"; };
 		F8C7A186289EAFE60000697B /* CheckPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPageView.swift; sourceTree = "<group>"; };
 		F8C7A188289EB0C70000697B /* EndPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageView.swift; sourceTree = "<group>"; };
@@ -111,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7A3BA306289C092E002ABB95 /* Extensions */,
+				F814F72D28A4D298007E08F0 /* CoreData */,
 				7AD34ABF288F945200E92B73 /* Models */,
 				7AD34ABE288F945000E92B73 /* ViewModels */,
 				7AD34AC0288F945D00E92B73 /* Views */,
@@ -169,12 +182,25 @@
 		F814F72928A4C4E7007E08F0 /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				F814F73428A4E7A2007E08F0 /* TemporaryListView.swift */,
 				F8C7A184289EAFCF0000697B /* WriteNoteView.swift */,
 				F8C8A082289A26E40087C00D /* WritePageView.swift */,
 				F8C7A186289EAFE60000697B /* CheckPageView.swift */,
 				F8C7A188289EB0C70000697B /* EndPageView.swift */,
 			);
 			path = Note;
+			sourceTree = "<group>";
+		};
+		F814F72D28A4D298007E08F0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F814F72A28A4D197007E08F0 /* Ahttiary.xcdatamodeld */,
+				F814F72E28A4D320007E08F0 /* PersistentStore.swift */,
+				F814F73228A4D65A007E08F0 /* NSManagedObject.swift */,
+				F814F73028A4D3B4007E08F0 /* Note.swift */,
+				F89302E528A5258B006067E2 /* DraftNote.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +275,7 @@
 			files = (
 				F8C8A08128998F4F0087C00D /* ScreenSize.swift in Sources */,
 				F8C7A189289EB0C70000697B /* EndPageView.swift in Sources */,
+				F814F73528A4E7A2007E08F0 /* TemporaryListView.swift in Sources */,
 				F8C7A185289EAFCF0000697B /* WriteNoteView.swift in Sources */,
 				F8C8A089289A326D0087C00D /* DateFormatter.swift in Sources */,
 				F8C7A187289EAFE60000697B /* CheckPageView.swift in Sources */,
@@ -258,6 +285,8 @@
 				7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */,
 				7A17093C2898D4AF001E98D5 /* MainView.swift in Sources */,
 				7A17093A2898D466001E98D5 /* CalendarView.swift in Sources */,
+				F814F73128A4D3B4007E08F0 /* Note.swift in Sources */,
+				F814F73328A4D65A007E08F0 /* NSManagedObject.swift in Sources */,
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				7AAE399328A370A4002529C1 /* Color.swift in Sources */,
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
@@ -266,8 +295,11 @@
 				7A3BA305289C037A002ABB95 /* DateGridView.swift in Sources */,
 				7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */,
 				7AD34AC2288F947700E92B73 /* Model.swift in Sources */,
+				F814F72F28A4D320007E08F0 /* PersistentStore.swift in Sources */,
+				F814F72C28A4D197007E08F0 /* Ahttiary.xcdatamodeld in Sources */,
 				7A3BA2FB289ABB9A002ABB95 /* CurrentMonthView.swift in Sources */,
 				7A3BA30E289C0FD0002ABB95 /* MonthStruct.swift in Sources */,
+				F89302E628A5258B006067E2 /* DraftNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +500,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F814F72A28A4D197007E08F0 /* Ahttiary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F814F72B28A4D197007E08F0 /* Ahttiary.xcdatamodel */,
+			);
+			currentVersion = F814F72B28A4D197007E08F0 /* Ahttiary.xcdatamodel */;
+			path = Ahttiary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7AD34AA1288F932E00E92B73 /* Project object */;
 }

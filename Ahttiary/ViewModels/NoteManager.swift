@@ -8,8 +8,6 @@
 import Foundation
 
 final class NoteManager: ObservableObject {
-    // TODO: 샘플 데이터입니다. UI 작업 끝나고 CoreData로 대체하겠습니다.
-    var answers: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     
     @Published var pageNumber: Int = 0
     
@@ -57,7 +55,9 @@ final class NoteManager: ObservableObject {
     ]
     
     func goToNextPage() {
-        if pageNumber != NoteManager.questions.count - 1 {
+        let lastPageNumber = NoteManager.questions.count - 1
+        
+        if pageNumber != lastPageNumber {
             pageNumber += 1
         }
     }
@@ -68,7 +68,13 @@ final class NoteManager: ObservableObject {
         }
     }
     
+    func goToFirstPage() {
+        pageNumber = 0
+    }
+    
     func goToLastPage() {
-        pageNumber = 7
+        let lastPageNumber = NoteManager.questions.count - 1
+        
+        pageNumber = lastPageNumber
     }
 }
