@@ -26,6 +26,7 @@ struct CurrentMonthView: View {
             }
 
             Text(currentYearAndMonth)
+                .font(.title2)
             
             Button {
                 dateManager.fetchNextMonth()

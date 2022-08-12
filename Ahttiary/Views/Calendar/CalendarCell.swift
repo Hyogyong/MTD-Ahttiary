@@ -14,7 +14,7 @@ struct CalendarCell: View {
     let startingPosition: Int
     let totalDaysInMonth: Int
     let totalDaysInPreviousMonth: Int
-    
+        
     var body: some View {
         if fetchMonthStruct().monthType == .current {
             ZStack {
