@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         VStack {
+            CalendarView()
+                .padding(.vertical)
             
             HStack {
                 Image("ahtty")
@@ -19,14 +21,12 @@ struct MainView: View {
                 Text("안녕")
                     .padding()
             }
-                
-            CalendarView()
-                .padding(.vertical)
             
             Spacer()
         }
         // General View Setting
         .padding(.horizontal, 20)
+        .background(Color.Custom.background)
 
     }// body
 }// MainView

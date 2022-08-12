@@ -17,9 +17,22 @@ struct CalendarCell: View {
     
     var body: some View {
         if fetchMonthStruct().monthType == .current {
-            Text(fetchMonthStruct().day())
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            ZStack {
+                Circle()
+                    .foregroundColor(verifyCurrentDay() ? Color.Custom.carrotGreen : .clear)
+
+                Text(fetchMonthStruct().day())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundColor(
+                        verifyCurrentDay()
+                        ? .white
+                        : verifyFutureDay()
+                            ? .gray
+                            : .black
+                    )
+                    .onTapGesture { print(fetchMonthStruct().day()) }
+                    .disabled(verifyFutureDay())
+            }
         } else {
             Text("")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -41,7 +54,28 @@ struct CalendarCell: View {
         
         return MonthStruct(monthType: .current, dayInt: day)
     }
+    
+    private func verifyCurrentDay() -> Bool {
+        let date = dateManager.date
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+
+        if components.year == fetchMonthStruct().yearInfo! &&
+           components.month == fetchMonthStruct().monthInfo! &&
+           components.day == fetchMonthStruct().dayInt {
+             return true
+        }
         
+        return false
+    }
+    
+    private func verifyFutureDay() -> Bool {
+        let date = dateManager.date
+        let components = Calendar.current.dateComponents([.day], from: date)
+        
+        if components.day! < fetchMonthStruct().dayInt { return true }
+        return false
+    }
+    
 }// CalendarCell
 
 struct CalendarCell_Previews: PreviewProvider {
