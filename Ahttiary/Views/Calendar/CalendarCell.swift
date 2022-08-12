@@ -14,24 +14,29 @@ struct CalendarCell: View {
     let startingPosition: Int
     let totalDaysInMonth: Int
     let totalDaysInPreviousMonth: Int
-        
+    
     var body: some View {
         if fetchMonthStruct().monthType == .current {
             ZStack {
                 Circle()
-                    .foregroundColor(verifyCurrentDay() ? Color.Custom.carrotGreen : .clear)
-
+                    .foregroundColor(verifySelectedDay() ? Color.Custom.carrotGreen : .clear)
+                
                 Text(fetchMonthStruct().day())
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
-                        verifyCurrentDay()
+                        verifySelectedDay()
                         ? .white
-                        : verifyFutureDay()
+                        : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
                             ? .gray
                             : .black
                     )
-                    .onTapGesture { print(fetchMonthStruct().day()) }
-                    .disabled(verifyFutureDay())
+                    .onTapGesture {
+                        withAnimation {
+                            dateManager.updateSelectedDate(fetchMonthStruct().dayInt)
+                        }
+                    }
+                    .disabled(dateManager.verifyFutureDate(fetchMonthStruct().dayInt))
+
             }
         } else {
             Text("")
@@ -55,24 +60,19 @@ struct CalendarCell: View {
         return MonthStruct(monthType: .current, dayInt: day)
     }
     
-    private func verifyCurrentDay() -> Bool {
-        let date = dateManager.date
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+    private func verifySelectedDay() -> Bool {
+        let currentYear = Calendar.current.dateComponents([.year], from: dateManager.date).year!
+        let currentMonth = Calendar.current.dateComponents([.month], from: dateManager.date).month!
+        let selectedYear = Calendar.current.dateComponents([.year], from: dateManager.selectedDate).year!
+        let selectedMonth = Calendar.current.dateComponents([.month], from: dateManager.selectedDate).month!
+        let selectedDay = Calendar.current.dateComponents([.day], from: dateManager.selectedDate).day!
 
-        if components.year == fetchMonthStruct().yearInfo! &&
-           components.month == fetchMonthStruct().monthInfo! &&
-           components.day == fetchMonthStruct().dayInt {
+        if currentYear == selectedYear &&
+           currentMonth == selectedMonth &&
+           selectedDay == fetchMonthStruct().dayInt {
              return true
         }
         
-        return false
-    }
-    
-    private func verifyFutureDay() -> Bool {
-        let date = dateManager.date
-        let components = Calendar.current.dateComponents([.day], from: date)
-        
-        if components.day! < fetchMonthStruct().dayInt { return true }
         return false
     }
     

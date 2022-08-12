@@ -12,9 +12,6 @@ struct CalendarView: View {
         CurrentMonthView()
             .padding(.top, 71)
         DateGridView()
-            .onAppear {
-                print("Hello")
-            }
 
     }// body
 }// CalendarView
