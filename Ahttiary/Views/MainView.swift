@@ -14,13 +14,16 @@ struct MainView: View {
                 .padding(.vertical)
             
             HStack (alignment: .center) {
-                Image("ahtty")
+                Image("ahttyHello")
                     .resizable()
-                    .frame(maxWidth: 120, maxHeight: 120)
+                    .frame(width: 168, height: 135)
                 
-                Text("안녕")
-                    .padding()
+                Spacer()
+                
+                Text(Comment.shared.mainComment[Int.random(in: 0..<Comment.shared.mainComment.count)])
+                    .font(.custom(Font.shared.comment, size: 20))
             }
+            .padding(.horizontal, 36)
             .padding(.bottom, 90)
             
             Button {
@@ -31,6 +34,7 @@ struct MainView: View {
                         .foregroundColor(Color.Custom.carrotGreen)
                     
                     Text("감정기록 시작하기")
+                        .font(.custom(Font.shared.calendarBold, size: 20))
                         .foregroundColor(.white)
                 }
                 .frame(minWidth: 250, maxHeight: 50)

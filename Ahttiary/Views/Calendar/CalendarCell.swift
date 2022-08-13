@@ -22,6 +22,7 @@ struct CalendarCell: View {
                     .foregroundColor(verifySelectedDay() ? Color.Custom.carrotGreen : .clear)
                 
                 Text(fetchMonthStruct().day())
+                    .font(.custom(Font.shared.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
                         verifySelectedDay()
