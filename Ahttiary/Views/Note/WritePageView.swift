@@ -40,6 +40,7 @@ struct WritePageView: View {
                         height: ScreenSize.answerMessageBoxHeight
                     )
                     .background(Color.white)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .cornerRadius(15)
                     .padding()
                     .focused($isTextFieldsFocused)
