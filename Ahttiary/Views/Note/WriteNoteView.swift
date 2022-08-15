@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WriteNoteView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var noteManager: NoteManager = NoteManager()
     @StateObject private var draftNote: DraftNote
@@ -58,6 +59,8 @@ struct WriteNoteView: View {
             nc.navigationBar.barTintColor = UIColor(Color.Custom.background)
             nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
         })
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: customBackButton)
         .onDisappear {
             Note.updateNote(using: draftNote)
             noteManager.goToFirstPage()
@@ -68,18 +71,28 @@ struct WriteNoteView: View {
 
 extension WriteNoteView {
     // 네비게이션 바 색상을 바꾸기 위해 UIKit 기능을 불러옴.
-    // 출처: https://stackoverflow.com/questions/56505528/swiftui-update-navigation-bar-title-color
     struct NavigationConfigurator: UIViewControllerRepresentable {
         var configure: (UINavigationController) -> Void = { _ in }
         
         func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
             UIViewController()
         }
+        
         func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
             if let nc = uiViewController.navigationController {
                 self.configure(nc)
             }
         }
-        
+    }
+    
+    // 색상 지정과 텍스트 제거를 위한 커스텀 뒤로가기 버튼
+    private var customBackButton: some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.backward") // set image here
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(Color.Custom.carrotGreen)
+        }
     }
 }
