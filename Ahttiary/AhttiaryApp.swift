@@ -10,12 +10,14 @@ import SwiftUI
 @main
 struct AhttiaryApp: App {
     
+    @StateObject var persistentStore = PersistentStore.shared
     @StateObject var dateViewModel: DateViewModel = DateViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environmentObject(dateViewModel)
+                .environment(\.managedObjectContext, persistentStore.context)
         }
     }
 }
