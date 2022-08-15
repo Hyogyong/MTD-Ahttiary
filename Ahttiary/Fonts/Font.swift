@@ -16,6 +16,7 @@ struct Font {
 
 // 폰트가 적용되지 않는 경우 해당 Text에 아래 내용을 적용한 후
 // 출력되는 결과 중 올바른 폰트명을 확인하세요.
+// https://kkannsoon2.tistory.com/2
 /*
 .onAppear {
     for family: String in UIFont.familyNames {
