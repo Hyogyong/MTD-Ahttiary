@@ -15,7 +15,7 @@ struct AhttiaryApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environmentObject(dateViewModel)
                 .environment(\.managedObjectContext, persistentStore.context)
         }
