@@ -54,10 +54,32 @@ struct WriteNoteView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .ignoresSafeArea()
         .navigationBarTitleDisplayMode(.inline)
+        .background(NavigationConfigurator { nc in
+            nc.navigationBar.barTintColor = UIColor(Color.Custom.background)
+            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        })
         .onDisappear {
             Note.updateNote(using: draftNote)
             noteManager.goToFirstPage()
         }
         
     } // End of body
+}
+
+extension WriteNoteView {
+    // 네비게이션 바 색상을 바꾸기 위해 UIKit 기능을 불러옴.
+    // 출처: https://stackoverflow.com/questions/56505528/swiftui-update-navigation-bar-title-color
+    struct NavigationConfigurator: UIViewControllerRepresentable {
+        var configure: (UINavigationController) -> Void = { _ in }
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+            UIViewController()
+        }
+        func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+            if let nc = uiViewController.navigationController {
+                self.configure(nc)
+            }
+        }
+        
+    }
 }
