@@ -17,6 +17,10 @@ class DraftNote: ObservableObject {
     @Published var fourthAnswer = ""
     @Published var fifthAnswer = ""
     
+    var displayedDate: String {
+        dateCreated.convertToDisplayedDate()
+    }
+    
     init(note: Note) {
         id = note.id
         dateCreated = note.dateCreated

@@ -54,7 +54,7 @@ struct WriteNoteView: View {
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .ignoresSafeArea()
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitle(draftNote.displayedDate, displayMode: .inline)
         .background(NavigationConfigurator { nc in
             nc.navigationBar.barTintColor = UIColor(Color.Custom.background)
             nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
