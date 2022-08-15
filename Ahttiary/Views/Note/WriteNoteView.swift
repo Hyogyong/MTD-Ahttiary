@@ -70,6 +70,7 @@ struct WriteNoteView: View {
 }
 
 extension WriteNoteView {
+    
     // 네비게이션 바 색상을 바꾸기 위해 UIKit 기능을 불러옴.
     struct NavigationConfigurator: UIViewControllerRepresentable {
         var configure: (UINavigationController) -> Void = { _ in }

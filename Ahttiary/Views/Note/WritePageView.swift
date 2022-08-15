@@ -33,17 +33,6 @@ struct WritePageView: View {
                     .padding()
             }
             
-            HStack {
-                Text(DateFormatter.getKoreanDateInString())
-                
-                Spacer()
-                
-                Text("맑음")
-            }
-            .padding(.horizontal)
-            .font(.callout)
-            .foregroundColor(.gray)
-            
             // 노트 작성란
             HStack {
                 TextEditor(text: $answer)
