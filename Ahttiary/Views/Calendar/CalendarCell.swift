@@ -19,13 +19,13 @@ struct CalendarCell: View {
         if fetchMonthStruct().monthType == .current {
             ZStack {
                 Circle()
-                    .foregroundColor(verifySelectedDay() ? Color.Custom.carrotGreen : .clear)
+                    .foregroundColor(dateManager.verifySelectedDay(fetchMonthStruct().dayInt) ? Color.Custom.carrotGreen : .clear)
                 
                 Text(fetchMonthStruct().day())
                     .font(.custom(Font.shared.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
-                        verifySelectedDay()
+                        dateManager.verifySelectedDay(fetchMonthStruct().dayInt)
                         ? .white
                         : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
                             ? .gray
@@ -60,23 +60,7 @@ struct CalendarCell: View {
         
         return MonthStruct(monthType: .current, dayInt: day)
     }
-    
-    private func verifySelectedDay() -> Bool {
-        let currentYear = Calendar.current.dateComponents([.year], from: dateManager.date).year!
-        let currentMonth = Calendar.current.dateComponents([.month], from: dateManager.date).month!
-        let selectedYear = Calendar.current.dateComponents([.year], from: dateManager.selectedDate).year!
-        let selectedMonth = Calendar.current.dateComponents([.month], from: dateManager.selectedDate).month!
-        let selectedDay = Calendar.current.dateComponents([.day], from: dateManager.selectedDate).day!
-
-        if currentYear == selectedYear &&
-           currentMonth == selectedMonth &&
-           selectedDay == fetchMonthStruct().dayInt {
-             return true
-        }
         
-        return false
-    }
-    
 }// CalendarCell
 
 struct CalendarCell_Previews: PreviewProvider {
