@@ -17,9 +17,28 @@ struct CalendarCell: View {
     
     var body: some View {
         if fetchMonthStruct().monthType == .current {
-            Text(fetchMonthStruct().day())
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            ZStack {
+                Circle()
+                    .foregroundColor(dateManager.verifySelectedDay(fetchMonthStruct().dayInt) ? Color.Custom.carrotGreen : .clear)
+                
+                Text(fetchMonthStruct().day())
+                    .font(.custom(Font.shared.calendarBold, size: 20))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundColor(
+                        dateManager.verifySelectedDay(fetchMonthStruct().dayInt)
+                        ? .white
+                        : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
+                            ? .gray
+                            : .black
+                    )
+                    .onTapGesture {
+                        withAnimation {
+                            dateManager.updateSelectedDate(fetchMonthStruct().dayInt)
+                        }
+                    }
+                    .disabled(dateManager.verifyFutureDate(fetchMonthStruct().dayInt))
+
+            }
         } else {
             Text("")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -19,19 +19,20 @@ struct CurrentMonthView: View {
     
     var body: some View {
         HStack {
-            Button {
-                dateManager.fetchPreviousMonth()
-            } label: {
-                Image(systemName: "chevron.left")
-            }
+//            Button {
+//                dateManager.fetchPreviousMonth()
+//            } label: {
+//                Image(systemName: "chevron.left")
+//            }
 
             Text(currentYearAndMonth)
+                .font(.custom(Font.shared.calendarBold, size: 22))
             
-            Button {
-                dateManager.fetchNextMonth()
-            } label: {
-                Image(systemName: "chevron.right")
-            }
+//            Button {
+//                dateManager.fetchNextMonth()
+//            } label: {
+//                Image(systemName: "chevron.right")
+//            }
         }
     }// body
     
