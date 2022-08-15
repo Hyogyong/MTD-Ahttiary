@@ -19,7 +19,7 @@ struct EndPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("AhttyWriter")
+                Image("ahttyHello")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
