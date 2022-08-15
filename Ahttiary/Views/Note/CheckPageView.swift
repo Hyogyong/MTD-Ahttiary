@@ -45,6 +45,7 @@ struct CheckPageView: View {
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {

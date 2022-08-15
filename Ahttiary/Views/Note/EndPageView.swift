@@ -40,6 +40,7 @@ struct EndPageView: View {
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
     }
 }
