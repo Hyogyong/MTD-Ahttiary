@@ -29,8 +29,8 @@ struct EndPageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
-                    .cornerRadius(15)
+                    .background(Color.Custom.background)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
             
