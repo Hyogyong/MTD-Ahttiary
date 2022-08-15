@@ -33,12 +33,15 @@ struct CheckPageView: View {
                     .padding()
             }
             
-            VStack {
-                Button("GBZG~") {
+            HStack(spacing: 20) {
+                CustomButton("이전") {
+                    noteManager.goToPreviousPage()
+                }
+                
+                CustomButton("선택 완료") {
                     noteManager.goToNextPage()
                 }
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }

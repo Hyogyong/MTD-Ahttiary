@@ -45,16 +45,15 @@ struct WritePageView: View {
                     .focused($isTextFieldsFocused)
             }
             
-            HStack {
-                Button("이전") {
+            HStack(spacing: 20) {
+                CustomButton("이전") {
                     noteManager.goToPreviousPage()
                 }
                 
-                Button("다음") {
+                CustomButton("다음") {
                     noteManager.goToNextPage()
                 }
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }

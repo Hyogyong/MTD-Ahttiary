@@ -34,10 +34,9 @@ struct EndPageView: View {
                     .padding()
             }
             
-            Button("종료하기") {
+            CustomButton("종료하기") {
                 dismiss()
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }
