@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WriteNoteView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     
     @ObservedObject var noteManager: NoteManager = NoteManager()
     @StateObject private var draftNote: DraftNote
@@ -89,7 +89,7 @@ extension WriteNoteView {
     // 색상 지정과 텍스트 제거를 위한 커스텀 뒤로가기 버튼
     private var customBackButton: some View {
         Button {
-            self.presentationMode.wrappedValue.dismiss()
+            dismiss()
         } label: {
             Image(systemName: "chevron.backward") // set image here
                 .aspectRatio(contentMode: .fit)
