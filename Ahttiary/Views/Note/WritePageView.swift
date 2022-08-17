@@ -18,7 +18,7 @@ struct WritePageView: View {
         VStack {
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("AhttyWriter")
+                Image("ahttyHello")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
@@ -28,21 +28,10 @@ struct WritePageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
-                    .cornerRadius(15)
+                    .background(Color.Custom.background)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
-            
-            HStack {
-                Text(DateFormatter.getKoreanDateInString())
-                
-                Spacer()
-                
-                Text("맑음")
-            }
-            .padding(.horizontal)
-            .font(.callout)
-            .foregroundColor(.gray)
             
             // 노트 작성란
             HStack {
@@ -51,24 +40,25 @@ struct WritePageView: View {
                         height: ScreenSize.answerMessageBoxHeight
                     )
                     .background(Color.white)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .cornerRadius(15)
                     .padding()
                     .focused($isTextFieldsFocused)
             }
             
-            HStack {
-                Button("이전") {
+            HStack(spacing: 20) {
+                CustomButton("이전") {
                     noteManager.goToPreviousPage()
                 }
                 
-                Button("다음") {
+                CustomButton("다음") {
                     noteManager.goToNextPage()
                 }
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {

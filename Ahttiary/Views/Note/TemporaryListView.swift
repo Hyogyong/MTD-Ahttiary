@@ -20,7 +20,7 @@ struct TemporaryListView: View {
                         NavigationLink {
                             WriteNoteView(note: note)
                         } label: {
-                            Text("\(DateFormatter.convertToKoreanDate(date: note.dateCreated))")
+                            Text(note.dateCreated.convertToDisplayedDate())
                         }
                     }
                 }

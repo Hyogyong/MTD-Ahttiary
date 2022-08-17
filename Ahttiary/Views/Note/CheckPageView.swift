@@ -18,7 +18,7 @@ struct CheckPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("AhttyWriter")
+                Image("ahttyHello")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
@@ -28,20 +28,24 @@ struct CheckPageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
-                    .cornerRadius(15)
+                    .background(Color.Custom.background)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
             
-            VStack {
-                Button("GBZG~") {
+            HStack(spacing: 20) {
+                CustomButton("이전") {
+                    noteManager.goToPreviousPage()
+                }
+                
+                CustomButton("선택 완료") {
                     noteManager.goToNextPage()
                 }
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
