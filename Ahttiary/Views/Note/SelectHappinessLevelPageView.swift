@@ -10,6 +10,15 @@ import SwiftUI
 struct SelectHappinessLevelPageView: View {
     
     @ObservedObject var noteManager: NoteManager
+    @Binding var answer: Int16
+    
+    var answerInFloat: Binding<Double> {
+        Binding<Double>(
+            get: { return Double(answer) },
+            set: { answer = Int16($0) }
+        )
+    }
+    
     @FocusState var isTextFieldsFocused: Bool
     
     var body: some View {
@@ -32,6 +41,13 @@ struct SelectHappinessLevelPageView: View {
                     .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
+            
+            Slider(
+                value: answerInFloat,
+                in: 1...5
+            )
+            
+            Text("\(answer)")
             
             HStack(spacing: 20) {
                 CustomButton("이전") {
