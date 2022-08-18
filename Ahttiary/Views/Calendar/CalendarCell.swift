@@ -10,15 +10,14 @@ import SwiftUI
 
 struct CalendarCell: View {
     @EnvironmentObject var dateManager: DateViewModel
+    @EnvironmentObject var mainViewManager: MainViewManager
     @FetchRequest(fetchRequest: Note.allNotesFR())
     var notes: FetchedResults<Note>
     let count: Int
     let startingPosition: Int
     let totalDaysInMonth: Int
     let totalDaysInPreviousMonth: Int
-    var dayOfThisCell: Int {
-        return fetchMonthStruct().dayInt
-    }
+    var dayOfThisCell: Int { return fetchMonthStruct().dayInt }
     
     var body: some View {
         if fetchMonthStruct().monthType == .current {
@@ -42,9 +41,9 @@ struct CalendarCell: View {
                         withAnimation {
                             dateManager.updateSelectedDate(dayOfThisCell)
                         }
+                        if detectNoteData() { linkNoteCoreData() }
                     }
                     .disabled(dateManager.verifyFutureDate(dayOfThisCell))
-                
             }
         } else {
             Text("")
@@ -85,6 +84,24 @@ struct CalendarCell: View {
         }
         
         return false
+    }
+    
+    private func linkNoteCoreData() {
+        for note in notes {
+            guard let dateCreated = note.dateCreated_ else { return }
+            let createdDateOfNote = DateFormatter.convertToKoreanDate(date: dateCreated)
+            var dateOfCell: String {
+                let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
+                let year = components.year!
+                let month = String(format: "%02d" , components.month!)
+                let day = dayOfThisCell
+                
+                return "\(year)년 \(month)월 \(day)일"
+            }
+            
+            if createdDateOfNote == dateOfCell { mainViewManager.updateNote(note) }
+        }
+
     }
     
 }// CalendarCell
