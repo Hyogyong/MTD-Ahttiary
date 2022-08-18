@@ -4,11 +4,11 @@
         <attribute name="dateCreated_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="fifthAnswer_" optional="YES" attributeType="String"/>
         <attribute name="firstAnswer_" optional="YES" attributeType="String"/>
-        <attribute name="firstHappinessLevel_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firstHappinessLevel_" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
         <attribute name="fourthAnswer_" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="secondAnswer_" optional="YES" attributeType="String"/>
-        <attribute name="secondHappinessLevel_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondHappinessLevel_" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
         <attribute name="thirdAnswer_" optional="YES" attributeType="String"/>
     </entity>
     <elements>
