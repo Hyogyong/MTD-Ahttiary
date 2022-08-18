@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CalendarCell: View {
     @EnvironmentObject var dateManager: DateViewModel
+    @FetchRequest(fetchRequest: Note.allNotesFR())
+    var notes: FetchedResults<Note>
     let count: Int
     let startingPosition: Int
     let totalDaysInMonth: Int
@@ -25,11 +27,14 @@ struct CalendarCell: View {
                     .font(.custom(Font.shared.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
-                        dateManager.verifySelectedDay(fetchMonthStruct().dayInt)
-                        ? .white
-                        : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
-                            ? .gray
-                            : .black
+                        detectNoteData()
+                        ? .Custom.carrot
+                        : dateManager.verifySelectedDay(fetchMonthStruct().dayInt)
+                            ? .white
+                            : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
+                                ? .gray
+                                : .black
+                        
                     )
                     .onTapGesture {
                         withAnimation {
@@ -37,7 +42,7 @@ struct CalendarCell: View {
                         }
                     }
                     .disabled(dateManager.verifyFutureDate(fetchMonthStruct().dayInt))
-
+                
             }
         } else {
             Text("")
@@ -60,7 +65,25 @@ struct CalendarCell: View {
         
         return MonthStruct(monthType: .current, dayInt: day)
     }
+    
+    private func detectNoteData() -> Bool {
+        for note in notes {
+            guard let dateCreated = note.dateCreated_ else { return false }
+            let createdDateOfNote = DateFormatter.convertToKoreanDate(date: dateCreated)
+            var dateOfCell: String {
+                let year = fetchMonthStruct().yearInfo!
+                let month = String(format: "%02d" , fetchMonthStruct().monthInfo!)
+                let day = fetchMonthStruct().dayInt
+                
+                return "\(year)년 \(month)월 \(day)일"
+            }
+
+            if createdDateOfNote == dateOfCell { return true }
+        }
         
+        return false
+    }
+    
 }// CalendarCell
 
 struct CalendarCell_Previews: PreviewProvider {
