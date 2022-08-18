@@ -16,12 +16,15 @@ struct CalendarCell: View {
     let startingPosition: Int
     let totalDaysInMonth: Int
     let totalDaysInPreviousMonth: Int
+    var dayOfThisCell: Int {
+        return fetchMonthStruct().dayInt
+    }
     
     var body: some View {
         if fetchMonthStruct().monthType == .current {
             ZStack {
                 Circle()
-                    .foregroundColor(dateManager.verifySelectedDay(fetchMonthStruct().dayInt) ? Color.Custom.carrotGreen : .clear)
+                    .foregroundColor(dateManager.verifySelectedDay(dayOfThisCell) ? Color.Custom.carrotGreen : .clear)
                 
                 Text(fetchMonthStruct().day())
                     .font(.custom(Font.shared.calendarBold, size: 20))
@@ -29,19 +32,18 @@ struct CalendarCell: View {
                     .foregroundColor(
                         detectNoteData()
                         ? .Custom.carrot
-                        : dateManager.verifySelectedDay(fetchMonthStruct().dayInt)
+                        : dateManager.verifySelectedDay(dayOfThisCell)
                             ? .white
-                            : dateManager.verifyFutureDate(fetchMonthStruct().dayInt)
+                            : dateManager.verifyFutureDate(dayOfThisCell)
                                 ? .gray
                                 : .black
-                        
                     )
                     .onTapGesture {
                         withAnimation {
-                            dateManager.updateSelectedDate(fetchMonthStruct().dayInt)
+                            dateManager.updateSelectedDate(dayOfThisCell)
                         }
                     }
-                    .disabled(dateManager.verifyFutureDate(fetchMonthStruct().dayInt))
+                    .disabled(dateManager.verifyFutureDate(dayOfThisCell))
                 
             }
         } else {
@@ -71,13 +73,14 @@ struct CalendarCell: View {
             guard let dateCreated = note.dateCreated_ else { return false }
             let createdDateOfNote = DateFormatter.convertToKoreanDate(date: dateCreated)
             var dateOfCell: String {
-                let year = fetchMonthStruct().yearInfo!
-                let month = String(format: "%02d" , fetchMonthStruct().monthInfo!)
-                let day = fetchMonthStruct().dayInt
+                let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
+                let year = components.year!
+                let month = String(format: "%02d" , components.month!)
+                let day = dayOfThisCell
                 
                 return "\(year)년 \(month)월 \(day)일"
             }
-
+            
             if createdDateOfNote == dateOfCell { return true }
         }
         
