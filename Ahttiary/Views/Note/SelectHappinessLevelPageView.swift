@@ -1,5 +1,5 @@
 //
-//  CheckNoteView.swift
+//  SelectHappinessLevelPageView.swift
 //  Ahttiary
 //
 //  Created by 임성균 on 2022/08/06.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CheckPageView: View {
+struct SelectHappinessLevelPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @FocusState var isTextFieldsFocused: Bool

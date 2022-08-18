@@ -34,13 +34,13 @@ extension Note {
         get { fifthAnswer_ ?? "" }
         set { fifthAnswer_ = newValue }
     }
-    var firstHappinessIndex: Int16 {
-        get { firstHappinessIndex_ }
-        set { firstHappinessIndex_ = newValue }
+    var firstHappinessLevel: Int16 {
+        get { firstHappinessLevel_ }
+        set { firstHappinessLevel_ = newValue }
     }
-    var secondHappinessIndex: Int16 {
-        get { secondHappinessIndex_ }
-        set { secondHappinessIndex_ = newValue }
+    var secondHappinessLevel: Int16 {
+        get { secondHappinessLevel_ }
+        set { secondHappinessLevel_ = newValue }
     }
     
     // MARK: Fetch Request 모음
@@ -120,7 +120,7 @@ extension Note {
         thirdAnswer_ = draftNote.thirdAnswer
         fourthAnswer_ = draftNote.fourthAnswer
         fifthAnswer_ = draftNote.fifthAnswer
-        firstHappinessIndex_ = draftNote.firstHappinessIndex
-        secondHappinessIndex_ = draftNote.secondHappinessIndex
+        firstHappinessLevel_ = draftNote.firstHappinessLevel
+        secondHappinessLevel_ = draftNote.secondHappinessLevel
     }
 }
