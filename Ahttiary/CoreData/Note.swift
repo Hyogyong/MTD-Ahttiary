@@ -34,6 +34,14 @@ extension Note {
         get { fifthAnswer_ ?? "" }
         set { fifthAnswer_ = newValue }
     }
+    var firstHappinessLevel: Int16 {
+        get { firstHappinessLevel_ }
+        set { firstHappinessLevel_ = newValue }
+    }
+    var secondHappinessLevel: Int16 {
+        get { secondHappinessLevel_ }
+        set { secondHappinessLevel_ = newValue }
+    }
     
     // MARK: Fetch Request 모음
     class func allNotesFR() -> NSFetchRequest<Note> {
@@ -112,5 +120,7 @@ extension Note {
         thirdAnswer_ = draftNote.thirdAnswer
         fourthAnswer_ = draftNote.fourthAnswer
         fifthAnswer_ = draftNote.fifthAnswer
+        firstHappinessLevel_ = draftNote.firstHappinessLevel
+        secondHappinessLevel_ = draftNote.secondHappinessLevel
     }
 }

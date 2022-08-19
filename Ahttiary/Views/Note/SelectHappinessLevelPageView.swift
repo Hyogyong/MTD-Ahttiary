@@ -1,5 +1,5 @@
 //
-//  CheckNoteView.swift
+//  SelectHappinessLevelPageView.swift
 //  Ahttiary
 //
 //  Created by 임성균 on 2022/08/06.
@@ -7,9 +7,18 @@
 
 import SwiftUI
 
-struct CheckPageView: View {
+struct SelectHappinessLevelPageView: View {
     
     @ObservedObject var noteManager: NoteManager
+    @Binding var answer: Int16
+    
+    var answerInFloat: Binding<Double> {
+        Binding<Double>(
+            get: { return Double(answer) },
+            set: { answer = Int16($0) }
+        )
+    }
+    
     @FocusState var isTextFieldsFocused: Bool
     
     var body: some View {
@@ -32,6 +41,13 @@ struct CheckPageView: View {
                     .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
+            
+            Slider(
+                value: answerInFloat,
+                in: 1...5
+            )
+            
+            Text("\(answer)")
             
             HStack(spacing: 20) {
                 CustomButton("이전") {
