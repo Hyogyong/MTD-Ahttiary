@@ -33,7 +33,7 @@ struct MainView: View {
             .padding(.bottom, 90)
             
             Button {
-                if mainViewManager.note == nil { return mainViewManager.goToWritingView() }
+                if mainViewManager.note == nil { mainViewManager.goToWritingView() }
                 mainViewManager.goToReadingView()
             } label: {
                 ZStack (alignment: .center) {

@@ -30,6 +30,6 @@ final class MainViewManager: ObservableObject {
         }
     }
         
-    func updateNote(_ data: FetchedResults<Note>.Element) { self.note = data }
+    func updateNote(_ data: FetchedResults<Note>.Element?) { self.note = data }
     
 }// MainViewManager

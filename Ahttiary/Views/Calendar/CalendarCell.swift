@@ -42,6 +42,7 @@ struct CalendarCell: View {
                             dateManager.updateSelectedDate(dayOfThisCell)
                         }
                         if detectNoteData() { linkNoteCoreData() }
+                        else { mainViewManager.updateNote(nil)}
                     }
                     .disabled(dateManager.verifyFutureDate(dayOfThisCell))
             }
@@ -87,21 +88,7 @@ struct CalendarCell: View {
     }
     
     private func linkNoteCoreData() {
-        for note in notes {
-            guard let dateCreated = note.dateCreated_ else { return }
-            let createdDateOfNote = DateFormatter.convertToKoreanDate(date: dateCreated)
-            var dateOfCell: String {
-                let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
-                let year = components.year!
-                let month = String(format: "%02d" , components.month!)
-                let day = dayOfThisCell
-                
-                return "\(year)년 \(month)월 \(day)일"
-            }
-            
-            if createdDateOfNote == dateOfCell { mainViewManager.updateNote(note) }
-        }
-
+        for note in notes { mainViewManager.updateNote(note) }
     }
     
 }// CalendarCell
