@@ -9,22 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var mainViewManager: MainViewManager
+    @EnvironmentObject var dateManager: DateViewModel
     @FetchRequest(fetchRequest: Note.allNotesFR())
     private var notes: FetchedResults<Note>
     
     var body: some View {
-        switch (mainViewManager.pageNumber) {
-        case 0:
+        contentView
+    }// body
+    
+    @ViewBuilder private var contentView: some View {
+        switch (mainViewManager.pageName) {
+        case .main:
             MainView()
-        case 1:
-            TemporaryListView()
-        case 2:
+        case .writing:
+            mainViewManager.createNote(dateManager.selectedDate)
+        case .reading:
             WriteNoteView(note: mainViewManager.note!)
-        default:
-            MainView()
         }
-        
-    }// body    
+    }
+    
 }// ContentView
 
 struct ContentView_Previews: PreviewProvider {

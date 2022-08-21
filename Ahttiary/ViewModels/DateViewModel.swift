@@ -25,7 +25,7 @@ final class DateViewModel: ObservableObject {
     func updateSelectedDate(_ selectedDay: Int) {
         let originalDay = Calendar.current.dateComponents([.day], from: date).day!
         guard let changedDate = Calendar.current.date(byAdding: .day, value: selectedDay - originalDay, to: date) else { return }
-                
+        print("✅ 캘린더에서 선택된 날짜: \(changedDate)")
         self.selectedDate = changedDate
     }
     

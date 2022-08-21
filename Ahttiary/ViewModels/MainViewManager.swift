@@ -9,27 +9,40 @@ import Foundation
 import SwiftUI
 
 final class MainViewManager: ObservableObject {
-    @Published var pageNumber: Int = 0
+    @Published var pageName: PageName = .main
     @Published var note: FetchedResults<Note>.Element? = nil
     
     func goToMainView() {
         withAnimation {
-            pageNumber = 0
+            pageName = .main
         }
     }
 
     func goToWritingView() {
         withAnimation {
-            pageNumber = 1
+            pageName = .writing
         }
     }
     
     func goToReadingView() {
         withAnimation {
-            pageNumber = 2
+            pageName = .reading
         }
     }
         
     func updateNote(_ data: FetchedResults<Note>.Element?) { self.note = data }
     
+    func createNote(_ createdDate: Date = Date()) -> some View {
+        print("🔥 해당 날짜로 다이어리가 생성됩니다: \(createdDate)")
+        let newNote = Note.getNewNote(createdDate)
+
+        return WriteNoteView(note: newNote)
+    }
+    
 }// MainViewManager
+
+enum PageName {
+    case main
+    case writing
+    case reading
+}

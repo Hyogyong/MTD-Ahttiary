@@ -34,7 +34,7 @@ struct MainView: View {
             
             Button {
                 if mainViewManager.note == nil { mainViewManager.goToWritingView() }
-                mainViewManager.goToReadingView()
+                else { mainViewManager.goToReadingView() }
             } label: {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)

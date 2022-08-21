@@ -57,7 +57,6 @@ struct DateGridView: View {
                                 totalDaysInMonth: totalDaysInMonth,
                                 totalDaysInPreviousMonth: totalDaysInPreviousMonth
                             )
-                            .environmentObject(dateManager)
                         }
                     }
                 }
