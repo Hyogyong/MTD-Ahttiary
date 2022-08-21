@@ -38,11 +38,14 @@ struct CalendarCell: View {
                                 : .black
                     )
                     .onTapGesture {
-                        withAnimation {
-                            dateManager.updateSelectedDate(dayOfThisCell)
-                        }
+                        withAnimation { dateManager.updateSelectedDate(dayOfThisCell) }
                         if detectNoteData() { linkNoteCoreData() }
                         else { mainViewManager.updateNote(nil)}
+                    }
+                    .onAppear {
+                        if dateManager.verifySelectedDay(dayOfThisCell) {
+                            if detectNoteData() { linkNoteCoreData() }
+                        }
                     }
                     .disabled(dateManager.verifyFutureDate(dayOfThisCell))
             }
