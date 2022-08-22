@@ -9,16 +9,24 @@ import SwiftUI
 
 struct DateGridView: View {
     @EnvironmentObject var dateManager: DateViewModel
+    @State private var locationOfGrid: CGFloat = 0
     
     var body: some View {
         VStack {
             dayOfWeek
             calendarGrid
+                .offset(x: locationOfGrid)
         }
-        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
-            if value.translation.width < 0 { dateManager.fetchNextMonth() }
-            if value.translation.width > 0 { dateManager.fetchPreviousMonth() }
-        }))
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            .onChanged {
+                locationOfGrid = $0.translation.width
+            }
+            .onEnded {
+                if $0.translation.width < 0 { dateManager.fetchNextMonth() }
+                if $0.translation.width > 0 { dateManager.fetchPreviousMonth() }
+                locationOfGrid = 0
+            }
+        )
     }// body
     
     private var dayOfWeek: some View {
@@ -57,7 +65,6 @@ struct DateGridView: View {
                                 totalDaysInMonth: totalDaysInMonth,
                                 totalDaysInPreviousMonth: totalDaysInPreviousMonth
                             )
-                            .environmentObject(dateManager)
                         }
                     }
                 }

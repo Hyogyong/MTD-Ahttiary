@@ -12,11 +12,13 @@ struct AhttiaryApp: App {
     
     @StateObject var persistentStore = PersistentStore.shared
     @StateObject var dateViewModel: DateViewModel = DateViewModel()
+    @StateObject var mainViewManager: MainViewManager = MainViewManager()
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ContentView()
                 .environmentObject(dateViewModel)
+                .environmentObject(mainViewManager)
                 .environment(\.managedObjectContext, persistentStore.context)
         }
     }
