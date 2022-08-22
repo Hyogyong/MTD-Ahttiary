@@ -30,7 +30,7 @@ final class NoteManager: ObservableObject {
         """,
         // 2. 첫번째 감정 인식
         """
-        감정 선택 페이지 1
+        너의 감정을 잘 나타내는 표정을 골라줘
         """,
         // 3. 자동적 사고
         """
@@ -46,7 +46,7 @@ final class NoteManager: ObservableObject {
         """,
         // 6. 두번째 감정 인식
         """
-        감정 선택 페이지 2
+        너의 감정을 잘 나타내는 표정을 골라줘
         """,
         // 7. 마지막 페이지
         """
