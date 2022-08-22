@@ -10,7 +10,6 @@ import Foundation
 final class DateViewModel: ObservableObject {
     @Published var date: Date = Date()
     @Published var selectedDate: Date = Date()
-    static let shared = DateViewModel()
     
     func fetchPreviousMonth() {
         guard let previousMonth = CalendarViewModel().getPreviousMonth(date) else { return }
