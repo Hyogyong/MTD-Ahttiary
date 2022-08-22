@@ -27,11 +27,6 @@ struct SelectHappinessLevelPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("ahttyHello")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: ScreenSize.ahttyWriterWidth)
-                
                 Text(noteManager.questionInPresentPage)
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
@@ -40,6 +35,12 @@ struct SelectHappinessLevelPageView: View {
                     .background(Color.Custom.background)
                     .font(.custom(Font.shared.comment, size: 20))
                     .padding()
+                
+                Image("ahttyHello")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: ScreenSize.ahttyWriterWidth)
+                    .scaleEffect(CGSize(width: -1.0, height: 1.0))
             }
             
             Slider(
