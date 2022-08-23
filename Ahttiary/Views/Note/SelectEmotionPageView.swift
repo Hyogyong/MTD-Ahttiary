@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectHappinessLevelPageView: View {
+struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @Binding var answer: Int16
