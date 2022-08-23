@@ -19,7 +19,7 @@ struct EndPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("AhttyWriter")
+                Image("ahttyHello")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
@@ -29,18 +29,18 @@ struct EndPageView: View {
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
-                    .cornerRadius(15)
+                    .background(Color.Custom.background)
+                    .font(.custom(Font.shared.comment, size: 20))
                     .padding()
             }
             
-            Button("종료하기") {
+            CustomButton("종료하기") {
                 dismiss()
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
     }
 }

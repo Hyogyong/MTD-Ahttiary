@@ -10,12 +10,18 @@ import Foundation
 class DraftNote: ObservableObject {
     
     var id: UUID? = nil
-    @Published var dateCreated = Date()
-    @Published var firstAnswer = ""
-    @Published var secondAnswer = ""
-    @Published var thirdAnswer = ""
-    @Published var fourthAnswer = ""
-    @Published var fifthAnswer = ""
+    @Published var dateCreated: Date = Date()
+    @Published var firstAnswer: String = ""
+    @Published var secondAnswer: String = ""
+    @Published var thirdAnswer: String = ""
+    @Published var fourthAnswer: String = ""
+    @Published var fifthAnswer: String = ""
+    @Published var firstHappinessLevel: Int16 = 3
+    @Published var secondHappinessLevel: Int16 = 3
+    
+    var displayedDate: String {
+        dateCreated.convertToDisplayedDate()
+    }
     
     init(note: Note) {
         id = note.id
@@ -25,6 +31,8 @@ class DraftNote: ObservableObject {
         thirdAnswer = note.thirdAnswer
         fourthAnswer = note.fourthAnswer
         fifthAnswer = note.fifthAnswer
+        firstHappinessLevel = note.firstHappinessLevel
+        secondHappinessLevel = note.secondHappinessLevel
     }
     
     var associatedNote: Note { Note.object(withID: id!)! }
