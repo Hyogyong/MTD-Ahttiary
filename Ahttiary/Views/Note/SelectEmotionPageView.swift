@@ -10,14 +10,7 @@ import SwiftUI
 struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
-    @Binding var answer: Int16
-    
-    var answerInFloat: Binding<Double> {
-        Binding<Double>(
-            get: { return Double(answer) },
-            set: { answer = Int16($0) }
-        )
-    }
+    @Binding var answer: String
     
     @FocusState var isTextFieldsFocused: Bool
     
@@ -43,10 +36,7 @@ struct SelectEmotionPageView: View {
                     .scaleEffect(CGSize(width: -1.0, height: 1.0))
             }
             
-            Slider(
-                value: answerInFloat,
-                in: 1...5
-            )
+            // Emotion Selecting Buttons
             
             Text("\(answer)")
             

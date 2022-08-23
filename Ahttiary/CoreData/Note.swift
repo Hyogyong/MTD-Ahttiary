@@ -34,12 +34,12 @@ extension Note {
         get { fifthAnswer_ ?? "" }
         set { fifthAnswer_ = newValue }
     }
-    var firstHappinessLevel: Int16 {
-        get { firstHappinessLevel_ }
+    var firstHappinessLevel: String {
+        get { firstHappinessLevel_ ?? "" }
         set { firstHappinessLevel_ = newValue }
     }
-    var secondHappinessLevel: Int16 {
-        get { secondHappinessLevel_ }
+    var secondHappinessLevel: String {
+        get { secondHappinessLevel_ ?? "" }
         set { secondHappinessLevel_ = newValue }
     }
     

@@ -16,8 +16,8 @@ class DraftNote: ObservableObject {
     @Published var thirdAnswer: String = ""
     @Published var fourthAnswer: String = ""
     @Published var fifthAnswer: String = ""
-    @Published var firstHappinessLevel: Int16 = 3
-    @Published var secondHappinessLevel: Int16 = 3
+    @Published var firstHappinessLevel: String = ""
+    @Published var secondHappinessLevel: String = ""
     
     var displayedDate: String {
         dateCreated.convertToDisplayedDate()
