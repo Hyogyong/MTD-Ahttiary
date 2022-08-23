@@ -28,6 +28,7 @@
 		8981172E28A6672000BAB3E2 /* GangwonEduAllBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8981172D28A6672000BAB3E2 /* GangwonEduAllBold.otf */; };
 		8981173028A6682B00BAB3E2 /* GangwonEduAllLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */; };
 		89D692E528A65EF700CD14AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D692E428A65EF700CD14AB /* Comment.swift */; };
+		F83BB7E228B4F1DB005F2D71 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E128B4F1DB005F2D71 /* Emotion.swift */; };
 		F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D0D28AA9C00008908CB /* ScreenSize.swift */; };
 		F8622D1728AA9C3B008908CB /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1128AA9C3B008908CB /* NSManagedObject.swift */; };
 		F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1228AA9C3B008908CB /* DraftNote.swift */; };
@@ -68,6 +69,7 @@
 		8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GangwonEduAllLight.otf; sourceTree = "<group>"; };
 		89CE3B6E28A6621000B3BE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89D692E428A65EF700CD14AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F83BB7E128B4F1DB005F2D71 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F8622D0D28AA9C00008908CB /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		F8622D1128AA9C3B008908CB /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		F8622D1228AA9C3B008908CB /* DraftNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				7AD34AC1288F947700E92B73 /* Model.swift */,
 				7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */,
 				89D692E428A65EF700CD14AB /* Comment.swift */,
+				F83BB7E128B4F1DB005F2D71 /* Emotion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */,
 				F8622D2628AA9C5F008908CB /* TemporaryListView.swift in Sources */,
+				F83BB7E228B4F1DB005F2D71 /* Emotion.swift in Sources */,
 				F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */,
 				7A17093C2898D4AF001E98D5 /* MainView.swift in Sources */,
 				F8622D2A28AAB38D008908CB /* Date.swift in Sources */,
