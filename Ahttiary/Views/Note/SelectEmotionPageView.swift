@@ -37,8 +37,39 @@ struct SelectEmotionPageView: View {
             }
             
             // Emotion Selecting Buttons
-            
-            Text("\(answer)")
+            HStack {
+                Button {
+                    answer = Emotion.anger.rawValue
+                } label: {
+                    Text("😡")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "anger" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.sad.rawValue
+                } label: {
+                    Text("😢")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "sad" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.tired.rawValue
+                } label: {
+                    Text("🫠")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "tired" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.worried.rawValue
+                } label: {
+                    Text("😮‍💨")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "worried" ? 1 : 0.5)
+            }
             
             HStack(spacing: 20) {
                 CustomButton("이전") {
@@ -63,7 +94,6 @@ struct SelectEmotionPageView: View {
                 } label: {
                     Image(systemName: "keyboard.chevron.compact.down")
                 }
-                
             }
         }
     }
