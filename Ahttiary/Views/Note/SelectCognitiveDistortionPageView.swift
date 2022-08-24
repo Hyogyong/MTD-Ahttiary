@@ -12,7 +12,7 @@ struct SelectCognitiveDistortionPageView: View {
     @ObservedObject var noteManager: NoteManager
     @Binding var answer: String
     
-    @ObservedObject var distortionCardManager: DistortionCardManager = DistortionCardManager()
+    @ObservedObject var distortionPageManager: DistortionPageManager = DistortionPageManager()
     
     var body: some View {
         ZStack {
@@ -38,33 +38,33 @@ struct SelectCognitiveDistortionPageView: View {
                 ScrollView {
                     VStack {
                         HStack {
-                            CognitiveDistortionCell(type: .polarizedThinking, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .polarizedThinking, answer: $answer, distortionPageManager: distortionPageManager)
                             
-                            CognitiveDistortionCell(type: .overgeneralization, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .overgeneralization, answer: $answer, distortionPageManager: distortionPageManager)
                         }
                         
                         HStack {
-                            CognitiveDistortionCell(type: .catastrophizing, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .catastrophizing, answer: $answer, distortionPageManager: distortionPageManager)
                             
-                            CognitiveDistortionCell(type: .personalization, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .personalization, answer: $answer, distortionPageManager: distortionPageManager)
                         }
                         
                         HStack {
-                            CognitiveDistortionCell(type: .mindReading, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .mindReading, answer: $answer, distortionPageManager: distortionPageManager)
                             
-                            CognitiveDistortionCell(type: .mentalFiltering, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .mentalFiltering, answer: $answer, distortionPageManager: distortionPageManager)
                         }
                         
                         HStack {
-                            CognitiveDistortionCell(type: .discountingThePositive, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .discountingThePositive, answer: $answer, distortionPageManager: distortionPageManager)
                             
-                            CognitiveDistortionCell(type: .shouldStatements, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .shouldStatements, answer: $answer, distortionPageManager: distortionPageManager)
                         }
                         
                         HStack {
-                            CognitiveDistortionCell(type: .emotionalReasoning, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .emotionalReasoning, answer: $answer, distortionPageManager: distortionPageManager)
                             
-                            CognitiveDistortionCell(type: .labeling, answer: $answer, distortionCardManager: distortionCardManager)
+                            CognitiveDistortionCell(type: .labeling, answer: $answer, distortionPageManager: distortionPageManager)
                         }
                     }
                 }
@@ -86,9 +86,9 @@ struct SelectCognitiveDistortionPageView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.Custom.background.ignoresSafeArea())
             
-            if distortionCardManager.isShowingDistortionCard {
+            if distortionPageManager.isShowingDistortionCard {
                 Color.black.opacity(0.2)
-                CognitiveDistortionCard(distortionCardManager: distortionCardManager)
+                CognitiveDistortionCard(distortionPageManager: distortionPageManager)
                     .frame(width: ScreenSize.distortionCardWidth, height: ScreenSize.distortionCardHeight, alignment: .center)
             }
         }

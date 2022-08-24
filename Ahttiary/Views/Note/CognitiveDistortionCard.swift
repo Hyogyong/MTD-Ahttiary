@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CognitiveDistortionCard: View {
     
-    @ObservedObject var distortionCardManager: DistortionCardManager
+    @ObservedObject var distortionPageManager: DistortionPageManager
     
     var body: some View {
         ZStack {
@@ -17,17 +17,17 @@ struct CognitiveDistortionCard: View {
                 .foregroundColor(Color.Custom.background)
             
             VStack {
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["name"]!)
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["name"]!)
                 
                 Image("ahttyHello")
                     .padding()
                 
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["description"]!)
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["description"]!)
                 
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["example"]!)
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["example"]!)
                 
                 CustomButton("확인") {
-                    distortionCardManager.isShowingDistortionCard = false
+                    distortionPageManager.isShowingDistortionCard = false
                 }
             }
             .font(.title)

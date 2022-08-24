@@ -10,7 +10,7 @@ import SwiftUI
 struct CognitiveDistortionCell: View {
     var type: CognitiveDistortionType
     @Binding var answer: String
-    @ObservedObject var distortionCardManager: DistortionCardManager
+    @ObservedObject var distortionPageManager: DistortionPageManager
     
     var body: some View {
         ZStack {
@@ -25,8 +25,8 @@ struct CognitiveDistortionCell: View {
                     Image(systemName: "info.circle")
                         .padding()
                         .onTapGesture {
-                            distortionCardManager.distortionCardType = type
-                            distortionCardManager.isShowingDistortionCard = true
+                            distortionPageManager.distortionCardType = type
+                            distortionPageManager.isShowingDistortionCard = true
                         }
                 }
                 

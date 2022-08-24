@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DistortionCardManager: ObservableObject {
+final class DistortionPageManager: ObservableObject {
     
     @Published var isShowingDistortionCard: Bool = false
     @Published var distortionCardType: CognitiveDistortionType = .polarizedThinking
