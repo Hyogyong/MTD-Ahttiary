@@ -34,8 +34,8 @@ final class MainViewManager: ObservableObject {
     
     func createNote(_ createdDate: Date = Date()) -> some View {
         print("🔥 해당 날짜로 다이어리가 생성됩니다: \(createdDate)")
-        let newNote = Note.getNewNote()
 
+        let newNote = Note.getNewNote()
         return WriteNoteView(note: newNote)
     }
     
