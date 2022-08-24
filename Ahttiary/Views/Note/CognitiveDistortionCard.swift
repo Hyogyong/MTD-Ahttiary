@@ -12,25 +12,31 @@ struct CognitiveDistortionCard: View {
     @ObservedObject var distortionPageManager: DistortionPageManager
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 30)
-                .foregroundColor(Color.Custom.background)
-            
-            VStack {
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["name"]!)
-                
-                Image("ahttyHello")
-                    .padding()
-                
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["description"]!)
-                
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["example"]!)
-                
-                CustomButton("확인") {
-                    distortionPageManager.isShowingDistortionCard = false
+        RoundedRectangle(cornerRadius: 30)
+            .foregroundColor(Color.Custom.background)
+            .frame(width: ScreenSize.fullWidth, height: ScreenSize.fullWidth * 1.4)
+            .overlay {
+                VStack {
+                    Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["name"]!)
+                        .font(.custom(Font.Custom.comment, size: 32))
+                        .padding(.top, 35)
+
+                    Image("ahttyHello")
+                        .padding()
+                    
+                    Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["description"]!)
+                        .font(.custom(Font.Custom.comment, size: 24))
+                        .padding()
+                    
+//                    Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["example"]!)
+                    
+                    Spacer()
+                    
+                    CustomButton("확인") { withAnimation { distortionPageManager.isShowingDistortionCard.toggle() } }
+                        .padding(.bottom)
                 }
             }
-            .font(.title)
-        }
-    }
-}
+            .scaleEffect(0.8)
+        
+    }// body
+}// CognitiveDistortionCard

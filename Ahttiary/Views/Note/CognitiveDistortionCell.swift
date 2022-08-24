@@ -13,32 +13,40 @@ struct CognitiveDistortionCell: View {
     @ObservedObject var distortionPageManager: DistortionPageManager
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(Color.white)
-                .border(type.rawValue == answer ? Color.Custom.carrotGreen : Color.clear, width: 4)
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Image(systemName: "info.circle")
-                        .padding()
-                        .onTapGesture {
-                            distortionPageManager.distortionCardType = type
-                            distortionPageManager.isShowingDistortionCard = true
+        RoundedRectangle(cornerRadius: 15)
+            .stroke(type.rawValue == answer ? Color.Custom.carrotGreen : Color.clear, lineWidth: 6)
+            .frame(maxWidth: .infinity, minHeight: 250, maxHeight: .infinity)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .overlay {
+                VStack {
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            withAnimation {
+                                distortionPageManager.distortionCardType = type
+                                distortionPageManager.isShowingDistortionCard.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.gray)
+                                .font(.title2)
                         }
+                    }
+                    .padding(.trailing)
+                    .padding(.top)
+                    
+                    Image("ahttyHello")
+                        .resizable()
+                    
+                    Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: type)["name"]!)
+                        .font(.custom(Font.Custom.calendarLight, size: 20))
+                        .padding(.vertical)
                 }
-                
-                Image("ahttyHello")
-                    .padding()
-                
-                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: type)["name"]!)
             }
-            .font(.title)
-        }
-        .onTapGesture {
-            answer = type.rawValue
-        }
-    }
-}
+            .scaleEffect(0.85)
+            .onTapGesture { withAnimation { answer = type.rawValue } }
+        
+    }// body
+}// CognitiveDistortionCell
