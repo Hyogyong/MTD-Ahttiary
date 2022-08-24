@@ -24,7 +24,7 @@ struct EndPageView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
                 
-                Text(noteManager.questionInPresentPage)
+                Text(noteManager.randomComments[noteManager.pageNumber])
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
