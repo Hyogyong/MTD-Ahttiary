@@ -8,12 +8,22 @@
 import SwiftUI
 
 extension Text {
+    
     // Text의 가로 간격을 최대화 합니다.
-    func expandHorizontally() -> some View {
-        self.frame(maxWidth: .infinity)
-            .padding(.top, 1)
-            .font(.system(size: 16, weight: .semibold))
-            .foregroundColor(Color.Custom.carrotGreen)
+    func weekDayViewModifier() -> some View {
+        modifier(WeekDayTextViewModifier())
     }
     
 }// Text
+
+struct WeekDayTextViewModifier: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity)
+            .font(.custom(Font.Custom.calendarBold, size: 20))
+            .foregroundColor(Color.Custom.carrotGreen)
+    }
+    
+}// WeekDayTextViewModifier
+
