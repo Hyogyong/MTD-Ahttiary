@@ -78,12 +78,12 @@ extension Note {
         PersistentStore.shared.saveContext()
     }
     
-    class func getNewNote() -> Note {
+    class func getNewNote(_ createdDate: Date = Date()) -> Note {
         let context = PersistentStore.shared.context
         let newNote = Note(context: context)
         
         newNote.id = UUID()
-        newNote.dateCreated = Date()
+        newNote.dateCreated = createdDate
         newNote.firstAnswer = ""
         newNote.secondAnswer = ""
         newNote.thirdAnswer = ""
