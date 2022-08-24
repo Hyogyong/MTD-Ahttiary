@@ -44,6 +44,12 @@ struct Comment {
     ]
     
     // 합리적 반응
+    static let cognitiveDistortionComment: [String] = [
+        "앞에서 적은 내용은 어떤 인지왜곡에 해당할까?",
+        "너의 생각에 드러난 인지 왜곡을 아래 항목 중에서 골라줘!"
+    ]
+    
+    // 합리적 반응
     static let rationalComment: [String] = [
         "아하. 그런 생각을 했구나. 그렇게 생각한 근거가 있다면 알려줄래?",
         "음. 그렇구나. 그것을 다르게 해석하는 방법은 없을까?",
