@@ -34,6 +34,14 @@ extension Note {
         get { fifthAnswer_ ?? "" }
         set { fifthAnswer_ = newValue }
     }
+    var firstEmotion: String {
+        get { firstEmotion_ ?? "" }
+        set { firstEmotion_ = newValue }
+    }
+    var secondEmotion: String {
+        get { secondEmotion_ ?? "" }
+        set { secondEmotion_ = newValue }
+    }
     
     // MARK: Fetch Request 모음
     class func allNotesFR() -> NSFetchRequest<Note> {
@@ -70,12 +78,12 @@ extension Note {
         PersistentStore.shared.saveContext()
     }
     
-    class func getNewNote() -> Note {
+    class func getNewNote(_ createdDate: Date = Date()) -> Note {
         let context = PersistentStore.shared.context
         let newNote = Note(context: context)
         
         newNote.id = UUID()
-        newNote.dateCreated = Date()
+        newNote.dateCreated = createdDate
         newNote.firstAnswer = ""
         newNote.secondAnswer = ""
         newNote.thirdAnswer = ""
@@ -112,5 +120,7 @@ extension Note {
         thirdAnswer_ = draftNote.thirdAnswer
         fourthAnswer_ = draftNote.fourthAnswer
         fifthAnswer_ = draftNote.fifthAnswer
+        firstEmotion_ = draftNote.firstEmotion
+        secondEmotion_ = draftNote.secondEmotion
     }
 }

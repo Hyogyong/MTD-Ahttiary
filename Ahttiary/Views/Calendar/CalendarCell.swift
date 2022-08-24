@@ -26,7 +26,7 @@ struct CalendarCell: View {
                     .foregroundColor(dateManager.verifySelectedDay(dayOfThisCell) ? Color.Custom.carrotGreen : .clear)
                 
                 Text(fetchMonthStruct().day())
-                    .font(.custom(Font.shared.calendarBold, size: 20))
+                    .font(.custom(Font.Custom.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
                         detectNoteData()
@@ -74,7 +74,9 @@ struct CalendarCell: View {
     private func detectNoteData() -> Bool {
         for note in notes {
             guard let dateCreated = note.dateCreated_ else { return false }
-            let createdDateOfNote = DateFormatter.convertToKoreanDate(date: dateCreated)
+
+            let createdDateOfNote = dateCreated.convertToDisplayedDate()
+
             var dateOfCell: String {
                 let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
                 let year = components.year!

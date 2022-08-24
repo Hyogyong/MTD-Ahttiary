@@ -27,7 +27,7 @@ struct MainView: View {
                 Spacer()
                 
                 Text(Comment.mainComment[Int.random(in: 0..<Comment.mainComment.count)])
-                    .font(.custom(Font.shared.comment, size: 20))
+                    .font(.custom(Font.Custom.comment, size: 20))
             }
             .padding(.horizontal, 36)
             .padding(.bottom, 90)
@@ -41,7 +41,7 @@ struct MainView: View {
                         .foregroundColor(Color.Custom.carrotGreen)
                     
                     Text(buttonText)
-                        .font(.custom(Font.shared.calendarBold, size: 20))
+                        .font(.custom(Font.Custom.calendarBold, size: 20))
                         .foregroundColor(.white)
                 }
                 .frame(minWidth: 250, maxHeight: 50)

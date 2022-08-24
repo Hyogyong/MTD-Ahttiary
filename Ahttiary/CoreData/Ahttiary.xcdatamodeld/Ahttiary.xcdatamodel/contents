@@ -4,12 +4,14 @@
         <attribute name="dateCreated_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="fifthAnswer_" optional="YES" attributeType="String"/>
         <attribute name="firstAnswer_" optional="YES" attributeType="String"/>
+        <attribute name="firstEmotion_" optional="YES" attributeType="String"/>
         <attribute name="fourthAnswer_" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="secondAnswer_" optional="YES" attributeType="String"/>
+        <attribute name="secondEmotion_" optional="YES" attributeType="String"/>
         <attribute name="thirdAnswer_" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Note" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>

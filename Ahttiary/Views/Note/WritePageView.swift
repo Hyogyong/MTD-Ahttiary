@@ -8,82 +8,72 @@
 import SwiftUI
 
 struct WritePageView: View {
-    
+
     @ObservedObject var noteManager: NoteManager
     @Binding var answer: String
-    
     @FocusState var isTextFieldsFocused: Bool
-    
+        
     var body: some View {
         VStack {
+            CustomNavigationBar(displayDate: Date())
+                .padding()
+            
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("AhttyWriter")
+                Image("ahttyHello")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
                 
-                Text(NoteManager.questions[noteManager.pageNumber])
+                Text(noteManager.randomComments[noteManager.pageNumber])
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
                     )
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .padding()
-            }
-            
-            HStack {
-                Text(DateFormatter.getKoreanDateInString())
-                
-                Spacer()
-                
-                Text("맑음")
+                    .frame(maxWidth: .infinity)
+                    .font(.custom(Font.Custom.comment, size: 20))
             }
             .padding(.horizontal)
-            .font(.callout)
-            .foregroundColor(.gray)
             
             // 노트 작성란
-            HStack {
-                TextEditor(text: $answer)
-                    .frame(
-                        height: ScreenSize.answerMessageBoxHeight
-                    )
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .padding()
-                    .focused($isTextFieldsFocused)
-            }
-            
-            HStack {
-                Button("이전") {
-                    noteManager.goToPreviousPage()
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(.white)
+                .overlay {
+                    TextEditor(text: $answer)
+                        .font(.custom(Font.Custom.comment, size: 20))
+                        .focused($isTextFieldsFocused)
+                        .accentColor(Color.Custom.carrotGreen)
+                        .padding()
                 }
-                
-                Button("다음") {
-                    noteManager.goToNextPage()
-                }
+                .padding()
+
+            // 페이지 전환 버튼
+            HStack(spacing: 20) {
+                CustomButton("이전") { noteManager.goToPreviousPage() }
+                CustomButton("다음") { noteManager.goToNextPage() }
+                .disabled(answer.isEmpty)
+                .opacity(answer.isEmpty ? 0.7 : 1)
             }
-            .buttonStyle(.bordered)
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                
-                Button {
-                    isTextFieldsFocused = false
-                } label: {
-                    Image(systemName: "keyboard.chevron.compact.down")
-                }
-                
-            }
-        }
-        .onAppear {
-            UITextView.appearance().backgroundColor = .clear
+        .onTapGesture { isTextFieldsFocused = false }
+        .onAppear { UITextView.appearance().backgroundColor = .clear }
+    }
+}
+
+/*
+.toolbar {
+    ToolbarItemGroup(placement: .keyboard) {
+        Spacer()
+        
+        Button {
+            isTextFieldsFocused = false
+        } label: {
+            Image(systemName: "keyboard.chevron.compact.down")
         }
     }
 }
+*/
