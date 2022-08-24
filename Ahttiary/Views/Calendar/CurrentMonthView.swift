@@ -26,7 +26,7 @@ struct CurrentMonthView: View {
 //            }
 
             Text(currentYearAndMonth)
-                .font(.custom(Font.shared.calendarBold, size: 22))
+                .font(.custom(Font.Custom.calendarBold, size: 22))
             
 //            Button {
 //                dateManager.fetchNextMonth()

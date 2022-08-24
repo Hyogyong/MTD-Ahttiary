@@ -16,6 +16,8 @@
 		7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */; };
 		7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */; };
 		7A3BA30E289C0FD0002ABB95 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */; };
+		7A3EFE1F28B6387C0061239D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */; };
+		7A3EFE2128B651780061239D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3EFE2028B651780061239D /* Poppins-Regular.ttf */; };
 		7AAE399328A370A4002529C1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE399228A370A4002529C1 /* Color.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
@@ -55,6 +57,8 @@
 		7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		7A3EFE2028B651780061239D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7AAE399228A370A4002529C1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* Ahttiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahttiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				F8622D1E28AA9C56008908CB /* Note */,
 				7AD34AAE288F932E00E92B73 /* ContentView.swift */,
 				7A17093B2898D4AF001E98D5 /* MainView.swift */,
+				7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				8981172928A664B200BAB3E2 /* AhttyComment.ttf */,
 				8981172D28A6672000BAB3E2 /* GangwonEduAllBold.otf */,
 				8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */,
+				7A3EFE2028B651780061239D /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				7AD34AB4288F933000E92B73 /* Preview Assets.xcassets in Resources */,
 				8981173028A6682B00BAB3E2 /* GangwonEduAllLight.otf in Resources */,
 				8981172E28A6672000BAB3E2 /* GangwonEduAllBold.otf in Resources */,
+				7A3EFE2128B651780061239D /* Poppins-Regular.ttf in Resources */,
 				8981172A28A664B200BAB3E2 /* AhttyComment.ttf in Resources */,
 				7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */,
 			);
@@ -322,6 +329,7 @@
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
 				F8622D2828AA9C5F008908CB /* WritePageView.swift in Sources */,
 				7A3BA308289C0938002ABB95 /* Text.swift in Sources */,
+				7A3EFE1F28B6387C0061239D /* CustomNavigationBar.swift in Sources */,
 				7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */,
 				F8622D1A28AA9C3B008908CB /* Ahttiary.xcdatamodeld in Sources */,
 				7A3BA305289C037A002ABB95 /* DateGridView.swift in Sources */,
@@ -468,8 +476,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,8 +507,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +519,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
