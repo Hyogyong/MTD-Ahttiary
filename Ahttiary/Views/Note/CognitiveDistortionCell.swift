@@ -10,6 +10,7 @@ import SwiftUI
 struct CognitiveDistortionCell: View {
     var type: CognitiveDistortionType
     @Binding var answer: String
+    @ObservedObject var distortionCardManager: DistortionCardManager
     
     var body: some View {
         ZStack {
@@ -23,6 +24,10 @@ struct CognitiveDistortionCell: View {
                     
                     Image(systemName: "info.circle")
                         .padding()
+                        .onTapGesture {
+                            distortionCardManager.distortionCardType = type
+                            distortionCardManager.isShowingDistortionCard = true
+                        }
                 }
                 
                 Image("ahttyHello")
@@ -35,11 +40,5 @@ struct CognitiveDistortionCell: View {
         .onTapGesture {
             answer = type.rawValue
         }
-    }
-}
-
-struct CognitiveDistortionCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CognitiveDistortionCell(type: CognitiveDistortionType.polarizedThinking, answer: .constant("polarizedThinking"))
     }
 }
