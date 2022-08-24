@@ -30,7 +30,7 @@ struct SelectCognitiveDistortionPageView: View {
                             alignment: .center
                         )
                         .background(Color.Custom.background)
-                        .font(.custom(Font.shared.comment, size: 20))
+                        .font(.custom(Font.Custom.comment, size: 20))
                         .padding()
                 }
                 
