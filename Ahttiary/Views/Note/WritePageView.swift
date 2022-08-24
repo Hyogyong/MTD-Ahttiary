@@ -23,7 +23,7 @@ struct WritePageView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
                 
-                Text(NoteManager.questions[noteManager.pageNumber])
+                Text(NoteManager.getRandomCommentOfCurrentPage(pageNumber: noteManager.pageNumber))
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center

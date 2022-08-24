@@ -20,7 +20,7 @@ struct SelectEmotionPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Text(noteManager.questionInPresentPage)
+                Text(NoteManager.getRandomCommentOfCurrentPage(pageNumber: noteManager.pageNumber))
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
                         alignment: .center
