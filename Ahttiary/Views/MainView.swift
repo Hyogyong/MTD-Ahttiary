@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var mainViewManager: MainViewManager
+    var buttonText: String {
+        if mainViewManager.note == nil { return "감정기록 시작하기" }
+        return "감정 읽기"
+    }
+    
     var body: some View {
         VStack {
             CalendarView()
@@ -20,20 +26,21 @@ struct MainView: View {
                 
                 Spacer()
                 
-                Text(Comment.shared.mainComment[Int.random(in: 0..<Comment.shared.mainComment.count)])
+                Text(Comment.mainComment[Int.random(in: 0..<Comment.mainComment.count)])
                     .font(.custom(Font.shared.comment, size: 20))
             }
             .padding(.horizontal, 36)
             .padding(.bottom, 90)
             
             Button {
-                print("Hello")
+                if mainViewManager.note == nil { mainViewManager.goToWritingView() }
+                else { mainViewManager.goToReadingView() }
             } label: {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(Color.Custom.carrotGreen)
                     
-                    Text("감정기록 시작하기")
+                    Text(buttonText)
                         .font(.custom(Font.shared.calendarBold, size: 20))
                         .foregroundColor(.white)
                 }
