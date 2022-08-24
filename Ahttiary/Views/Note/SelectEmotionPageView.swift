@@ -1,13 +1,13 @@
 //
-//  WritePageView.swift
+//  SelectHappinessLevelPageView.swift
 //  Ahttiary
 //
-//  Created by 임성균 on 2022/08/03.
+//  Created by 임성균 on 2022/08/06.
 //
 
 import SwiftUI
 
-struct WritePageView: View {
+struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @Binding var answer: String
@@ -16,13 +16,10 @@ struct WritePageView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("ahttyHello")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: ScreenSize.ahttyWriterWidth)
-                
                 Text(noteManager.randomComments[noteManager.pageNumber])
                     .frame(
                         height: ScreenSize.questionMessageBoxHeight,
@@ -31,19 +28,47 @@ struct WritePageView: View {
                     .background(Color.Custom.background)
                     .font(.custom(Font.shared.comment, size: 20))
                     .padding()
+                
+                Image("ahttyHello")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: ScreenSize.ahttyWriterWidth)
+                    .scaleEffect(CGSize(width: -1.0, height: 1.0))
             }
             
-            // 노트 작성란
+            // Emotion Selecting Buttons
             HStack {
-                TextEditor(text: $answer)
-                    .frame(
-                        height: ScreenSize.answerMessageBoxHeight
-                    )
-                    .background(Color.white)
-                    .font(.custom(Font.shared.comment, size: 20))
-                    .cornerRadius(15)
-                    .padding()
-                    .focused($isTextFieldsFocused)
+                Button {
+                    answer = Emotion.anger.rawValue
+                } label: {
+                    Text("😡")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "anger" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.sad.rawValue
+                } label: {
+                    Text("😢")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "sad" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.tired.rawValue
+                } label: {
+                    Text("🫠")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "tired" ? 1 : 0.5)
+                
+                Button {
+                    answer = Emotion.worried.rawValue
+                } label: {
+                    Text("😮‍💨")
+                        .font(.largeTitle)
+                }
+                .opacity(answer == "worried" ? 1 : 0.5)
             }
             
             HStack(spacing: 20) {
@@ -51,7 +76,7 @@ struct WritePageView: View {
                     noteManager.goToPreviousPage()
                 }
                 
-                CustomButton("다음") {
+                CustomButton("선택 완료") {
                     noteManager.goToNextPage()
                 }
                 .disabled(answer.isEmpty)
@@ -71,11 +96,7 @@ struct WritePageView: View {
                 } label: {
                     Image(systemName: "keyboard.chevron.compact.down")
                 }
-                
             }
-        }
-        .onAppear {
-            UITextView.appearance().backgroundColor = .clear
         }
     }
 }

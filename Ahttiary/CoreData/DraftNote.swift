@@ -16,8 +16,8 @@ class DraftNote: ObservableObject {
     @Published var thirdAnswer: String = ""
     @Published var fourthAnswer: String = ""
     @Published var fifthAnswer: String = ""
-    @Published var firstHappinessLevel: Int16 = 3
-    @Published var secondHappinessLevel: Int16 = 3
+    @Published var firstEmotion: String = ""
+    @Published var secondEmotion: String = ""
     
     var displayedDate: String {
         dateCreated.convertToDisplayedDate()
@@ -31,8 +31,8 @@ class DraftNote: ObservableObject {
         thirdAnswer = note.thirdAnswer
         fourthAnswer = note.fourthAnswer
         fifthAnswer = note.fifthAnswer
-        firstHappinessLevel = note.firstHappinessLevel
-        secondHappinessLevel = note.secondHappinessLevel
+        firstEmotion = note.firstEmotion
+        secondEmotion = note.secondEmotion
     }
     
     var associatedNote: Note { Note.object(withID: id!)! }

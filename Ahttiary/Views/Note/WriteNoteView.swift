@@ -29,7 +29,7 @@ struct WriteNoteView: View {
                 .tag(1)
             
             // 첫 번째 감정 체크
-            SelectHappinessLevelPageView(noteManager: noteManager, answer: $draftNote.firstHappinessLevel)
+            SelectEmotionPageView(noteManager: noteManager, answer: $draftNote.firstEmotion)
                 .tag(2)
             
             // 자동적 사고 기술
@@ -45,7 +45,7 @@ struct WriteNoteView: View {
                 .tag(5)
             
             // 두 번째 감정 체크
-            SelectHappinessLevelPageView(noteManager: noteManager, answer: $draftNote.secondHappinessLevel)
+            SelectEmotionPageView(noteManager: noteManager, answer: $draftNote.secondEmotion)
                 .tag(6)
             
             // 마지막 페이지(내일도 즐거운 하루 보내자!)
