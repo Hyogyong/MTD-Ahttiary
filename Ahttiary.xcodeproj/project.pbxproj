@@ -33,6 +33,7 @@
 		F83BB7E828B60B20005F2D71 /* CognitiveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E728B60B20005F2D71 /* CognitiveDistortion.swift */; };
 		F83BB7EA28B60E46005F2D71 /* CognitiveDistortionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E928B60E46005F2D71 /* CognitiveDistortionCell.swift */; };
 		F83BB7EC28B60F53005F2D71 /* CognitiveDistortionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7EB28B60F53005F2D71 /* CognitiveDistortionCard.swift */; };
+		F83BB7EE28B63EF9005F2D71 /* DistortionCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7ED28B63EF9005F2D71 /* DistortionCardManager.swift */; };
 		F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D0D28AA9C00008908CB /* ScreenSize.swift */; };
 		F8622D1728AA9C3B008908CB /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1128AA9C3B008908CB /* NSManagedObject.swift */; };
 		F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1228AA9C3B008908CB /* DraftNote.swift */; };
@@ -78,6 +79,7 @@
 		F83BB7E728B60B20005F2D71 /* CognitiveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortion.swift; sourceTree = "<group>"; };
 		F83BB7E928B60E46005F2D71 /* CognitiveDistortionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortionCell.swift; sourceTree = "<group>"; };
 		F83BB7EB28B60F53005F2D71 /* CognitiveDistortionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortionCard.swift; sourceTree = "<group>"; };
+		F83BB7ED28B63EF9005F2D71 /* DistortionCardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionCardManager.swift; sourceTree = "<group>"; };
 		F8622D0D28AA9C00008908CB /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		F8622D1128AA9C3B008908CB /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		F8622D1228AA9C3B008908CB /* DraftNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */,
 				F8622D1C28AA9C4D008908CB /* NoteManager.swift */,
 				8906A86B28ADE19400C1E254 /* MainViewManager.swift */,
+				F83BB7ED28B63EF9005F2D71 /* DistortionCardManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				F8622D2428AA9C5F008908CB /* SelectEmotionPageView.swift in Sources */,
 				F8622D2528AA9C5F008908CB /* EndPageView.swift in Sources */,
 				8981172C28A6663200BAB3E2 /* Font.swift in Sources */,
+				F83BB7EE28B63EF9005F2D71 /* DistortionCardManager.swift in Sources */,
 				7A17093A2898D466001E98D5 /* CalendarView.swift in Sources */,
 				F8622D2728AA9C5F008908CB /* WriteNoteView.swift in Sources */,
 				F83BB7EC28B60F53005F2D71 /* CognitiveDistortionCard.swift in Sources */,
