@@ -54,6 +54,8 @@ struct WritePageView: View {
                 CustomButton("다음") {
                     noteManager.goToNextPage()
                 }
+                .disabled(answer.isEmpty)
+                .opacity(answer.isEmpty ? 0.7 : 1)
             }
             
             Spacer()

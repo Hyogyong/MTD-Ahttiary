@@ -79,6 +79,8 @@ struct SelectEmotionPageView: View {
                 CustomButton("선택 완료") {
                     noteManager.goToNextPage()
                 }
+                .disabled(answer.isEmpty)
+                .opacity(answer.isEmpty ? 0.7 : 1)
             }
             
             Spacer()
