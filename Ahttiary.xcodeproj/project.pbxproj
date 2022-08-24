@@ -16,6 +16,8 @@
 		7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */; };
 		7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */; };
 		7A3BA30E289C0FD0002ABB95 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */; };
+		7A3EFE1F28B6387C0061239D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */; };
+		7A3EFE2128B651780061239D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3EFE2028B651780061239D /* Poppins-Regular.ttf */; };
 		7AAE399328A370A4002529C1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE399228A370A4002529C1 /* Color.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
@@ -29,6 +31,11 @@
 		8981173028A6682B00BAB3E2 /* GangwonEduAllLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */; };
 		89D692E528A65EF700CD14AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D692E428A65EF700CD14AB /* Comment.swift */; };
 		F83BB7E228B4F1DB005F2D71 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E128B4F1DB005F2D71 /* Emotion.swift */; };
+		F83BB7E628B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */; };
+		F83BB7E828B60B20005F2D71 /* CognitiveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E728B60B20005F2D71 /* CognitiveDistortion.swift */; };
+		F83BB7EA28B60E46005F2D71 /* CognitiveDistortionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E928B60E46005F2D71 /* CognitiveDistortionCell.swift */; };
+		F83BB7EC28B60F53005F2D71 /* CognitiveDistortionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7EB28B60F53005F2D71 /* CognitiveDistortionCard.swift */; };
+		F83BB7EE28B63EF9005F2D71 /* DistortionPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7ED28B63EF9005F2D71 /* DistortionPageManager.swift */; };
 		F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D0D28AA9C00008908CB /* ScreenSize.swift */; };
 		F8622D1728AA9C3B008908CB /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1128AA9C3B008908CB /* NSManagedObject.swift */; };
 		F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1228AA9C3B008908CB /* DraftNote.swift */; };
@@ -55,6 +62,8 @@
 		7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		7A3BA30B289C0EF2002ABB95 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		7A3EFE2028B651780061239D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7AAE399228A370A4002529C1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* Ahttiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahttiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
@@ -70,6 +79,11 @@
 		89CE3B6E28A6621000B3BE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89D692E428A65EF700CD14AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F83BB7E128B4F1DB005F2D71 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCognitiveDistortionPageView.swift; sourceTree = "<group>"; };
+		F83BB7E728B60B20005F2D71 /* CognitiveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortion.swift; sourceTree = "<group>"; };
+		F83BB7E928B60E46005F2D71 /* CognitiveDistortionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortionCell.swift; sourceTree = "<group>"; };
+		F83BB7EB28B60F53005F2D71 /* CognitiveDistortionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitiveDistortionCard.swift; sourceTree = "<group>"; };
+		F83BB7ED28B63EF9005F2D71 /* DistortionPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionPageManager.swift; sourceTree = "<group>"; };
 		F8622D0D28AA9C00008908CB /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		F8622D1128AA9C3B008908CB /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		F8622D1228AA9C3B008908CB /* DraftNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 				7A3BA309289C0B9B002ABB95 /* CalendarViewModel.swift */,
 				F8622D1C28AA9C4D008908CB /* NoteManager.swift */,
 				8906A86B28ADE19400C1E254 /* MainViewManager.swift */,
+				F83BB7ED28B63EF9005F2D71 /* DistortionPageManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,6 +193,7 @@
 				7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */,
 				89D692E428A65EF700CD14AB /* Comment.swift */,
 				F83BB7E128B4F1DB005F2D71 /* Emotion.swift */,
+				F83BB7E728B60B20005F2D71 /* CognitiveDistortion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +205,7 @@
 				F8622D1E28AA9C56008908CB /* Note */,
 				7AD34AAE288F932E00E92B73 /* ContentView.swift */,
 				7A17093B2898D4AF001E98D5 /* MainView.swift */,
+				7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +217,7 @@
 				8981172928A664B200BAB3E2 /* AhttyComment.ttf */,
 				8981172D28A6672000BAB3E2 /* GangwonEduAllBold.otf */,
 				8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */,
+				7A3EFE2028B651780061239D /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -219,6 +237,9 @@
 		F8622D1E28AA9C56008908CB /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */,
+				F83BB7E928B60E46005F2D71 /* CognitiveDistortionCell.swift */,
+				F83BB7EB28B60F53005F2D71 /* CognitiveDistortionCard.swift */,
 				F8622D1F28AA9C5F008908CB /* SelectEmotionPageView.swift */,
 				F8622D2028AA9C5F008908CB /* EndPageView.swift */,
 				F8622D2128AA9C5F008908CB /* TemporaryListView.swift */,
@@ -290,6 +311,7 @@
 				7AD34AB4288F933000E92B73 /* Preview Assets.xcassets in Resources */,
 				8981173028A6682B00BAB3E2 /* GangwonEduAllLight.otf in Resources */,
 				8981172E28A6672000BAB3E2 /* GangwonEduAllBold.otf in Resources */,
+				7A3EFE2128B651780061239D /* Poppins-Regular.ttf in Resources */,
 				8981172A28A664B200BAB3E2 /* AhttyComment.ttf in Resources */,
 				7AD34AB1288F933000E92B73 /* Assets.xcassets in Resources */,
 			);
@@ -303,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1709352898D309001E98D5 /* DateViewModel.swift in Sources */,
+				F83BB7EA28B60E46005F2D71 /* CognitiveDistortionCell.swift in Sources */,
 				F8622D2628AA9C5F008908CB /* TemporaryListView.swift in Sources */,
 				F83BB7E228B4F1DB005F2D71 /* Emotion.swift in Sources */,
 				F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */,
@@ -311,17 +334,22 @@
 				F8622D2428AA9C5F008908CB /* SelectEmotionPageView.swift in Sources */,
 				F8622D2528AA9C5F008908CB /* EndPageView.swift in Sources */,
 				8981172C28A6663200BAB3E2 /* Font.swift in Sources */,
+				F83BB7EE28B63EF9005F2D71 /* DistortionPageManager.swift in Sources */,
 				7A17093A2898D466001E98D5 /* CalendarView.swift in Sources */,
 				F8622D2728AA9C5F008908CB /* WriteNoteView.swift in Sources */,
+				F83BB7EC28B60F53005F2D71 /* CognitiveDistortionCard.swift in Sources */,
 				89D692E528A65EF700CD14AB /* Comment.swift in Sources */,
 				7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */,
 				F8622D1B28AA9C3B008908CB /* PersistentStore.swift in Sources */,
 				7AAE399328A370A4002529C1 /* Color.swift in Sources */,
 				F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */,
+				F83BB7E628B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift in Sources */,
 				F8622D1D28AA9C4D008908CB /* NoteManager.swift in Sources */,
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
 				F8622D2828AA9C5F008908CB /* WritePageView.swift in Sources */,
 				7A3BA308289C0938002ABB95 /* Text.swift in Sources */,
+				F83BB7E828B60B20005F2D71 /* CognitiveDistortion.swift in Sources */,
+				7A3EFE1F28B6387C0061239D /* CustomNavigationBar.swift in Sources */,
 				7A3BA30C289C0EF2002ABB95 /* CalendarCell.swift in Sources */,
 				F8622D1A28AA9C3B008908CB /* Ahttiary.xcdatamodeld in Sources */,
 				7A3BA305289C037A002ABB95 /* DateGridView.swift in Sources */,
@@ -468,8 +496,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,8 +527,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +539,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

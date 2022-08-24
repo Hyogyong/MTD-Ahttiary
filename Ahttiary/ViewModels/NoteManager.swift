@@ -42,37 +42,6 @@ final class NoteManager: ObservableObject {
         ]
     }
     
-//    static func getRandomCommentOfCurrentPage(pageNumber: Int) -> String {
-//        switch pageNumber {
-//        case 0: // 상황 기술
-//            return Comment.situationComment.randomElement()!
-//            
-//        case 1: // 정서 기술
-//            return Comment.sentimentComment.randomElement()!
-//            
-//        case 2: // 첫 번째 감정 선택
-//            return Comment.selectEmoticonComment
-//            
-//        case 3: // 자동적 사고
-//            return Comment.unconsciousnessComment.randomElement()!
-//            
-//        case 4: // 인지 왜곡 선택
-//            return Comment.cognitiveDistortionComment.randomElement()!
-//            
-//        case 5: // 합리적 반응
-//            return Comment.rationalComment.randomElement()!
-//            
-//        case 6: // 두 번째 감정 선택
-//            return Comment.selectEmoticonComment
-//            
-//        case 7: // 결과
-//            return Comment.resultComment.randomElement()!
-//            
-//        default:
-//            return ""
-//        }
-//    }
-    
     func goToNextPage() {
         if pageNumber != lastPageNumber {
             pageNumber += 1

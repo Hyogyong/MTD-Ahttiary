@@ -8,10 +8,12 @@
 import Foundation
 
 struct Font {
-    static let shared = Font()
-    let comment = "나눔손글씨 힘내라는 말보단"
-    let calendarBold = "GangwonEduAll-OTFBold"
-    let calendarLight = "GangwonEduAll-OTFLight"
+    enum Custom {
+        static let comment = "나눔손글씨 힘내라는 말보단"
+        static let calendarBold = "GangwonEduAll-OTFBold"
+        static let calendarLight = "GangwonEduAll-OTFLight"
+//        static let weekDay = "Poppins-Regular"
+    }
 }
 
 // 폰트가 적용되지 않는 경우 해당 Text에 아래 내용을 적용한 후

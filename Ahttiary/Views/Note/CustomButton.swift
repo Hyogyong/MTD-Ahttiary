@@ -25,7 +25,7 @@ struct CustomButton: View {
                     .foregroundColor(Color.Custom.carrotGreen)
                 
                 Text(title)
-                    .font(.custom(Font.shared.calendarBold, size: 20))
+                    .font(.custom(Font.Custom.calendarBold, size: 20))
                     .foregroundColor(.white)
             }
             .frame(maxWidth: 120, maxHeight: 50)

@@ -31,16 +31,13 @@ struct DateGridView: View {
     
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
-            Group {
-                Text("일").expandHorizontally()
-                Text("월").expandHorizontally()
-                Text("화").expandHorizontally()
-                Text("수").expandHorizontally()
-                Text("목").expandHorizontally()
-                Text("금").expandHorizontally()
-                Text("토").expandHorizontally()
-            }
-            .font(.custom(Font.shared.calendarBold, size: 20))
+            Text("일").weekDayViewModifier()
+            Text("월").weekDayViewModifier()
+            Text("화").weekDayViewModifier()
+            Text("수").weekDayViewModifier()
+            Text("목").weekDayViewModifier()
+            Text("금").weekDayViewModifier()
+            Text("토").weekDayViewModifier()
         }
     }// dayOfWeek
     
