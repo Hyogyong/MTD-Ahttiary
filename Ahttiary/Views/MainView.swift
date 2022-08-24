@@ -26,7 +26,7 @@ struct MainView: View {
                 
                 Spacer()
                 
-                Text(Comment.shared.mainComment[Int.random(in: 0..<Comment.shared.mainComment.count)])
+                Text(Comment.mainComment[Int.random(in: 0..<Comment.mainComment.count)])
                     .font(.custom(Font.shared.comment, size: 20))
             }
             .padding(.horizontal, 36)
