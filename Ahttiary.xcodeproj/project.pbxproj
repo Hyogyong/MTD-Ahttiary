@@ -28,6 +28,7 @@
 		8981172E28A6672000BAB3E2 /* GangwonEduAllBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8981172D28A6672000BAB3E2 /* GangwonEduAllBold.otf */; };
 		8981173028A6682B00BAB3E2 /* GangwonEduAllLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */; };
 		89D692E528A65EF700CD14AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D692E428A65EF700CD14AB /* Comment.swift */; };
+		F83BB7E628B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */; };
 		F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D0D28AA9C00008908CB /* ScreenSize.swift */; };
 		F8622D1728AA9C3B008908CB /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1128AA9C3B008908CB /* NSManagedObject.swift */; };
 		F8622D1828AA9C3B008908CB /* DraftNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8622D1228AA9C3B008908CB /* DraftNote.swift */; };
@@ -68,6 +69,7 @@
 		8981172F28A6682B00BAB3E2 /* GangwonEduAllLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GangwonEduAllLight.otf; sourceTree = "<group>"; };
 		89CE3B6E28A6621000B3BE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89D692E428A65EF700CD14AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCognitiveDistortionPageView.swift; sourceTree = "<group>"; };
 		F8622D0D28AA9C00008908CB /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		F8622D1128AA9C3B008908CB /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		F8622D1228AA9C3B008908CB /* DraftNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftNote.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F8622D1F28AA9C5F008908CB /* SelectHappinessLevelPageView.swift */,
+				F83BB7E528B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift */,
 				F8622D2028AA9C5F008908CB /* EndPageView.swift */,
 				F8622D2128AA9C5F008908CB /* TemporaryListView.swift */,
 				F8622D2228AA9C5F008908CB /* WriteNoteView.swift */,
@@ -314,6 +317,7 @@
 				F8622D1B28AA9C3B008908CB /* PersistentStore.swift in Sources */,
 				7AAE399328A370A4002529C1 /* Color.swift in Sources */,
 				F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */,
+				F83BB7E628B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift in Sources */,
 				F8622D1D28AA9C4D008908CB /* NoteManager.swift in Sources */,
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
 				F8622D2828AA9C5F008908CB /* WritePageView.swift in Sources */,
