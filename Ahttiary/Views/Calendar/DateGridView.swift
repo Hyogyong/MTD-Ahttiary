@@ -40,7 +40,7 @@ struct DateGridView: View {
                 Text("금").expandHorizontally()
                 Text("토").expandHorizontally()
             }
-            .font(.custom(Font.shared.calendarBold, size: 20))
+            .font(.custom(Font.calendarBold, size: 20))
         }
     }// dayOfWeek
     

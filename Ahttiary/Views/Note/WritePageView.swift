@@ -29,7 +29,7 @@ struct WritePageView: View {
                         alignment: .center
                     )
                     .background(Color.Custom.background)
-                    .font(.custom(Font.shared.comment, size: 20))
+                    .font(.custom(Font.comment, size: 20))
                     .padding()
             }
             
@@ -40,7 +40,7 @@ struct WritePageView: View {
                         height: ScreenSize.answerMessageBoxHeight
                     )
                     .background(Color.white)
-                    .font(.custom(Font.shared.comment, size: 20))
+                    .font(.custom(Font.comment, size: 20))
                     .cornerRadius(15)
                     .padding()
                     .focused($isTextFieldsFocused)

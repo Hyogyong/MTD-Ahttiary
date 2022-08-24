@@ -26,7 +26,7 @@ struct CalendarCell: View {
                     .foregroundColor(dateManager.verifySelectedDay(dayOfThisCell) ? Color.Custom.carrotGreen : .clear)
                 
                 Text(fetchMonthStruct().day())
-                    .font(.custom(Font.shared.calendarBold, size: 20))
+                    .font(.custom(Font.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
                         detectNoteData()

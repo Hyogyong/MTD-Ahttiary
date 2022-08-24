@@ -38,7 +38,7 @@ struct SelectHappinessLevelPageView: View {
                         alignment: .center
                     )
                     .background(Color.Custom.background)
-                    .font(.custom(Font.shared.comment, size: 20))
+                    .font(.custom(Font.comment, size: 20))
                     .padding()
             }
             
