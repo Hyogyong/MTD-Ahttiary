@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct CognitiveDistortionCard: View {
+    
+    @ObservedObject var distortionCardManager: DistortionCardManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct CognitiveDistortionCard_Previews: PreviewProvider {
-    static var previews: some View {
-        CognitiveDistortionCard()
+        ZStack {
+            RoundedRectangle(cornerRadius: 30)
+                .foregroundColor(Color.Custom.background)
+            
+            VStack {
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["name"]!)
+                
+                Image("ahttyHello")
+                    .padding()
+                
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["description"]!)
+                
+                Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionCardManager.distortionCardType)["example"]!)
+                
+                CustomButton("확인") {
+                    distortionCardManager.isShowingDistortionCard = false
+                }
+            }
+            .font(.title)
+        }
     }
 }
