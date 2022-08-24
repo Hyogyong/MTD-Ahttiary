@@ -8,6 +8,19 @@
 import Foundation
 
 struct CognitiveDistortion {
+    static let types: [CognitiveDistortionType] = [
+        .polarizedThinking,
+        .overgeneralization,
+        .catastrophizing,
+        .personalization,
+        .mindReading,
+        .mentalFiltering,
+        .discountingThePositive,
+        .shouldStatements,
+        .emotionalReasoning,
+        .labeling
+    ]
+    
     static func getDiscriptionAndExample(cognitiveDistortionType: CognitiveDistortionType) -> [String: String] {
         switch cognitiveDistortionType {
         case .polarizedThinking:

@@ -13,6 +13,7 @@ struct SelectCognitiveDistortionPageView: View {
     @Binding var answer: String
     
     @ObservedObject var distortionPageManager: DistortionPageManager = DistortionPageManager()
+    var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ZStack {
@@ -35,40 +36,22 @@ struct SelectCognitiveDistortionPageView: View {
                 }
                 
                 // Emotion Selecting Buttons
-                ScrollView {
-                    VStack {
-                        HStack {
-                            CognitiveDistortionCell(type: .polarizedThinking, answer: $answer, distortionPageManager: distortionPageManager)
-                            
-                            CognitiveDistortionCell(type: .overgeneralization, answer: $answer, distortionPageManager: distortionPageManager)
-                        }
-                        
-                        HStack {
-                            CognitiveDistortionCell(type: .catastrophizing, answer: $answer, distortionPageManager: distortionPageManager)
-                            
-                            CognitiveDistortionCell(type: .personalization, answer: $answer, distortionPageManager: distortionPageManager)
-                        }
-                        
-                        HStack {
-                            CognitiveDistortionCell(type: .mindReading, answer: $answer, distortionPageManager: distortionPageManager)
-                            
-                            CognitiveDistortionCell(type: .mentalFiltering, answer: $answer, distortionPageManager: distortionPageManager)
-                        }
-                        
-                        HStack {
-                            CognitiveDistortionCell(type: .discountingThePositive, answer: $answer, distortionPageManager: distortionPageManager)
-                            
-                            CognitiveDistortionCell(type: .shouldStatements, answer: $answer, distortionPageManager: distortionPageManager)
-                        }
-                        
-                        HStack {
-                            CognitiveDistortionCell(type: .emotionalReasoning, answer: $answer, distortionPageManager: distortionPageManager)
-                            
-                            CognitiveDistortionCell(type: .labeling, answer: $answer, distortionPageManager: distortionPageManager)
-                        }
-                    }
-                }
+                ScrollView (showsIndicators: false) {
+                    LazyVGrid(columns: gridItemLayout) {
+                        ForEach(CognitiveDistortion.types, id: \.self) { type in
+                            CognitiveDistortionCell(
+                                type: type,
+                                answer: $answer,
+                                distortionPageManager: distortionPageManager
+                            )
+                        }// ForEach
+                    }// LazyVGrid
+                }// ScrollView
+                .padding(.horizontal, 10)
                 
+                Spacer()
+                
+                // 화면 전환 버튼
                 HStack(spacing: 20) {
                     CustomButton("이전") {
                         noteManager.goToPreviousPage()
@@ -81,16 +64,20 @@ struct SelectCognitiveDistortionPageView: View {
                     .opacity(answer.isEmpty ? 0.7 : 1)
                 }
                 
-                Spacer()
+
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.Custom.background.ignoresSafeArea())
             
+            
+            // 유형 설명 모달
             if distortionPageManager.isShowingDistortionCard {
                 Color.black.opacity(0.2)
+                    .ignoresSafeArea()
                 CognitiveDistortionCard(distortionPageManager: distortionPageManager)
                     .frame(width: ScreenSize.distortionCardWidth, height: ScreenSize.distortionCardHeight, alignment: .center)
             }
-        }
-    }
-}
+            
+        }// VStack
+    }// body
+}// SelectCognitiveDistortionPageView
