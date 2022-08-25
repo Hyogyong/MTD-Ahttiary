@@ -74,7 +74,7 @@ struct CalendarCell: View {
     private func detectNoteData() -> Bool {
         for note in notes {
             guard let dateCreated = note.dateCreated_ else { return false }
-            let createdDateOfNote = dateCreated.convertToDisplayedDate()
+            let createdDateOfNote = dateCreated.convertToDetailedDate()
             var dateOfCell: String {
                 let components = Calendar.current.dateComponents([.year, .month], from: dateManager.date)
                 let year = components.year!
