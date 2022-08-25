@@ -13,6 +13,8 @@ struct WritePageView: View {
     @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
+    
+    let imageName: String
         
     var body: some View {
         VStack {
@@ -21,7 +23,7 @@ struct WritePageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("ahttyHello")
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)

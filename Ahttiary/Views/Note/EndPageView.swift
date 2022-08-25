@@ -11,6 +11,7 @@ struct EndPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @EnvironmentObject var mainViewModel: MainViewManager
+    let imageName: String
     
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct EndPageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("ahttyHello")
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)

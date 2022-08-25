@@ -11,8 +11,9 @@ struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @Binding var answer: String
-    
     @FocusState var isTextFieldsFocused: Bool
+    
+    let imageName: String
     
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct SelectEmotionPageView: View {
                     .font(.custom(Font.Custom.comment, size: 20))
                     .padding()
                 
-                Image("ahttyHello")
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
