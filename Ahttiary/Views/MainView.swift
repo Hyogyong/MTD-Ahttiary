@@ -35,9 +35,8 @@ struct MainView: View {
                 .padding(.vertical)
             
             HStack (alignment: .center) {
-                Image("ahttyHello")
+                Image("helloAhtty")
                     .resizable()
-                    .frame(width: 168, height: 135)
                 
                 Spacer()
                 

@@ -10,17 +10,17 @@ import SwiftUI
 struct SelectCognitiveDistortionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
-    @Binding var answer: String
-    
     @ObservedObject var distortionPageManager: DistortionPageManager = DistortionPageManager()
+    @Binding var answer: String
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    let imageName: String
     
     var body: some View {
         ZStack {
             VStack {
                 // 아띠와 말풍선
                 HStack(alignment: .center) {
-                    Image("ahttyHello")
+                    Image(imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: ScreenSize.ahttyWriterWidth)
