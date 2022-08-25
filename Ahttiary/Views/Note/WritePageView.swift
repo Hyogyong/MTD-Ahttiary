@@ -64,17 +64,3 @@ struct WritePageView: View {
         .onAppear { UITextView.appearance().backgroundColor = .clear }
     }
 }
-
-/*
-.toolbar {
-    ToolbarItemGroup(placement: .keyboard) {
-        Spacer()
-        
-        Button {
-            isTextFieldsFocused = false
-        } label: {
-            Image(systemName: "keyboard.chevron.compact.down")
-        }
-    }
-}
-*/
