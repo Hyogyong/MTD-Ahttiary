@@ -39,9 +39,13 @@ struct EndPageView: View {
                     .padding()
             }
             
-            CustomButton("종료하기") { mainViewModel.goToMainView() }
-            
             Spacer()
+            
+            // 페이지 전환 버튼
+            HStack(spacing: 20) {
+                CustomButton("이전") { noteManager.goToPreviousPage() }
+                CustomButton("종료하기") { mainViewModel.goToMainView() }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
