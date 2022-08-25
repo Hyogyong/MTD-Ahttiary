@@ -18,22 +18,8 @@ struct CurrentMonthView: View {
     }
     
     var body: some View {
-        HStack {
-//            Button {
-//                dateManager.fetchPreviousMonth()
-//            } label: {
-//                Image(systemName: "chevron.left")
-//            }
-
-            Text(currentYearAndMonth)
-                .font(.custom(Font.Custom.calendarBold, size: 22))
-            
-//            Button {
-//                dateManager.fetchNextMonth()
-//            } label: {
-//                Image(systemName: "chevron.right")
-//            }
-        }
+        Text(currentYearAndMonth)
+            .font(.custom(Font.Custom.calendarBold, size: 22))
     }// body
     
 }// CurrentMonthView

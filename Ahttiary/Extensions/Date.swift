@@ -8,13 +8,13 @@
 import Foundation
 
 extension Date {
-    // Date 값을 "XXXX년 XX월 XX일" 형태의 String으로 변환
+    // Date 값을 "XXXX년 XX월 X일" 형태의 String으로 변환
     func convertToDetailedDate() -> String {
         let dateFormatter: DateFormatter = DateFormatter()
         
         dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.timeZone = TimeZone(abbreviation: "KST")
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        dateFormatter.dateFormat = "yyyy년 MM월 d일"
         
         return dateFormatter.string(from: self)
     }

@@ -10,12 +10,13 @@ import SwiftUI
 struct WritePageView: View {
 
     @ObservedObject var noteManager: NoteManager
+    @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
         
     var body: some View {
         VStack {
-            CustomNavigationBar(displayDate: Date())
+            CustomNavigationBar(displayDate: dateManager.selectedDate)
                 .padding()
             
             // 아띠와 말풍선
@@ -63,17 +64,3 @@ struct WritePageView: View {
         .onAppear { UITextView.appearance().backgroundColor = .clear }
     }
 }
-
-/*
-.toolbar {
-    ToolbarItemGroup(placement: .keyboard) {
-        Spacer()
-        
-        Button {
-            isTextFieldsFocused = false
-        } label: {
-            Image(systemName: "keyboard.chevron.compact.down")
-        }
-    }
-}
-*/

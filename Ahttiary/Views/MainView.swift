@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var mainViewManager: MainViewManager
+    @EnvironmentObject var mainViewModel: MainViewManager
+    @EnvironmentObject var dateManager: DateViewModel
+    @State var myNote: FetchedResults<Note>.Element? = nil
     var buttonText: String {
-        if mainViewManager.note == nil { return "감정기록 시작하기" }
-        return "감정 읽기"
+        var selectedNote: FetchedResults<Note>.Element? = nil
+        for note in mainViewModel.noteArray {
+            if note.dateCreated.convertToDetailedDate() == dateManager.selectedDate.convertToDetailedDate() {
+                    selectedNote = note
+            }
+        }
+        
+        if selectedNote != nil {
+            updateToReadNote(selectedNote!)
+            return "감정 읽기"
+        }
+        else {
+            updateToReadNote(nil)
+            return "감정 기록 쓰기"
+        }
     }
     
     var body: some View {
@@ -33,8 +48,12 @@ struct MainView: View {
             .padding(.bottom, 90)
             
             Button {
-                if mainViewManager.note == nil { mainViewManager.goToWritingView() }
-                else { mainViewManager.goToReadingView() }
+                if myNote == nil {
+                    mainViewModel.goToWritingView()
+                }
+                else {
+                    mainViewModel.goToReadingView(myNote)
+                }
             } label: {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)
@@ -53,6 +72,11 @@ struct MainView: View {
         .padding(.horizontal, 20)
         .background(Color.Custom.background)
     }// body
+    
+    private func updateToReadNote(_ note: FetchedResults<Note>.Element?) {
+        DispatchQueue.main.async { self.myNote = note }
+    }
+    
 }// MainView
 
 struct MainView_Previews: PreviewProvider {
