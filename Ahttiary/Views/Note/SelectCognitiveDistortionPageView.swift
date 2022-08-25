@@ -68,8 +68,6 @@ struct SelectCognitiveDistortionPageView: View {
                     .disabled(answer.isEmpty)
                     .opacity(answer.isEmpty ? 0.7 : 1)
                 }
-                
-
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.Custom.background.ignoresSafeArea())
