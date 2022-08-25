@@ -24,13 +24,17 @@ struct CalendarCell: View {
             ZStack {
                 Circle()
                     .foregroundColor(dateManager.verifySelectedDay(dayOfThisCell) ? Color.Custom.carrotGreen : .clear)
+
+                if detectNoteData() { Image("carrot").scaleEffect(0.75) }
                 
                 Text(fetchMonthStruct().day())
                     .font(.custom(Font.Custom.calendarBold, size: 20))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(
                         detectNoteData()
-                        ? .Custom.carrot
+                        ? dateManager.verifySelectedDay(dayOfThisCell)
+                            ? .white
+                            : .black
                         : dateManager.verifySelectedDay(dayOfThisCell)
                             ? .white
                             : dateManager.verifyFutureDate(dayOfThisCell)
