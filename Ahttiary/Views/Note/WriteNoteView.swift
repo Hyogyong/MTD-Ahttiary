@@ -16,69 +16,65 @@ struct WriteNoteView: View {
     }
     
     var body: some View {
-        
-        TabView(selection: $noteManager.pageNumber) {
-            // 상황
-            WritePageView(
-                noteManager: noteManager,
-                answer: $draftNote.firstAnswer,
-                imageName: "noteAhtty"
-            ).tag(0)
-            
-            // 정서
-            WritePageView(
-                noteManager: noteManager,
-                answer: $draftNote.secondAnswer,
-                imageName: "bbaeggomAhtty"
-            ).tag(1)
-            
-            // 첫 번째 감정 체크
-            SelectEmotionPageView(
-                noteManager: noteManager,
-                answer: $draftNote.firstEmotion,
-                imageName: "selectinAhtty"
-            ).tag(2)
-            
-            // 자동적 사고 기술
-            WritePageView(
-                noteManager: noteManager,
-                answer: $draftNote.thirdAnswer,
-                imageName: "questionAhtty"
-            ).tag(3)
-            
-            // 인지 왜곡 파악
-            SelectCognitiveDistortionPageView(
-                noteManager: noteManager,
-                answer: $draftNote.fourthAnswer,
-                imageName: "helloAhtty"
-            ).tag(4)
-            
-            // 합리적 반응 도출
-            WritePageView(
-                noteManager: noteManager,
-                answer: $draftNote.fifthAnswer,
-                imageName: "thinkinAhtty"
-            ).tag(5)
-            
-            // 두 번째 감정 체크
-            SelectEmotionPageView(
-                noteManager: noteManager,
-                answer: $draftNote.secondEmotion,
-                imageName: "selectinAhtty"
-            ).tag(6)
-            
-            // 마지막 페이지(내일도 즐거운 하루 보내자!)
-            EndPageView(
-                noteManager: noteManager,
-                imageName: "helloAhtty"
-            ).tag(7)
+        Group {
+            switch noteManager.pageNumber {
+            case 0:
+                WritePageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.firstAnswer,
+                    imageName: "noteAhtty"
+                )
+            case 1:
+                WritePageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.secondAnswer,
+                    imageName: "bbaeggomAhtty"
+                )
+            case 2:
+                SelectEmotionPageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.firstEmotion,
+                    imageName: "selectinAhtty"
+                )
+            case 3:
+                WritePageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.thirdAnswer,
+                    imageName: "questionAhtty"
+                )
+            case 4:
+                SelectCognitiveDistortionPageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.fourthAnswer,
+                    imageName: "helloAhtty"
+                )
+            case 5:
+                // 합리적 반응 도출
+                WritePageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.fifthAnswer,
+                    imageName: "thinkinAhtty"
+                )
+            case 6:
+                // 두 번째 감정 체크
+                SelectEmotionPageView(
+                    noteManager: noteManager,
+                    answer: $draftNote.secondEmotion,
+                    imageName: "selectinAhtty"
+                )
+            case 7:
+                // 마지막 페이지(내일도 즐거운 하루 보내자!)
+                EndPageView(
+                    noteManager: noteManager,
+                    imageName: "helloAhtty"
+                )
+            default:
+                EmptyView()
+            }
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .ignoresSafeArea()
         .background(Color.Custom.background)
         .onChange(of: noteManager.pageNumber) { _ in
             Note.updateNote(using: draftNote)
         }
-
     } // End of body
-}// WriteNoteView
+} // WriteNoteView
