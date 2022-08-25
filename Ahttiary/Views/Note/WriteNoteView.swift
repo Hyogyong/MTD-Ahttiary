@@ -53,6 +53,9 @@ struct WriteNoteView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .ignoresSafeArea()
         .background(Color.Custom.background)
+        .onChange(of: noteManager.pageNumber) { _ in
+            Note.updateNote(using: draftNote)
+        }
 
     } // End of body
 }// WriteNoteView
