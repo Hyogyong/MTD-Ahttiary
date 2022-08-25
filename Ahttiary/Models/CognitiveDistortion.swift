@@ -80,8 +80,8 @@ struct CognitiveDistortion {
         case .labeling:
             return [
                 "name": "낙인 찍기",
-                "description": "",
-                "example": ""
+                "description": "자신이나 타인에게 강한 고정관념을 가지고, 그에 반하는 정보는 차단하는 것.",
+                "example": "이번 대회에서 A가 활약했다고? A는 구제불능이야. 꼼수를 쓴게 분명해."
             ]
         }
     }
