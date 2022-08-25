@@ -16,7 +16,7 @@ struct CognitiveDistortionCell: View {
         RoundedRectangle(cornerRadius: 15)
             .stroke(type.rawValue == answer ? Color.Custom.carrotGreen : Color.clear, lineWidth: 6)
             .frame(maxWidth: .infinity, minHeight: 250, maxHeight: .infinity)
-            .background(.white)
+            .background(Color.Custom.carrot)
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .overlay {
                 VStack {
@@ -37,7 +37,7 @@ struct CognitiveDistortionCell: View {
                     .padding(.trailing)
                     .padding(.top)
                     
-                    Image("ahttyHello")
+                    Image("helloAhtty")
                         .resizable()
                     
                     Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: type)["name"]!)
