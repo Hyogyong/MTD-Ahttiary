@@ -11,10 +11,15 @@ struct EndPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @EnvironmentObject var mainViewModel: MainViewManager
+    @EnvironmentObject var dateManager: DateViewModel
+    
     let imageName: String
     
     var body: some View {
         VStack {
+            CustomNavigationBar(displayDate: dateManager.selectedDate)
+                .padding()
+            
             Spacer()
             
             // 아띠와 말풍선
