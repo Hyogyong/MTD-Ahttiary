@@ -37,7 +37,7 @@ struct WriteNoteView: View {
                 .tag(3)
             
             // 인지 왜곡 파악
-            WritePageView(noteManager: noteManager, answer: $draftNote.fourthAnswer)
+            SelectCognitiveDistortionPageView(noteManager: noteManager, answer: $draftNote.fourthAnswer)
                 .tag(4)
             
             // 합리적 반응 도출
