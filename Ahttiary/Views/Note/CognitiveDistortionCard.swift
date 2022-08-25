@@ -28,8 +28,8 @@ struct CognitiveDistortionCard: View {
                         .font(.custom(Font.Custom.comment, size: 24))
                         .padding()
                     
-                    Text("예시: \(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["example"]!)")
-                        .font(.custom(Font.Custom.comment, size: 18))
+                    Text("예시) \(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["example"]!)")
+                        .font(.custom(Font.Custom.comment, size: 22))
                         .padding()
                     
                     Spacer()
