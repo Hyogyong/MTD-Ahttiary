@@ -25,62 +25,62 @@ struct CognitiveDistortion {
         switch cognitiveDistortionType {
         case .polarizedThinking:
             return [
-                "name": "흑백논리",
-                "description": "극단적으로 생각하는 경향",
-                "example": ""
+                "name": "이분법적 사고",
+                "description": "모든 일을 한두 개의 범주로만 받아들이며, 중간 지대는 인정하지 않는 것.",
+                "example": "완벽하지 않으면 가치가 없어"
             ]
         case .overgeneralization:
             return [
-                "name": "지나친 보편화",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
-                "example": ""
+                "name": "과도한 일반화",
+                "description": "한두 가지 사건을 확대해석하여 섣부른 결론을 내리는 것.",
+                "example": "취업 면접에서 떨어졌어. 나는 앞으로도 절대 직업을 구할 수 없을거야."
             ]
         case .catastrophizing:
             return [
-                "name": "파국화",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
-                "example": ""
+                "name": "재앙화",
+                "description": "자신에게 일어난 사건을 실제보다 끔찍하고 심각하게 받아들이는 것.",
+                "example": "지난 며칠 동안 두통이 있었어. 이건 뇌종양이 틀림없어."
             ]
         case .personalization:
             return [
                 "name": "개인화",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
-                "example": ""
+                "description": "책임이 없거나 통제할 수 없는 사건의 발생을 자신의 탓으로 돌리는 것.",
+                "example": "키우던 강아지가 갑자기 병으로 죽었어. 다 내가 그동안 잘해주지 못해서 생긴 일이야."
             ]
         case .mindReading:
             return [
-                "name": "지나친 보편화",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
-                "example": ""
+                "name": "독심술",
+                "description": "뚜렷한 근거 없이 타인의 생각이나 의도를 단정짓는 것.",
+                "example": "눈이 마주쳤는데도 인사를 하지 않네. 나를 싫어하는게 분명해."
             ]
         case .mentalFiltering:
             return [
-                "name": "필터링",
-                "description": "부정적인 사건만 부각시켜 받아들인다.",
-                "example": ""
+                "name": "정신적 필터",
+                "description": "사건의 긍정적인 측면은 무시하고, 부정적인 측면만을 부각시켜 받아들이는 것.",
+                "example": "내 실수가 이번 프로젝트를 완전히 망쳤어."
             ]
         case .discountingThePositive:
             return [
                 "name": "긍정 격하",
-                "description": "긍정적인 결과에도 불구하고 이를 의도적으로 부인한다.",
-                "example": ""
+                "description": "긍정적인 경험이나 능력을 객관적으로 보지 않고 낮추어 평가하는 것.",
+                "example": "이번 시험은 우연히 잘 봤을 뿐이고, 나는 별 볼일 없는 사람이야."
             ]
         case .shouldStatements:
             return [
                 "name": "당위 진술",
-                "description": "\"해야 한다\" 혹은 \"해서는 안 된다\" 등 극단적인 동기를 유발한다. 어떠한 행동을 하기도 전에 자신에게 부담을 주며, 이를 타인에게 적용함으로써 더 큰 좌절을 느낀다.",
-                "example": ""
+                "description": "스스로에게 비현실적인 기대를 하거나 무거운 압박을 부여하는 것.",
+                "example": "하나도 긴장하지 않고 이 발표를 마쳐야만 해."
             ]
         case .emotionalReasoning:
             return [
-                "name": "감정적 추리",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
-                "example": ""
+                "name": "정서적 추론",
+                "description": "객관적인 근거에 부합하지 않는데도, 개인적인 감정이나 느낌으로 결론을 내리는 것.",
+                "example": "A는 인성이 별로일거야. 걔만 보면 질투가 나거든."
             ]
         case .labeling:
             return [
-                "name": "낙인",
-                "description": "하나의 사건을 항구적인 패배의 이유로 본다.",
+                "name": "낙인 찍기",
+                "description": "",
                 "example": ""
             ]
         }
