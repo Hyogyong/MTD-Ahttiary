@@ -24,7 +24,7 @@ struct ContentView: View {
         case .writing:
             mainViewManager.createNote(dateManager.selectedDate)
         case .reading:
-            WriteNoteView(note: mainViewManager.note!)
+            mainViewManager.readSelectedNote(dateManager.selectedDate)
         }
     }
     

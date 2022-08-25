@@ -10,33 +10,43 @@ import SwiftUI
 
 final class MainViewManager: ObservableObject {
     @Published var pageName: PageName = .main
-    @Published var note: FetchedResults<Note>.Element? = nil
+    @Published var noteArray: [FetchedResults<Note>.Element] = []
+    var myNote: FetchedResults<Note>.Element? = nil
     
     func goToMainView() {
-        withAnimation {
-            pageName = .main
-        }
+        withAnimation { pageName = .main }
     }
 
     func goToWritingView() {
-        withAnimation {
-            pageName = .writing
-        }
+        withAnimation { pageName = .writing }
     }
     
-    func goToReadingView() {
-        withAnimation {
-            pageName = .reading
-        }
+    func goToReadingView(_ note: FetchedResults<Note>.Element?) {
+        guard let note = note else { return }
+        self.myNote = note
+        withAnimation { pageName = .reading }
     }
         
-    func updateNote(_ data: FetchedResults<Note>.Element?) { self.note = data }
+    func updateNote(_ note: FetchedResults<Note>.Element?) {
+        guard let note = note else { return }
+        self.noteArray.append(note)
+    }
     
     func createNote(_ createdDate: Date = Date()) -> some View {
-        print("🔥 해당 날짜로 다이어리가 생성됩니다: \(createdDate)")
-
-        let newNote = Note.getNewNote()
+        let newNote = Note.getNewNote(createdDate)
         return WriteNoteView(note: newNote)
+    }
+    
+    func readSelectedNote(_ createdDate: Date = Date()) -> some View {
+        var selectedNoteView: WriteNoteView? = nil
+        
+        if
+            myNote != nil,
+            myNote?.dateCreated.convertToDetailedDate() == createdDate.convertToDetailedDate() {
+            selectedNoteView = WriteNoteView(note: myNote!)
+        }
+        
+        return selectedNoteView
     }
     
 }// MainViewManager
