@@ -11,6 +11,8 @@ struct SelectCognitiveDistortionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
     @ObservedObject var distortionPageManager: DistortionPageManager = DistortionPageManager()
+    @EnvironmentObject var dateManager: DateViewModel
+    
     @Binding var answer: String
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     let imageName: String
@@ -18,6 +20,9 @@ struct SelectCognitiveDistortionPageView: View {
     var body: some View {
         ZStack {
             VStack {
+                CustomNavigationBar(displayDate: dateManager.selectedDate)
+                    .padding()
+                
                 // 아띠와 말풍선
                 HStack(alignment: .center) {
                     Image(imageName)
