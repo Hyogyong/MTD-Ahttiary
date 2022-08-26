@@ -10,14 +10,16 @@ import SwiftUI
 struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
+    @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
-    
     let imageName: String
+    var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         VStack {
-            Spacer()
+            CustomNavigationBar(displayDate: dateManager.selectedDate)
+                .padding()
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
@@ -37,67 +39,58 @@ struct SelectEmotionPageView: View {
                     .scaleEffect(CGSize(width: -1.0, height: 1.0))
             }
             
-            // Emotion Selecting Buttons
-            HStack {
-                Button {
-                    answer = Emotion.anger.rawValue
-                } label: {
-                    Text("😡")
-                        .font(.largeTitle)
+            // 감정 선택 그리드
+            LazyVGrid(columns: gridItemLayout) {
+                ForEach(
+                    noteManager.pageNumber == 2 ? EmotionStruct.firstEmotionArray : EmotionStruct.secondEmotionArray,
+                    id: \.self
+                ) { emotion in
+                    EmotionCard(answer: $answer, emotion: emotion)
                 }
-                .opacity(answer == "anger" ? 1 : 0.5)
-                
-                Button {
-                    answer = Emotion.sad.rawValue
-                } label: {
-                    Text("😢")
-                        .font(.largeTitle)
-                }
-                .opacity(answer == "sad" ? 1 : 0.5)
-                
-                Button {
-                    answer = Emotion.tired.rawValue
-                } label: {
-                    Text("🫠")
-                        .font(.largeTitle)
-                }
-                .opacity(answer == "tired" ? 1 : 0.5)
-                
-                Button {
-                    answer = Emotion.worried.rawValue
-                } label: {
-                    Text("😮‍💨")
-                        .font(.largeTitle)
-                }
-                .opacity(answer == "worried" ? 1 : 0.5)
             }
             
+            Spacer()
+            
+            // 페이지 전환 버튼
             HStack(spacing: 20) {
-                CustomButton("이전") {
-                    noteManager.goToPreviousPage()
-                }
-                
-                CustomButton("선택 완료") {
-                    noteManager.goToNextPage()
-                }
+                CustomButton("이전") { noteManager.goToPreviousPage() }
+                CustomButton("선택 완료") { noteManager.goToNextPage() }
                 .disabled(answer.isEmpty)
                 .opacity(answer.isEmpty ? 0.7 : 1)
             }
             
-            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal)
         .background(Color.Custom.background.ignoresSafeArea())
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                
-                Button {
-                    isTextFieldsFocused = false
-                } label: {
-                    Image(systemName: "keyboard.chevron.compact.down")
+    }
+}
+
+struct EmotionCard: View {
+    @Binding var answer: String
+    let emotion: Emotion
+    
+    var body: some View {
+        Button {
+            answer = emotion.rawValue
+        } label: {
+            RoundedRectangle(cornerRadius: 15)
+                .frame(minHeight: 100)
+                .foregroundColor(.white)
+                .overlay {
+                    VStack {
+                        Image(emotion.rawValue)
+                            .resizable()
+                            .scaledToFit()
+                            .scaleEffect(1.2)
+                            .padding(.top, 20)
+                        Text(EmotionStruct().emotionDictionary[emotion]!)
+                            .foregroundColor(.black)
+                            .font(.custom(Font.Custom.comment, size: 24))
+                            .padding(.bottom, 10)
+                    }
                 }
-            }
         }
+        .opacity(answer == emotion.rawValue ? 1 : 0.5)
     }
 }
