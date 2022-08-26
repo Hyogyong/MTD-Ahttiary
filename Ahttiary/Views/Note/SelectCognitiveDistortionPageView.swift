@@ -39,6 +39,7 @@ struct SelectCognitiveDistortionPageView: View {
                         .font(.custom(Font.Custom.comment, size: 20))
                         .padding()
                 }
+                .padding(.horizontal)
                 
                 // Emotion Selecting Buttons
                 ScrollView (showsIndicators: false) {

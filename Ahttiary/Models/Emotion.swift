@@ -8,13 +8,20 @@
 import Foundation
 
 struct EmotionStruct {
-    let emotionArray: [Emotion] = [
+    static let firstEmotionArray: [Emotion] = [
+        .angry,
+        .sad,
+        .irritated,
+        .scared
+    ]
+    
+    static let secondEmotionArray: [Emotion] = [
         .angry,
         .sad,
         .irritated,
         .scared,
-        .happy,
-        .satisfied
+        .satisfied,
+        .happy
     ]
     
     let emotionDictionary: [Emotion : String] = [
@@ -22,8 +29,8 @@ struct EmotionStruct {
         .sad : "슬퍼요",
         .irritated : "짜증나요",
         .scared : "두려워요",
-        .happy : "행복해요",
-        .satisfied : "만족해요"
+        .satisfied : "만족해요",
+        .happy : "행복해요"
     ]
 }
 
@@ -32,7 +39,7 @@ enum Emotion: String {
     case sad
     case irritated
     case scared
-    case happy
     case satisfied
+    case happy
 }
 
