@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
+    @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
     let imageName: String
@@ -17,6 +18,9 @@ struct SelectEmotionPageView: View {
     
     var body: some View {
         VStack {
+            CustomNavigationBar(displayDate: dateManager.selectedDate)
+                .padding()
+            
             // 아띠와 말풍선
             HStack(alignment: .center) {
                 Text(noteManager.randomComments[noteManager.pageNumber])
