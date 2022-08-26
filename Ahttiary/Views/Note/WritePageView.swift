@@ -13,6 +13,8 @@ struct WritePageView: View {
     @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
+    
+    let imageName: String
         
     var body: some View {
         VStack {
@@ -21,7 +23,7 @@ struct WritePageView: View {
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
-                Image("ahttyHello")
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
@@ -48,6 +50,8 @@ struct WritePageView: View {
                 }
                 .padding()
 
+            Spacer()
+            
             // 페이지 전환 버튼
             HStack(spacing: 20) {
                 CustomButton("이전") { noteManager.goToPreviousPage() }
@@ -55,8 +59,6 @@ struct WritePageView: View {
                 .disabled(answer.isEmpty)
                 .opacity(answer.isEmpty ? 0.7 : 1)
             }
-            
-            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())

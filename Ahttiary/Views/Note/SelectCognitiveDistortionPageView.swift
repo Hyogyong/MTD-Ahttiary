@@ -10,17 +10,22 @@ import SwiftUI
 struct SelectCognitiveDistortionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
-    @Binding var answer: String
-    
     @ObservedObject var distortionPageManager: DistortionPageManager = DistortionPageManager()
+    @EnvironmentObject var dateManager: DateViewModel
+    
+    @Binding var answer: String
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    let imageName: String
     
     var body: some View {
         ZStack {
             VStack {
+                CustomNavigationBar(displayDate: dateManager.selectedDate)
+                    .padding()
+                
                 // 아띠와 말풍선
                 HStack(alignment: .center) {
-                    Image("ahttyHello")
+                    Image(imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: ScreenSize.ahttyWriterWidth)
@@ -63,8 +68,6 @@ struct SelectCognitiveDistortionPageView: View {
                     .disabled(answer.isEmpty)
                     .opacity(answer.isEmpty ? 0.7 : 1)
                 }
-                
-
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.Custom.background.ignoresSafeArea())

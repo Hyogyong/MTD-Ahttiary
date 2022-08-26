@@ -31,13 +31,11 @@ struct DateGridView: View {
     
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
-            Text("일").weekDayViewModifier()
-            Text("월").weekDayViewModifier()
-            Text("화").weekDayViewModifier()
-            Text("수").weekDayViewModifier()
-            Text("목").weekDayViewModifier()
-            Text("금").weekDayViewModifier()
-            Text("토").weekDayViewModifier()
+            let weekdayArray: [String] = ["일", "월", "화", "수", "목", "금", "토"]
+
+            ForEach(weekdayArray, id: \.self) { weekday in
+                Text(weekday).weekDayViewModifier()
+            }
         }
     }// dayOfWeek
     

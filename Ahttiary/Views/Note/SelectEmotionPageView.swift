@@ -10,13 +10,16 @@ import SwiftUI
 struct SelectEmotionPageView: View {
     
     @ObservedObject var noteManager: NoteManager
+    @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
-    
     @FocusState var isTextFieldsFocused: Bool
+    
+    let imageName: String
     
     var body: some View {
         VStack {
-            Spacer()
+            CustomNavigationBar(displayDate: dateManager.selectedDate)
+                .padding()
             
             // 아띠와 말풍선
             HStack(alignment: .center) {
@@ -29,7 +32,7 @@ struct SelectEmotionPageView: View {
                     .font(.custom(Font.Custom.comment, size: 20))
                     .padding()
                 
-                Image("ahttyHello")
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: ScreenSize.ahttyWriterWidth)
@@ -71,6 +74,8 @@ struct SelectEmotionPageView: View {
                 .opacity(answer == "worried" ? 1 : 0.5)
             }
             
+            Spacer()
+            
             HStack(spacing: 20) {
                 CustomButton("이전") {
                     noteManager.goToPreviousPage()
@@ -82,8 +87,6 @@ struct SelectEmotionPageView: View {
                 .disabled(answer.isEmpty)
                 .opacity(answer.isEmpty ? 0.7 : 1)
             }
-            
-            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
