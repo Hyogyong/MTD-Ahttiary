@@ -14,7 +14,7 @@ struct DateGridView: View {
     var body: some View {
         VStack {
             dayOfWeek
-            if locationOfGrid != 0 { calendarGrid.transition(.customOpacity) }
+            if locationOfGrid != 0 { calendarGrid.transition(.opacity.animation(.easeInOut)) }
             else { calendarGrid }
             
         }// VStack
@@ -72,23 +72,5 @@ struct DateGridView: View {
 struct DateGridView_Previews: PreviewProvider {
     static var previews: some View {
         DateGridView()
-    }
-}
-
-struct SwipeViewModifier: ViewModifier {
-    let width: CGFloat
-    
-    func body(content: Content) -> some View {
-        content
-            .offset(x: width)
-    }
-}
-
-struct OpacityViewModifier: ViewModifier {
-    let level: Double
-
-    func body(content: Content) -> some View {
-        content
-            .opacity(level)
     }
 }

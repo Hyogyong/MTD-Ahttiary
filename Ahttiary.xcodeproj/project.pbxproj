@@ -18,7 +18,6 @@
 		7A3BA30E289C0FD0002ABB95 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */; };
 		7A3EFE1F28B6387C0061239D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */; };
 		7A3EFE2128B651780061239D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3EFE2028B651780061239D /* Poppins-Regular.ttf */; };
-		7A80AF7128BBD06A00EF6511 /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80AF7028BBD06A00EF6511 /* AnyTransition.swift */; };
 		7AAE399328A370A4002529C1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE399228A370A4002529C1 /* Color.swift */; };
 		7AD34AAD288F932E00E92B73 /* AhttiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */; };
 		7AD34AAF288F932E00E92B73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD34AAE288F932E00E92B73 /* ContentView.swift */; };
@@ -65,7 +64,6 @@
 		7A3BA30D289C0FD0002ABB95 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
 		7A3EFE1E28B6387C0061239D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		7A3EFE2028B651780061239D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		7A80AF7028BBD06A00EF6511 /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		7AAE399228A370A4002529C1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7AD34AA9288F932E00E92B73 /* 아띠어리.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "아띠어리.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD34AAC288F932E00E92B73 /* AhttiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhttiaryApp.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				7AAE399228A370A4002529C1 /* Color.swift */,
 				F8622D0D28AA9C00008908CB /* ScreenSize.swift */,
 				F8622D2928AAB38D008908CB /* Date.swift */,
-				7A80AF7028BBD06A00EF6511 /* AnyTransition.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,7 +343,6 @@
 				F8622D1B28AA9C3B008908CB /* PersistentStore.swift in Sources */,
 				7AAE399328A370A4002529C1 /* Color.swift in Sources */,
 				F8622D0F28AA9C00008908CB /* ScreenSize.swift in Sources */,
-				7A80AF7128BBD06A00EF6511 /* AnyTransition.swift in Sources */,
 				F83BB7E628B60A9C005F2D71 /* SelectCognitiveDistortionPageView.swift in Sources */,
 				F8622D1D28AA9C4D008908CB /* NoteManager.swift in Sources */,
 				7A3BA30A289C0B9B002ABB95 /* CalendarViewModel.swift in Sources */,
