@@ -14,17 +14,16 @@ struct DateGridView: View {
     var body: some View {
         VStack {
             dayOfWeek
-            calendarGrid
-                .offset(x: locationOfGrid)
-        }
+            if locationOfGrid != 0 { calendarGrid.transition(.customOpacity) }
+            else { calendarGrid }
+            
+        }// VStack
         .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-            .onChanged {
-                locationOfGrid = $0.translation.width
-            }
+            .onChanged { locationOfGrid = $0.translation.width }
             .onEnded {
                 if $0.translation.width < 0 { dateManager.fetchNextMonth() }
                 if $0.translation.width > 0 { dateManager.fetchPreviousMonth() }
-                locationOfGrid = 0
+                withAnimation(.easeInOut) { locationOfGrid = 0 }
             }
         )
     }// body
@@ -32,7 +31,7 @@ struct DateGridView: View {
     private var dayOfWeek: some View {
         HStack (spacing: 1) {
             let weekdayArray: [String] = ["일", "월", "화", "수", "목", "금", "토"]
-
+            
             ForEach(weekdayArray, id: \.self) { weekday in
                 Text(weekday).weekDayViewModifier()
             }
@@ -73,5 +72,23 @@ struct DateGridView: View {
 struct DateGridView_Previews: PreviewProvider {
     static var previews: some View {
         DateGridView()
+    }
+}
+
+struct SwipeViewModifier: ViewModifier {
+    let width: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .offset(x: width)
+    }
+}
+
+struct OpacityViewModifier: ViewModifier {
+    let level: Double
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(level)
     }
 }
