@@ -36,7 +36,7 @@ struct CognitiveDistortionCard: View {
                     
                     Spacer()
                     
-                    CustomButton("확인") { withAnimation { distortionPageManager.isShowingDistortionCard.toggle() } }
+                    ChangePageButton("확인") { withAnimation { distortionPageManager.isShowingDistortionCard.toggle() } }
                         .padding(.bottom)
                 }
             }

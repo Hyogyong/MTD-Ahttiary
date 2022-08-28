@@ -55,13 +55,13 @@ struct WritePageView: View {
             // 페이지 전환 버튼
             HStack(spacing: 20) {
                 if noteManager.pageNumber == 0 {
-                    CustomButton("다음", .long) { noteManager.goToNextPage() }
+                    ChangePageButton("다음", .long) { noteManager.goToNextPage() }
                         .disabled(answer.isEmpty)
                         .opacity(answer.isEmpty ? 0.7 : 1)
                 } else {
-                    CustomButton("이전") { noteManager.goToPreviousPage() }
+                    ChangePageButton("이전") { noteManager.goToPreviousPage() }
                     
-                    CustomButton("다음") { noteManager.goToNextPage() }
+                    ChangePageButton("다음") { noteManager.goToNextPage() }
                         .disabled(answer.isEmpty)
                         .opacity(answer.isEmpty ? 0.7 : 1)
                 }

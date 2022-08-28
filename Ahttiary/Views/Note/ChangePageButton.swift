@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomButton: View {
+struct ChangePageButton: View {
     
     var title: String
     var buttonLength: Double
@@ -43,7 +43,7 @@ struct CustomButton: View {
     }
 }
 
-extension CustomButton {
+extension ChangePageButton {
     
     enum ButtonLength {
         case short, long
@@ -52,7 +52,7 @@ extension CustomButton {
 
 struct Buttons_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton("테스트") {
+        ChangePageButton("테스트") {
             print("테스트")
         }
     }

@@ -59,11 +59,11 @@ struct SelectCognitiveDistortionPageView: View {
                 
                 // 화면 전환 버튼
                 HStack(spacing: 20) {
-                    CustomButton("이전") {
+                    ChangePageButton("이전") {
                         noteManager.goToPreviousPage()
                     }
                     
-                    CustomButton("선택 완료") {
+                    ChangePageButton("선택 완료") {
                         noteManager.goToNextPage()
                     }
                     .disabled(answer.isEmpty)
