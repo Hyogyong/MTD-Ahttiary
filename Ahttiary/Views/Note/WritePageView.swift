@@ -40,11 +40,12 @@ struct WritePageView: View {
             
             // 노트 작성란
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(Color.Custom.ahttyWhite)
                 .overlay {
                     TextEditor(text: $answer)
                         .font(.custom(Font.Custom.comment, size: 20))
                         .focused($isTextFieldsFocused)
+                        .background(Color.Custom.ahttyWhite)
                         .accentColor(Color.Custom.carrotGreen)
                         .padding()
                 }

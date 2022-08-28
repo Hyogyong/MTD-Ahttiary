@@ -76,7 +76,7 @@ struct EmotionCard: View {
         } label: {
             RoundedRectangle(cornerRadius: 15)
                 .frame(minHeight: 100)
-                .foregroundColor(.white)
+                .foregroundColor(Color.Custom.ahttyWhite)
                 .overlay {
                     VStack {
                         Image(emotion.rawValue)
