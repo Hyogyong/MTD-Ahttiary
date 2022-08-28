@@ -53,7 +53,7 @@ struct SelectCognitiveDistortionPageView: View {
                         }// ForEach
                     }// LazyVGrid
                 }// ScrollView
-                .padding(.horizontal, 10)
+                .padding(.horizontal)
                 
                 Spacer()
                 

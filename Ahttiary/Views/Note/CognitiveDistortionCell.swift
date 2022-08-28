@@ -31,7 +31,7 @@ struct CognitiveDistortionCell: View {
                         } label: {
                             Image(systemName: "info.circle")
                                 .foregroundColor(Color.Custom.carrotGreen)
-                                .font(.system(size: 20))
+                                .font(.system(size: 17))
                         }
                     }
                     .padding(.trailing)
@@ -42,11 +42,10 @@ struct CognitiveDistortionCell: View {
                         .padding(.horizontal)
                     
                     Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: type)["name"]!)
-                        .font(.custom(Font.Custom.calendarBold, size: 20))
+                        .font(.custom(Font.Custom.calendarBold, size: 17))
                         .padding(.vertical)
                 }
             }
-            .scaleEffect(0.85)
             .onTapGesture { withAnimation { answer = type.rawValue } }
         
     }// body

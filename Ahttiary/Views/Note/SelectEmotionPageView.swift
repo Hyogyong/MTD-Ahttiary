@@ -84,9 +84,11 @@ struct EmotionCard: View {
                             .scaledToFit()
                             .scaleEffect(1.2)
                             .padding(.top, 20)
+                        
                         Text(EmotionStruct().emotionDictionary[emotion]!)
                             .foregroundColor(.black)
-                            .font(.custom(Font.Custom.comment, size: 24))
+                            .font(.custom(Font.Custom.calendarBold, size: 17))
+                            .padding(.top, 5)
                             .padding(.bottom, 10)
                     }
                 }
