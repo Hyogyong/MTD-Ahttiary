@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct WritePageView: View {
-
+    
     @ObservedObject var noteManager: NoteManager
     @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
     
     let imageName: String
-        
+    
     var body: some View {
         VStack {
             CustomNavigationBar(displayDate: dateManager.selectedDate)
@@ -49,15 +49,23 @@ struct WritePageView: View {
                         .padding()
                 }
                 .padding()
-
+            
             Spacer()
             
             // 페이지 전환 버튼
             HStack(spacing: 20) {
-                CustomButton("이전") { noteManager.goToPreviousPage() }
-                CustomButton("다음") { noteManager.goToNextPage() }
-                .disabled(answer.isEmpty)
-                .opacity(answer.isEmpty ? 0.7 : 1)
+                if noteManager.pageNumber == 0 {
+                    CustomButton("다음", .long) { noteManager.goToNextPage() }
+                        .disabled(answer.isEmpty)
+                        .opacity(answer.isEmpty ? 0.7 : 1)
+                } else {
+                    CustomButton("이전") { noteManager.goToPreviousPage() }
+                    
+                    CustomButton("다음") { noteManager.goToNextPage() }
+                        .disabled(answer.isEmpty)
+                        .opacity(answer.isEmpty ? 0.7 : 1)
+                }
+                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
