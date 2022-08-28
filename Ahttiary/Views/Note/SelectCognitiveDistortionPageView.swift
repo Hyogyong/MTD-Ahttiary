@@ -79,7 +79,7 @@ struct SelectCognitiveDistortionPageView: View {
                 Color.black.opacity(0.2)
                     .ignoresSafeArea()
                 CognitiveDistortionCard(distortionPageManager: distortionPageManager)
-                    .frame(width: ScreenSize.distortionCardWidth, height: ScreenSize.distortionCardHeight, alignment: .center)
+                    .frame(width: ScreenSize.distortionCardWidth, height: ScreenSize.distortionCardWidth * 1.4, alignment: .center)
             }
             
         }// VStack
