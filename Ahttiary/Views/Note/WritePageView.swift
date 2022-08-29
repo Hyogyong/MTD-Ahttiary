@@ -52,7 +52,8 @@ struct WritePageView: View {
                         .padding()
                         .textSelection(.disabled)
                 }
-                .padding()
+                .padding(.horizontal)
+                .padding(.vertical, 5)
             
             Spacer()
             
