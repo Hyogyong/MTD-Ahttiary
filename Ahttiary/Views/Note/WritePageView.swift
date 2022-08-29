@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct WritePageView: View {
-
+    
     @ObservedObject var noteManager: NoteManager
     @EnvironmentObject var dateManager: DateViewModel
     @Binding var answer: String
     @FocusState var isTextFieldsFocused: Bool
     
     let imageName: String
-        
+    
     var body: some View {
         VStack {
             CustomNavigationBar(displayDate: dateManager.selectedDate)
@@ -40,24 +40,33 @@ struct WritePageView: View {
             
             // 노트 작성란
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(Color.Custom.ahttyWhite)
                 .overlay {
                     TextEditor(text: $answer)
                         .font(.custom(Font.Custom.comment, size: 20))
                         .focused($isTextFieldsFocused)
+                        .background(Color.Custom.ahttyWhite)
                         .accentColor(Color.Custom.carrotGreen)
                         .padding()
                 }
                 .padding()
-
+            
             Spacer()
             
             // 페이지 전환 버튼
             HStack(spacing: 20) {
-                CustomButton("이전") { noteManager.goToPreviousPage() }
-                CustomButton("다음") { noteManager.goToNextPage() }
-                .disabled(answer.isEmpty)
-                .opacity(answer.isEmpty ? 0.7 : 1)
+                if noteManager.pageNumber == 0 {
+                    ChangePageButton("다음", .long) { noteManager.goToNextPage() }
+                        .disabled(answer.isEmpty)
+                        .opacity(answer.isEmpty ? 0.7 : 1)
+                } else {
+                    ChangePageButton("이전") { noteManager.goToPreviousPage() }
+                    
+                    ChangePageButton("다음") { noteManager.goToNextPage() }
+                        .disabled(answer.isEmpty)
+                        .opacity(answer.isEmpty ? 0.7 : 1)
+                }
+                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
