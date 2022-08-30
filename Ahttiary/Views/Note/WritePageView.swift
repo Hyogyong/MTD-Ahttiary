@@ -37,6 +37,8 @@ struct WritePageView: View {
                     .font(.custom(Font.Custom.comment, size: 20))
             }
             .padding(.horizontal)
+            .contentShape(Rectangle())
+            .onTapGesture { isTextFieldsFocused = false }
             
             // 노트 작성란
             RoundedRectangle(cornerRadius: 15)
@@ -48,8 +50,10 @@ struct WritePageView: View {
                         .background(Color.Custom.ahttyWhite)
                         .accentColor(Color.Custom.carrotGreen)
                         .padding()
+                        .textSelection(.disabled)
                 }
-                .padding()
+                .padding(.horizontal)
+                .padding(.vertical, 5)
             
             Spacer()
             
@@ -68,10 +72,9 @@ struct WritePageView: View {
                 }
                 
             }
-        }
+        } // End of VStack
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.Custom.background.ignoresSafeArea())
-        .onTapGesture { isTextFieldsFocused = false }
         .onAppear { UITextView.appearance().backgroundColor = .clear }
     }
 }

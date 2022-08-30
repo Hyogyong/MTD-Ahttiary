@@ -40,6 +40,7 @@ struct ChangePageButton: View {
             }
         }
         .frame(width: buttonLength, height: 50)
+        .padding(.bottom, 12)
     }
 }
 
