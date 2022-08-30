@@ -76,5 +76,8 @@ struct WriteNoteView: View {
         .onChange(of: noteManager.pageNumber) { _ in
                 Note.updateNote(using: draftNote)
         }
+        .onDisappear {
+            Note.updateNote(using: draftNote)
+        }
     } // End of body
 } // WriteNoteView

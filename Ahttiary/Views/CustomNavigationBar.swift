@@ -24,7 +24,7 @@ struct CustomNavigationBar: View {
             Spacer()
             
             Text(displayDate.convertToDisplayedDate())
-                .font(.custom(Font.Custom.comment, size: 20))
+                .font(.custom(Font.Custom.calendarBold, size: 22))
                 .foregroundColor(.black)
             
             Spacer()
