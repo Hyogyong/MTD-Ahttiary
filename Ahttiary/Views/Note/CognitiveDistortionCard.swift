@@ -21,7 +21,9 @@ struct CognitiveDistortionCard: View {
                         .font(.custom(Font.Custom.comment, size: 32))
                         .padding(.top, 35)
 
-                    Image("ahttyHello")
+                    Image("helloAhtty")
+                        .resizable()
+                        .scaledToFit()
                         .padding()
                     
                     Text(CognitiveDistortion.getDiscriptionAndExample(cognitiveDistortionType: distortionPageManager.distortionCardType)["description"]!)
