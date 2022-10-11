@@ -10,32 +10,34 @@ import SwiftUI
 struct OnboardingPageView: View {
     let imageName: String
     let title: String
-    let subtitle: String
     
     var body: some View {
-        VStack {
-            Image(imageName)
-                .font(.system(size: 100))
-                .padding()
+        ZStack {
+            Color.Custom.cardBackground
+                .ignoresSafeArea()
             
-            Text(title)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
-            
-            Text(subtitle)
-                .font(.title2)
+            VStack {
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: ScreenSize.onboardingImageWidth)
+                    .padding()
+                
+                Text(title)
+                    .font(.custom(Font.Custom.calendarBold, size: 24))
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(10)
+            }
         }
-        
     }
 }
 
 struct OnboardingPageView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingPageView(
-            imageName: "note.text.badge.plus",
-            title: "쓰기 탭",
-            subtitle: "이 앱은 개인 메모장으로 쓸 수 있어요"
+            imageName: "Onboarding_1",
+            title: "나의 하루, 나의 감정을\n아띠와 함께 기록해요"
         )
     }
 }

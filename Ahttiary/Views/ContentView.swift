@@ -19,7 +19,7 @@ struct ContentView: View {
             .fullScreenCover(isPresented: $isFirstLaunching) {
                 OnboardingTabView(isFirstLaunching: $isFirstLaunching)
             }
-    }// body
+    } // body
     
     @ViewBuilder private var contentView: some View {
         switch (mainViewManager.pageName) {
@@ -32,7 +32,7 @@ struct ContentView: View {
         }
     }
     
-}// ContentView
+} // ContentView
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
