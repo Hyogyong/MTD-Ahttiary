@@ -63,16 +63,16 @@ struct OnboardingTabView: View {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(Color.Custom.carrotGreen)
+                        .frame(width: 250, height: 50)
                     
-                    Text("buttonText")
+                    Text("시작하기")
                         .font(.custom(Font.Custom.calendarBold, size: 20))
                         .foregroundColor(.white)
                 }
-                .frame(minWidth: 250, maxHeight: 50)
             }
-            .padding(.horizontal, 70)
-            .padding(.bottom, 32)
+            .frame(height: 82)
+            .opacity(tagNumber == 2 ? 1 : 0)
         }
-        .ignoresSafeArea()
+        .background(Color.Custom.cardBackground)
     }
 }
