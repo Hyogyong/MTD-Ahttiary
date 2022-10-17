@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingTabView: View {
     @Binding var isFirstLaunching: Bool
+    @State var tagNumber: Int = 0
     
     init(isFirstLaunching: Binding<Bool>) {
         _isFirstLaunching = isFirstLaunching
@@ -19,24 +20,40 @@ struct OnboardingTabView: View {
     
     var body: some View {
         VStack {
-            TabView {
+            HStack {
+                Spacer()
+                Text("건너뛰기")
+                    .onTapGesture {
+                        isFirstLaunching = false
+                    }
+                    .font(.custom(Font.Custom.calendarBold, size: 20))
+                    .padding(.top, 30)
+                    .padding(.trailing, 30)
+                    .foregroundColor(Color.Custom.carrotGreen)
+                    .opacity(tagNumber == 2 ? 0 : 1)
+            }
+            
+            TabView(selection: $tagNumber) {
                 // 페이지 1
                 OnboardingPageView(
                     imageName: "Onboarding_1",
                     title: "나의 하루, 나의 감정을\n아띠와 함께 기록해요"
                 )
+                .tag(0)
                 
                 // 페이지 2
                 OnboardingPageView(
                     imageName: "Onboarding_2",
                     title: "나의 감정을 알아가며\n행복해지는 방법을 배워요"
                 )
+                .tag(1)
                 
                 // 페이지 3
                 OnboardingPageView(
                     imageName: "Onboarding_3",
                     title: "나를 더 잘 아는 것,\n스스로의 행복을 찾는 첫 걸음입니다"
                 )
+                .tag(2)
                 
             }
             .tabViewStyle(PageTabViewStyle())
