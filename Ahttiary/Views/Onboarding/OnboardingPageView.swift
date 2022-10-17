@@ -12,23 +12,18 @@ struct OnboardingPageView: View {
     let title: String
     
     var body: some View {
-        ZStack {
-            Color.Custom.cardBackground
-                .ignoresSafeArea()
+        VStack {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: ScreenSize.onboardingImageWidth)
+                .padding()
             
-            VStack {
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: ScreenSize.onboardingImageWidth)
-                    .padding()
-                
-                Text(title)
-                    .font(.custom(Font.Custom.calendarBold, size: 24))
-                    .padding()
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(10)
-            }
+            Text(title)
+                .font(.custom(Font.Custom.calendarBold, size: 24))
+                .padding()
+                .multilineTextAlignment(.center)
+                .lineSpacing(10)
         }
     }
 }
