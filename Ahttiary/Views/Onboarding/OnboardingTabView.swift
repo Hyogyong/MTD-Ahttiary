@@ -58,6 +58,7 @@ struct OnboardingTabView: View {
             }
             .tabViewStyle(PageTabViewStyle())
             Button {
+                isFirstLaunching = false
             } label: {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)
