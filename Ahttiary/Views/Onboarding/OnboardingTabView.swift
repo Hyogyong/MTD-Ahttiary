@@ -38,18 +38,9 @@ struct OnboardingTabView: View {
                     title: "나를 더 잘 아는 것,\n스스로의 행복을 찾는 첫 걸음입니다"
                 )
                 
-                //            // 페이지 3: 읽기 페이지 안내 + 온보딩 완료
-                //            OnboardingLastPageView(
-                //                imageName: "eyes",
-                //                title: "읽기 탭",
-                //                subtitle: "시행착오를 정리해서 공유하고, 다른 개발자들의 인사이트를 얻으세요",
-                //                isFirstLaunching: $isFirstLaunching
-                //            )
             }
             .tabViewStyle(PageTabViewStyle())
-            
             Button {
-                
             } label: {
                 ZStack (alignment: .center) {
                     RoundedRectangle(cornerRadius: 10)
